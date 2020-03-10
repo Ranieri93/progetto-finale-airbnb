@@ -10882,3 +10882,22 @@ a.text-dark:focus {
   }
 }
 
+main {
+  background-image: url("https://previews.123rf.com/images/siraphol/siraphol1508/siraphol150803612/44023975-empty-sea-and-beach-background-with-copy-space.jpg");
+}
+
+main nav {
+  height: 81px !important;
+}
+
+main nav .space {
+  margin-right: 10px;
+}
+
+.form {
+  position: relative;
+  margin-left: 80px;
+  width: 441px;
+  height: 474px;
+}
+
