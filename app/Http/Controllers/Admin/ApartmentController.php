@@ -6,6 +6,7 @@ use App\Apartment;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Storage;
 
 class ApartmentController extends Controller
 {
@@ -52,6 +53,14 @@ class ApartmentController extends Controller
 
         $data = $request->all();
         $apartment = new Apartment();
+
+
+        if (!empty($data['cover_image'])) {
+            $cover_image = $data['cover_image'];
+            $cover_image_path = Storage::put('uploads', $cover_image);
+            $apartment->cover_image = $cover_image_path;
+        }
+
         $apartment->fill($data);
         $apartment->slug = Str::slug($data['sommary_title']);
         $apartment->save();
@@ -78,7 +87,7 @@ class ApartmentController extends Controller
      */
     public function edit(Apartment $apartment)
     {
-        //
+        return view('admin.apartments.edit', ['apartment' => $apartment]);
     }
 
     /**
@@ -90,7 +99,31 @@ class ApartmentController extends Controller
      */
     public function update(Request $request, Apartment $apartment)
     {
-        //
+        $request->validate([
+            'sommary_title' => 'required|max:255',
+            'description' => 'required',
+            'room_number' => 'required|numeric|min:1|max:10',
+            'guest_number' => 'required|numeric|min:1|max:10',
+            'wc_number' => 'required|numeric|min:1|max:3',
+            'square_meters' => 'required|numeric|min:30|max:250',
+            'latitude' => 'required|numeric',
+            'longitude' => 'required|numeric',
+            'cover_image' => 'image',
+        ]);
+
+        $data = $request->all();
+
+
+        if (!empty($data['cover_image'])) {
+            $cover_image = $data['cover_image'];
+            $cover_image_path = Storage::put('uploads', $cover_image);
+            $apartment->cover_image = $cover_image_path;
+        }
+
+        $apartment->update($data);
+        return redirect()->route('admin.apartments.index');
+
+
     }
 
     /**

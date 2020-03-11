@@ -33,7 +33,7 @@
                             <td>{{ $apartment->square_meters}}</td>
                             <td class="d-flex justify-content-around">
                                 <a class="btn btn-secondary" href="{{ route('admin.apartments.show', ['apartment' => $apartment->id])}}">Details</a>
-                                <a class="btn btn-warning" {{--href="{{ route('admin.posts.edit', ['post' => $post->id])}}--}}">Update</a>
+                                <a class="btn btn-warning" href="{{ route('admin.apartments.edit', ['apartment' => $apartment->id])}}">Update</a>
                                 <form method="post" {{--action="{{ route('admin.posts.destroy', ['post' => $post->id])}}--}}">
                                     @csrf
                                     @method('DELETE')
