@@ -21,6 +21,10 @@
                                name="sommary_title" id="sommary_title"  placeholder="Scrivi qui il titolo descrittivo" value="{{old('sommary_title')}}" required>
                     </div>
                     <div class="form-group">
+                        <label for="description">Testo Articolo</label>
+                        <textarea name="description" id="description" cols="80" >{{old('description')}}</textarea>
+                    </div>
+                    <div class="form-group">
                         <label for="room_number">Numero Stanze</label>
                         <input type="text" class="form-control"
                                name="room_number" id="room_number" placeholder="Scrivi qui il numero delle stanze" value="{{old('room_number')}}" required>

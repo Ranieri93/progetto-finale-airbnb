@@ -14,7 +14,7 @@ class ApartmentsTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('apartments')->delete();
+/*        DB::table('apartments')->delete();*/
         $json = File::get("database/data/MOCK_DATA.json");
         $data = json_decode($json);
         foreach ($data as $object) {

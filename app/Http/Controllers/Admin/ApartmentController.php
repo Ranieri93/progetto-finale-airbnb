@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Apartment;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class ApartmentController extends Controller
 {
@@ -39,6 +40,7 @@ class ApartmentController extends Controller
     {
         $request->validate([
             'sommary_title' => 'required|max:255',
+            'description' => 'required',
             'room_number' => 'required|numeric|min:1|max:10',
             'guest_number' => 'required|numeric|min:1|max:10',
             'wc_number' => 'required|numeric|min:1|max:3',
@@ -51,6 +53,7 @@ class ApartmentController extends Controller
         $data = $request->all();
         $apartment = new Apartment();
         $apartment->fill($data);
+        $apartment->slug = Str::slug($data['sommary_title']);
         $apartment->save();
 
         return redirect()->route('admin.apartments.index');
@@ -64,7 +67,7 @@ class ApartmentController extends Controller
      */
     public function show(Apartment $apartment)
     {
-        //
+        return view('admin.apartments.show', ['apartment' => $apartment]);
     }
 
     /**

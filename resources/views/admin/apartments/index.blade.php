@@ -12,12 +12,12 @@
                     <tr>
                         <th scope="col">ID</th>
                         <th scope="col">Titolo Descrittivo</th>
+                        <th scope="col">Slug</th>
+                        <th scope="col">Descrizione</th>
                         <th scope="col">Numero Camere</th>
                         <th scope="col">Numero Ospiti</th>
                         <th scope="col">Numero Bagni</th>
                         <th scope="col">Metri Quadrati</th>
-                        <th scope="col">Slug</th>
-                        <th scope="col">Tags</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -25,12 +25,14 @@
                         <tr>
                             <th scope="row">{{ $apartment->id }}</th>
                             <td>{{ $apartment->sommary_title }}</td>
+                            <td>{{ $apartment->slug }}</td>
+                            <td>{{ $apartment->description }}</td>
                             <td>{{ $apartment->room_number }}</td>
                             <td>{{ $apartment->guest_number }}</td>
                             <td>{{ $apartment->wc_number}}</td>
                             <td>{{ $apartment->square_meters}}</td>
                             <td class="d-flex justify-content-around">
-                                <a class="btn btn-secondary" {{--href="{{ route('admin.posts.show', ['post' => $post->id])}}--}}">Details</a>
+                                <a class="btn btn-secondary" href="{{ route('admin.apartments.show', ['apartment' => $apartment->id])}}">Details</a>
                                 <a class="btn btn-warning" {{--href="{{ route('admin.posts.edit', ['post' => $post->id])}}--}}">Update</a>
                                 <form method="post" {{--action="{{ route('admin.posts.destroy', ['post' => $post->id])}}--}}">
                                     @csrf
