@@ -3,7 +3,7 @@
     <div class="container">
         <div class="row">
             <div class="col-6 offset-3" >
-                <h1>Inserisci un nuovo Post</h1>
+                <h1>Inserisci un nuovo Appartamento</h1>
                 @if($errors->any())
                     <div class="alert alert-danger">
                         <ul>

@@ -48,7 +48,7 @@ class ApartmentController extends Controller
             'square_meters' => 'required|numeric|min:30|max:250',
             'latitude' => 'required|numeric',
             'longitude' => 'required|numeric',
-            'cover_image' => 'image',
+            'cover_image' => 'image'
         ]);
 
         $data = $request->all();
@@ -116,8 +116,10 @@ class ApartmentController extends Controller
 
         if (!empty($data['cover_image'])) {
             $cover_image = $data['cover_image'];
+
             $cover_image_path = Storage::put('uploads', $cover_image);
             $apartment->cover_image = $cover_image_path;
+
         }
 
         $apartment->update($data);
@@ -134,6 +136,12 @@ class ApartmentController extends Controller
      */
     public function destroy(Apartment $apartment)
     {
-        //
+
+        $apartment_image = $apartment->cover_image;
+        if (!empty($apartment_image)) {
+            Storage::delete($apartment_image);
+        }
+        $apartment->delete();
+        return redirect()->route('admin.apartments.index');
     }
 }

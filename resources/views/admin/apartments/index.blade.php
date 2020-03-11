@@ -34,7 +34,7 @@
                             <td class="d-flex justify-content-around">
                                 <a class="btn btn-secondary" href="{{ route('admin.apartments.show', ['apartment' => $apartment->id])}}">Details</a>
                                 <a class="btn btn-warning" href="{{ route('admin.apartments.edit', ['apartment' => $apartment->id])}}">Update</a>
-                                <form method="post" {{--action="{{ route('admin.posts.destroy', ['post' => $post->id])}}--}}">
+                                <form method="post" action="{{ route('admin.apartments.destroy', ['apartment' => $apartment->id])}}">
                                     @csrf
                                     @method('DELETE')
                                     <input class="btn btn-danger" type="submit" value="Delete">

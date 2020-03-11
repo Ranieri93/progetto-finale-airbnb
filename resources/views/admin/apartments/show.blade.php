@@ -14,8 +14,11 @@
                             <li class="list-group-item">Numero Ospiti: <br> {{ $apartment->guest_number }}</li>
                             <li class="list-group-item">Numero Bagni: <br> {{ $apartment->wc_number}}</li>
                             <li class="list-group-item">Metratura: <br> {{ $apartment->square_meters}}</li>
-                            {{--<img src="{{$post->cover_image ?
-                             asset('storage/' . $post->cover_image) : asset('storage/uploads/404.png') }}" alt="{{$post->title}}">--}}
+                            <li class="list-group-item"><img
+                                    src="{{$apartment->cover_image ? asset('storage/' . $apartment->cover_image) : asset('storage/uploads/404.png') }}"
+                                                             alt="{{$apartment->sommary_title}}">
+                            </li>
+
                         </ul>
                     </div>
                 </div>
