@@ -62,6 +62,23 @@
                                name="longitude" id="longitude" placeholder="Scrivi qui la metratura"
                                value="{{old('longitude', $apartment->longitude)}}" required>
                     </div>
+
+                    @if($services->count())
+                    <div class="form-group">
+                        @foreach($services as $service)
+                            <label for="service_{{ $service->id }}">
+                                <input type="checkbox" id="service_{{ $service->id }}" name="service_id[]" value="{{$service->id}}"
+                                @if($errors->any())
+                                    {{in_array($service->id, old('service_id', array())) ? 'checked' : ''}}
+                                    @else
+                                    {{$apartment->services->contains($service) ? 'checked' : ''}}>
+                                @endif
+                                {{$service->name}}
+                            </label>
+                        @endforeach
+                    </div>
+                    @endif
+
                     <div class="form-group">
                         <label for="cover_image">Immagine di copertina</label>
                         @if($apartment->cover_image)

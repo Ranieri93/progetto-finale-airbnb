@@ -44,6 +44,20 @@
                         <input type="text" class="form-control"
                                name="square_meters" id="square_meters" placeholder="Scrivi qui la metratura" value="{{old('square_meters')}}" required>
                     </div>
+
+                    @if($services->count())
+                        <div class="form-group">
+                            @foreach($services as $service)
+                                <label for="service_{{ $service->id }}">
+                                    <input type="checkbox" id="service_{{ $service->id }}" name="service_id[]" value="{{$service->id}}"
+                                        {{in_array('$service->id', old('service_id', array())) ? 'checked' : '' }}>
+                                    {{$service->name}}
+                                </label>
+                            @endforeach
+                        </div>
+                    @endif
+
+
                     <div class="form-group">
                         <label for="latitude">Latitudine</label>
                         <input type="text" class="form-control"

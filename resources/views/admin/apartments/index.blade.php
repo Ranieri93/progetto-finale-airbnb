@@ -18,6 +18,7 @@
                         <th scope="col">Numero Ospiti</th>
                         <th scope="col">Numero Bagni</th>
                         <th scope="col">Metri Quadrati</th>
+                        <th scope="col">Serivizi</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -31,6 +32,13 @@
                             <td>{{ $apartment->guest_number }}</td>
                             <td>{{ $apartment->wc_number}}</td>
                             <td>{{ $apartment->square_meters}}</td>
+                            <td>
+                                @forelse($apartment->services as $service)
+                                    {{$service->name}} {{$loop->last ? '' : '-'}}
+                                @empty
+                                    -
+                                @endforelse
+                            </td>
                             <td class="d-flex justify-content-around">
                                 <a class="btn btn-secondary" href="{{ route('admin.apartments.show', ['apartment' => $apartment->id])}}">Details</a>
                                 <a class="btn btn-warning" href="{{ route('admin.apartments.edit', ['apartment' => $apartment->id])}}">Update</a>

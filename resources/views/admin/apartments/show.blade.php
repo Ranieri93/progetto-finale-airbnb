@@ -14,6 +14,13 @@
                             <li class="list-group-item">Numero Ospiti: <br> {{ $apartment->guest_number }}</li>
                             <li class="list-group-item">Numero Bagni: <br> {{ $apartment->wc_number}}</li>
                             <li class="list-group-item">Metratura: <br> {{ $apartment->square_meters}}</li>
+                            <li class="list-group-item">
+                                @forelse($apartment->services as $service)
+                                    {{$service->name}} {{$loop->last ? '' : '-'}}
+                                @empty
+                                    -
+                                @endforelse
+                            </li>
                             <li class="list-group-item"><img
                                     src="{{$apartment->cover_image ? asset('storage/' . $apartment->cover_image) : asset('storage/uploads/404.png') }}"
                                                              alt="{{$apartment->sommary_title}}">

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Apartment;
 use App\Http\Controllers\Controller;
+use App\Service;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Storage;
@@ -28,7 +29,10 @@ class ApartmentController extends Controller
      */
     public function create()
     {
-        return view('admin.apartments.create');
+        $services = Service::all();
+        return view('admin.apartments.create', [
+            'services' => $services
+        ]);
     }
 
     /**
@@ -65,6 +69,10 @@ class ApartmentController extends Controller
         $apartment->slug = Str::slug($data['sommary_title']);
         $apartment->save();
 
+        if (!empty($data['service_id'])) {
+            $apartment->services()->sync($data['service_id']);
+        }
+
         return redirect()->route('admin.apartments.index');
     }
 
@@ -87,7 +95,12 @@ class ApartmentController extends Controller
      */
     public function edit(Apartment $apartment)
     {
-        return view('admin.apartments.edit', ['apartment' => $apartment]);
+        $services = Service::all();
+        return view('admin.apartments.edit', [
+            'apartment' => $apartment,
+            'services' => $services
+
+        ]);
     }
 
     /**
@@ -123,6 +136,11 @@ class ApartmentController extends Controller
         }
 
         $apartment->update($data);
+
+        if (!empty($data['service_id'])) {
+            $apartment->services()->sync($data['service_id']);
+        }
+
         return redirect()->route('admin.apartments.index');
 
 
@@ -141,6 +159,11 @@ class ApartmentController extends Controller
         if (!empty($apartment_image)) {
             Storage::delete($apartment_image);
         }
+
+        if ($apartment->services->isNotEmpty()) {
+            $apartment->services()->sync([]);
+        }
+
         $apartment->delete();
         return redirect()->route('admin.apartments.index');
     }
