@@ -10935,6 +10935,10 @@ main .find {
   margin-left: 300px;
 }
 
+footer {
+  margin-top: 50px;
+}
+
 li a {
   color: #222222 !important;
 }

@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -19,11 +20,13 @@
 
     <title>Document</title>
 </head>
+
 <body>
-<main>
-    @include('layouts.partials.public-navbar')
-    @yield('content')
-    @include('layouts.partials.footer')
-</main>
+    <main>
+        @include('layouts.partials.public-navbar')
+        @yield('content')
+        @include('layouts.partials.footer')
+    </main>
 </body>
+
 </html>
