@@ -1,0 +1,22 @@
+li a {
+    color: $color !important;
+}
+
+.low_left {
+    a::after{
+        margin-left: 4px;
+        position: absolute;
+        top: 25%;
+         content: ".";
+    }
+    a {
+        color: $color !important;
+        margin-left: 8px;
+    }
+}
+.low_right {
+    a {
+        margin-left: 10px;
+        color: $color !important;
+    }
+}

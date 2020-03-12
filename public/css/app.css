@@ -10902,7 +10902,6 @@ main .form {
   margin-left: 80px;
   padding: 32px;
   width: 441px;
-  height: 474px;
   border-radius: 4px;
   box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
 }
@@ -10934,5 +10933,26 @@ main .guest_select_triangle {
 main .find {
   position: relative;
   margin-left: 300px;
+}
+
+li a {
+  color: #222222 !important;
+}
+
+.low_left a::after {
+  margin-left: 4px;
+  position: absolute;
+  top: 25%;
+  content: ".";
+}
+
+.low_left a {
+  color: #222222 !important;
+  margin-left: 8px;
+}
+
+.low_right a {
+  margin-left: 10px;
+  color: #222222 !important;
 }
 

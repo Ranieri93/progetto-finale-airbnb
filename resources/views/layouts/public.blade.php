@@ -23,7 +23,7 @@
 <main>
     @include('layouts.partials.public-navbar')
     @yield('content')
+    @include('layouts.partials.footer')
 </main>
 </body>
 </html>
-

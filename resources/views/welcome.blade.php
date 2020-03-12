@@ -5,17 +5,7 @@
         <h1>Prenota allogi e attività unici.</h1>
         <div class="where mb-3">
             <h4>DOVE</h4>
-            <input class="everywhere" id="" name="query" placeholder="Ovunque">
-        </div>
-        <div class="check clearfix">
-            <div class="check-in float-left mb-3">
-                <h4>CHECK-IN</h4>
-                <input class="ch-in" id="" name="query" placeholder="dd/mm/aaaa">
-            </div>
-            <div class="check-out mb-3">
-                <h4>CHECK-OUT</h4>
-                <input class="ch-out" id="" name="query" placeholder="dd/mm/aaaa">
-            </div>
+            <input type="text" class="everywhere" id="" name="query" placeholder="Ovunque">
         </div>
         <div class="where mb-3">
             <h4>OSPITI</h4>

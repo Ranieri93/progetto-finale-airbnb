@@ -1,0 +1,53 @@
+
+main {
+    /*
+    background-image: url("https://previews.123rf.com/images/siraphol/siraphol1508/siraphol150803612/44023975-empty-sea-and-beach-background-with-copy-space.jpg");
+    */
+    nav {
+        height: 81px!important;
+
+        .space {
+            margin-right: 10px;
+        }
+    }
+
+    .form {
+        background-color: white;
+        position: relative;
+        margin-left: 80px;
+        padding: 32px;
+        width: 441px;
+
+        border-radius: 4px;
+        box-shadow: 0 16px 40px rgba(0,0,0,0.12);
+    }
+
+    .everywhere {
+        width: 85%;
+    }
+
+    .ch-in {
+        width: 100%;
+    }
+
+    .ch-out {
+        width: 41.5%;
+        float: none!important;
+    }
+
+    .guest_select {
+        width: 85%;
+        position: relative;
+    }
+
+    .guest_select_triangle {
+        position: absolute;
+        top: 7px;
+        right: 10px;
+    }
+
+    .find {
+        position: relative;
+        margin-left: 300px;
+    }
+}
