@@ -25,8 +25,8 @@
     <main>
         @include('layouts.partials.public-navbar')
         @yield('content')
-        @include('layouts.partials.footer')
     </main>
+    @include('layouts.partials.footer')
 </body>
 
 </html>
