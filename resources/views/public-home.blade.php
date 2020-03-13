@@ -1,12 +1,7 @@
-@extends('layouts.admin')
 
-@section('content')
-    <div class="container">
-        @if (session('status'))
-            <div class="alert alert-success" role="alert">
-                {{ session('status') }}
-            </div>
-        @endif
+    @extends('layouts.public')
+    @section('content')
+    <main>
         <div class="form">
             <h1>Prenota allogi e attività unici.</h1>
             <div class="where mb-3">
@@ -26,5 +21,5 @@
                 <button type="button" class="btn btn-danger find">Cerca</button>
             </div>
         </div>
-    </div>
+    </main>
 @endsection

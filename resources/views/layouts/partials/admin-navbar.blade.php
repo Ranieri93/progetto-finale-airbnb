@@ -9,16 +9,18 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <!-- Left Side Of Navbar -->
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
-                    <a class="nav-link text-uppercase {{ Route::currentRouteName()== 'admin.apartments.index' ? 'active' : '' }}"
-                       href="{{ route('admin.apartments.index') }}">Gestisci i tuoi Appartamenti</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-uppercase {{ Route::currentRouteName()== 'admin.apartments.create' ? 'active' : '' }}"
-                       href="{{ route('admin.apartments.create') }}">Crea i tuoi Appartamenti</a>
-                </li>
-            </ul>
+            @auth()
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link text-uppercase {{ Route::currentRouteName()== 'admin.apartments.index' ? 'active' : '' }}"
+                           href="{{ route('admin.apartments.index') }}">Gestisci i tuoi Appartamenti</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-uppercase {{ Route::currentRouteName()== 'admin.apartments.create' ? 'active' : '' }}"
+                           href="{{ route('admin.apartments.create') }}">Crea i tuoi Appartamenti</a>
+                    </li>
+                </ul>
+            @endauth
 
             <!-- Right Side Of Navbar -->
             <ul class="navbar-nav ml-auto">
