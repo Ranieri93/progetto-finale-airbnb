@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Service;
 use Illuminate\Http\Request;
 
 class SearchController extends Controller
 {
     public function index()
     {
-        return view('public-search');
+        $services= Service::all();
+        return view('public-search', ['services' => $services]);
     }
 }

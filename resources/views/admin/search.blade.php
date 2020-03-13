@@ -16,7 +16,7 @@
     </div>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-8 offset-2">
+            <div class="col-4 offset-2">
                 <h2>filtri</h2>
                 @if($services->count())
                     <div class="form-group">
@@ -29,11 +29,7 @@
                     </div>
                 @endif
             </div>
-        </div>
-    </div>
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-1 offset-2" >
+            <div class="col-1" >
                 <div class="form-group">
                     <label for="">Seleziona numero ospiti</label>
                     <select class="form-control" id="">
@@ -69,6 +65,51 @@
             </div>
         </div>
     </div>
-
+    <div class="apartment-search-results container">
+        <div class="row medium-spacer">
+            <div class="single-apartment d-flex flex-row">
+                <div class="img-apartment col-4">
+                    <img class="img-fluid fix-img-search" src="https://images.pexels.com/photos/3265511/pexels-photo-3265511.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="">
+                </div>
+                <div class="content-apartment col-6">
+                    <h1>lorem ipsum bla bla bla bla</h1>
+                    <p>oijwenoijwnx xowiexnowijexnow xowijexnowaijxewa </p>
+                </div>
+            </div>
+        </div>
+        <div class="row medium-spacer">
+            <div class="single-apartment d-flex flex-row">
+                <div class="img-apartment col-4">
+                    <img class="img-fluid fix-img-search" src="https://images.pexels.com/photos/3265511/pexels-photo-3265511.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="">
+                </div>
+                <div class="content-apartment col-6">
+                    <h1>lorem ipsum bla bla bla bla</h1>
+                    <p>oijwenoijwnx xowiexnowijexnow xowijexnowaijxewa </p>
+                </div>
+            </div>
+        </div>
+        <div class="row medium-spacer">
+            <div class="single-apartment d-flex flex-row">
+                <div class="img-apartment col-4">
+                    <img class="img-fluid fix-img-search" src="https://images.pexels.com/photos/3265511/pexels-photo-3265511.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="">
+                </div>
+                <div class="content-apartment col-6">
+                    <h1>lorem ipsum bla bla bla bla</h1>
+                    <p>oijwenoijwnx xowiexnowijexnow xowijexnowaijxewa </p>
+                </div>
+            </div>
+        </div>
+        <div class="row medium-spacer">
+            <div class="single-apartment d-flex flex-row">
+                <div class="img-apartment col-4">
+                    <img class="img-fluid fix-img-search" src="https://images.pexels.com/photos/3265511/pexels-photo-3265511.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="">
+                </div>
+                <div class="content-apartment col-6">
+                    <h1>lorem ipsum bla bla bla bla</h1>
+                    <p>oijwenoijwnx xowiexnowijexnow xowijexnowaijxewa </p>
+                </div>
+            </div>
+        </div>
+    </div>
 
 @endsection
