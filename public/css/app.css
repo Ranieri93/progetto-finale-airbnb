@@ -10960,3 +10960,13 @@ li a {
   color: #222222 !important;
 }
 
+main .apt-img img {
+  height: 300px;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
