@@ -10882,57 +10882,12 @@ a.text-dark:focus {
   }
 }
 
-main {
-  /*
-  background-image: url("https://previews.123rf.com/images/siraphol/siraphol1508/siraphol150803612/44023975-empty-sea-and-beach-background-with-copy-space.jpg");
-  */
-}
-
-main nav {
+nav {
   height: 81px !important;
 }
 
-main nav .space {
+nav .space {
   margin-right: 10px;
-}
-
-main .form {
-  background-color: white;
-  position: relative;
-  margin-left: 80px;
-  padding: 32px;
-  width: 441px;
-  border-radius: 4px;
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
-}
-
-main .everywhere {
-  width: 85%;
-}
-
-main .ch-in {
-  width: 100%;
-}
-
-main .ch-out {
-  width: 41.5%;
-  float: none !important;
-}
-
-main .guest_select {
-  width: 85%;
-  position: relative;
-}
-
-main .guest_select_triangle {
-  position: absolute;
-  top: 7px;
-  right: 10px;
-}
-
-main .find {
-  position: relative;
-  margin-left: 300px;
 }
 
 footer {
@@ -10972,10 +10927,55 @@ main .apt-img img {
 =======
 .fix-img-search {
   height: 200px;
+  width: 300px;
+  margin-right: 15px;
 }
 
 .medium-spacer {
   margin-top: 1.5rem;
 >>>>>>> 87f7b02e9ec4f8f0336ab336aca8d57ca8813136
+}
+
+#main-public {
+  background-image: url("https://cdn.wallpapersafari.com/58/87/8Dq5YV.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-blend-mode: darken;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#main-public #search-home-public h1 {
+  color: white;
+  font-weight: bold;
+}
+
+#main-admin {
+  background-image: url("https://external-preview.redd.it/pHkCRkzD1_nLb2ik7v9U0HA12l_Hr1JSh4auGrFPiXY.jpg?auto=webp&s=3635fb966f38721f9c6c3e4a8cd380d8f3515755");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-blend-mode: darken;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#main-admin #search-home-admin h2 {
+  color: white;
+}
+
+#main-admin #search-home-admin input {
+  width: 450px;
+}
+
+.my-form {
+  display: inline-block;
+  background-color: #282B29;
+  padding: 10px;
+  border-radius: 4px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
 }
 
