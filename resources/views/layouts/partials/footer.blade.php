@@ -26,9 +26,6 @@
                     <li>
                         <a href="#!">Airbnb Citizen</a>
                     </li>
-                    <li>
-                        <a href="#!">Newsroom</a>
-                    </li>
                 </ul>
 
             </div>
