@@ -10915,6 +10915,7 @@ li a {
   color: #222222 !important;
 }
 
+<<<<<<< HEAD
 main .apt-img img {
   height: 300px;
 }
@@ -10925,6 +10926,8 @@ main .apt-img img {
   box-sizing: border-box;
 }
 
+=======
+>>>>>>> 832ad897fe0250e13f7cb22b3d4afd4857d1cddc
 .fix-img-search {
   height: 200px;
   width: 300px;
@@ -10933,6 +10936,25 @@ main .apt-img img {
 
 .medium-spacer {
   margin-top: 1.5rem;
+<<<<<<< HEAD
+=======
+}
+
+#main-public {
+  background-image: url("https://cdn.wallpapersafari.com/58/87/8Dq5YV.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-blend-mode: darken;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#main-public #search-home-public h1 {
+  color: white;
+  font-weight: bold;
+>>>>>>> 832ad897fe0250e13f7cb22b3d4afd4857d1cddc
 }
 
 main .apt-img img {
