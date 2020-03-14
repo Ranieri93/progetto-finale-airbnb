@@ -37136,8 +37136,13 @@ if (token) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
+<<<<<<< HEAD
 __webpack_require__(/*! /Users/nene/php/progetto-finale-airbnb/resources/js/app.js */"./resources/js/app.js");
 module.exports = __webpack_require__(/*! /Users/nene/php/progetto-finale-airbnb/resources/sass/app.scss */"./resources/sass/app.scss");
+=======
+__webpack_require__(/*! C:\MAMP\htdocs\corso-mamp\finalProjectTeam3\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\MAMP\htdocs\corso-mamp\finalProjectTeam3\resources\sass\app.scss */"./resources/sass/app.scss");
+>>>>>>> 8ed7761422c3741a3eefdc8ff657f10df83ddcd4
 
 
 /***/ })
