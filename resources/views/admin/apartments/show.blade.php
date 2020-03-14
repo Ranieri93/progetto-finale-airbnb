@@ -8,7 +8,7 @@
         <p class="card-text apt-title"> {{$apartment->sommary_title}}</p>
         </div>
     </div>
-
+-
     <div class="container" style="width:100%">
         <div class="d-flex" style="">
             <div class="p-2 flex-grow-* bd-highlight">
