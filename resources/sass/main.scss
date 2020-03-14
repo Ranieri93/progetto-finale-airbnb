@@ -1,0 +1,47 @@
+#main-public {
+    background-image: url('https://cdn.wallpapersafari.com/58/87/8Dq5YV.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: darken;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    #search-home-public {
+        h1 {
+            color: white;
+            font-weight:bold;
+        }
+    }
+
+
+}
+#main-admin {
+    background-image: url('https://external-preview.redd.it/pHkCRkzD1_nLb2ik7v9U0HA12l_Hr1JSh4auGrFPiXY.jpg?auto=webp&s=3635fb966f38721f9c6c3e4a8cd380d8f3515755');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: darken;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    #search-home-admin {
+        h2 {
+            color: white;
+
+
+        }
+        input{
+            width: 450px;
+        }
+    }
+}
+.my-form {
+    display: inline-block;
+    background-color: #282B29;
+    padding: 10px;
+    border-radius: 4px;
+    box-shadow: 0 16px 40px rgba(0,0,0,0.12);
+}

@@ -6,14 +6,15 @@
             <div class="col-6 offset-3">
                 <form>
                     <div class="form-group">
-                        <label for="">Search Apartments</label>
-                        <input type="text" class="form-control" id="" placeholder="Search">
+                        <label for="">Dove vorresti soggiornare?</label>
+                        <input type="text" class="form-control" id="" placeholder="Ovunque">
                     </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="submit" class="btn btn-primary">Cerca</button>
                 </form>
             </div>
         </div>
     </div>
+    <hr>
     <div class="container-fluid">
         <div class="row">
             <div class="col-4 offset-2">
@@ -65,51 +66,29 @@
             </div>
         </div>
     </div>
+    <hr>
     <div class="apartment-search-results container">
-        <div class="row medium-spacer">
-            <div class="single-apartment d-flex flex-row">
-                <div class="img-apartment col-4">
-                    <img class="img-fluid fix-img-search" src="https://images.pexels.com/photos/3265511/pexels-photo-3265511.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="">
-                </div>
-                <div class="content-apartment col-6">
-                    <h1>lorem ipsum bla bla bla bla</h1>
-                    <p>oijwenoijwnx xowiexnowijexnow xowijexnowaijxewa </p>
-                </div>
-            </div>
-        </div>
-        <div class="row medium-spacer">
-            <div class="single-apartment d-flex flex-row">
-                <div class="img-apartment col-4">
-                    <img class="img-fluid fix-img-search" src="https://images.pexels.com/photos/3265511/pexels-photo-3265511.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="">
-                </div>
-                <div class="content-apartment col-6">
-                    <h1>lorem ipsum bla bla bla bla</h1>
-                    <p>oijwenoijwnx xowiexnowijexnow xowijexnowaijxewa </p>
+        <h2 class="text-center">Ecco gli appartamenti disponibili nella zona che hai scelto.</h2>
+        <br>
+        @foreach ($apartments as $apartment)
+            <div class="row medium-spacer">
+                <div class="single-apartment d-flex flex-row">
+                    <div class="img-apartment">
+                        <img class="fix-img-search" src="{{ $apartment->cover_image}}" alt="">
+                    </div>
+                    <div class="content-apartment">
+                        <h3>{{$apartment->sommary_title}}</h3>
+                        <p>{{$apartment->guest_number}} ospiti</p>
+                        <p>{{$apartment->room_number}} stanze</p>
+                        <p>{{$apartment->square_meters}} metri quadrati</p>
+                        <p>{{ $apartment->description }}</p>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="row medium-spacer">
-            <div class="single-apartment d-flex flex-row">
-                <div class="img-apartment col-4">
-                    <img class="img-fluid fix-img-search" src="https://images.pexels.com/photos/3265511/pexels-photo-3265511.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="">
-                </div>
-                <div class="content-apartment col-6">
-                    <h1>lorem ipsum bla bla bla bla</h1>
-                    <p>oijwenoijwnx xowiexnowijexnow xowijexnowaijxewa </p>
-                </div>
-            </div>
-        </div>
-        <div class="row medium-spacer">
-            <div class="single-apartment d-flex flex-row">
-                <div class="img-apartment col-4">
-                    <img class="img-fluid fix-img-search" src="https://images.pexels.com/photos/3265511/pexels-photo-3265511.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="">
-                </div>
-                <div class="content-apartment col-6">
-                    <h1>lorem ipsum bla bla bla bla</h1>
-                    <p>oijwenoijwnx xowiexnowijexnow xowijexnowaijxewa </p>
-                </div>
-            </div>
-        </div>
+            <hr>
+        @endforeach
+
+
     </div>
 
 @endsection

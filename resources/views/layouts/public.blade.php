@@ -22,8 +22,8 @@
 </head>
 
 <body>
+    @include('layouts.partials.public-navbar')
     <main>
-        @include('layouts.partials.public-navbar')
         @yield('content')
     </main>
     @include('layouts.partials.footer')
