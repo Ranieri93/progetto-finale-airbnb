@@ -10960,6 +10960,7 @@ li a {
   color: #222222 !important;
 }
 
+<<<<<<< HEAD
 main .apt-img img {
   height: 300px;
 }
@@ -10968,5 +10969,13 @@ main .apt-img img {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+=======
+.fix-img-search {
+  height: 200px;
+}
+
+.medium-spacer {
+  margin-top: 1.5rem;
+>>>>>>> 87f7b02e9ec4f8f0336ab336aca8d57ca8813136
 }
 
