@@ -7,19 +7,17 @@
                 {{ session('status') }}
             </div>
         @endif
-        @section('content')
-            <main>
-                <div class="form">
-                    <h1>Prenota allogi e attività unici.</h1>
-                    <div class="where mb-3">
-                        <h4>DOVE</h4>
-                        <input type="text" class="everywhere" id="" name="query" placeholder="Ovunque">
-                    </div>
-                    <div class="where mb-3">
-                        <button type="button" class="btn btn-danger find">Cerca</button>
-                        <button type="button" class="btn btn-secondary find"><a href="{{route('admin.search')}}">PROVA SEARCH</a> </button>
-                    </div>
-                </div>
-            </main>
-@endsection
+        <div id="main-admin">
+            <div id="search-home-admin">
 
+                <h2>Cerchiamo insieme l' appartamento dei tuoi sogni!</h2>
+                <div class="form-group my-form form-inline">
+                    <input type="text" class="form-control fluid" placeholder="Everywhere">
+                    <button type="button" class="btn btn-success ml-4 mr-2 ">Search</button>
+                    <button type="button" class="btn btn-info"><a href="{{route('admin.search')}}">TEST</a> </button>
+                </div>
+            </div>
+        </div>
+
+
+@endsection
