@@ -10915,19 +10915,6 @@ li a {
   color: #222222 !important;
 }
 
-<<<<<<< HEAD
-main .apt-img img {
-  height: 300px;
-}
-
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
-
-=======
->>>>>>> 832ad897fe0250e13f7cb22b3d4afd4857d1cddc
 .fix-img-search {
   height: 200px;
   width: 300px;
@@ -10936,8 +10923,6 @@ main .apt-img img {
 
 .medium-spacer {
   margin-top: 1.5rem;
-<<<<<<< HEAD
-=======
 }
 
 #main-public {
@@ -10954,10 +10939,32 @@ main .apt-img img {
 #main-public #search-home-public h1 {
   color: white;
   font-weight: bold;
->>>>>>> 832ad897fe0250e13f7cb22b3d4afd4857d1cddc
 }
 
-main .apt-img img {
-  height: 300px;
+#main-admin {
+  background-image: url("https://external-preview.redd.it/pHkCRkzD1_nLb2ik7v9U0HA12l_Hr1JSh4auGrFPiXY.jpg?auto=webp&s=3635fb966f38721f9c6c3e4a8cd380d8f3515755");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-blend-mode: darken;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#main-admin #search-home-admin h2 {
+  color: white;
+}
+
+#main-admin #search-home-admin input {
+  width: 450px;
+}
+
+.my-form {
+  display: inline-block;
+  background-color: #282B29;
+  padding: 10px;
+  border-radius: 4px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
 }
 
