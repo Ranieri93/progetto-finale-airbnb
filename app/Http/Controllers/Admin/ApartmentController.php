@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Apartment;
 use App\Http\Controllers\Controller;
 use App\Service;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Storage;
@@ -67,6 +68,7 @@ class ApartmentController extends Controller
 
         $apartment->fill($data);
         $apartment->slug = Str::slug($data['sommary_title']);
+        $apartment->user_id = Auth::user()->id;
         $apartment->save();
 
         if (!empty($data['service_id'])) {
