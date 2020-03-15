@@ -1,55 +1,71 @@
 @extends('layouts.admin')
 @section('content')
+
+    <div class="back">
+        <a class="show-back-button btn" href="{{route('admin.apartments.index')}}">Torna indietro</a>
+    </div>
+
     {{-- image section --}}
-    <div class="card apt-img">
+    <div class="show-picture">
         <img src="{{$apartment->cover_image ? asset('storage/' . $apartment->cover_image) : asset('storage/uploads/404.png') }}"
         alt="{{$apartment->sommary_title}}" class="card-img-top" alt="...">
-        <div class="card-body">
-        <p class="card-text apt-title"> {{$apartment->sommary_title}}</p>
-        </div>
+        <h3 class="title">{{$apartment->sommary_title}}</h3>
     </div>
--
-    <div class="container" style="width:100%">
-        <div class="d-flex" style="">
-            <div class="p-2 flex-grow-* bd-highlight">
-                <p>Descrizione
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos minus debitis officiis delectus, reprehenderit voluptas! Architecto nam laborum ab voluptatem, repudiandae, ratione consequuntur ullam illum, consequatur accusantium aspernatur assumenda ipsam.
-                </p>
-            <p>{{ $apartment->description }}</p>
-            </div>
-            <div class="p-2 flex-grow-* bd-highlight" style="width:40vw;">
-                <div class="card">
-                    <div class="card-body">
-                        {{-- <h4 class="card-title"> {{$apartment->sommary_title}}</h4> --}}
-                        <a class="btn btn-dark" href="{{route('admin.apartments.index')}}">Torna indietro</a>
-                        <ul class="list-group list-group-flush">
-                            {{-- <li class="list-group-item">Slug: <br> {{ $apartment->slug }}</li> --}}
-                            {{-- <li class="list-group-item">Descrizione: <br> {{ $apartment->description }}</li> --}}
-                            <li class="list-group-item">Numero Stanze: <br> {{ $apartment->room_number }}</li>
-                            <li class="list-group-item">Numero Ospiti: <br> {{ $apartment->guest_number }}</li>
-                            <li class="list-group-item">Numero Bagni: <br> {{ $apartment->wc_number}}</li>
-                            <li class="list-group-item">Metratura: <br> {{ $apartment->square_meters}}</li>
-                            <li class="list-group-item">
-                                @forelse($apartment->services as $service)
-                                    {{$service->name}} {{$loop->last ? '' : '-'}}
-                                @empty
-                                    -
-                                @endforelse
-                            {{-- </li>
-                            <li class="list-group-item"><img
-                                    src="{{$apartment->cover_image ? asset('storage/' . $apartment->cover_image) : asset('storage/uploads/404.png') }}"
-                                                             alt="{{$apartment->sommary_title}}">
-                            </li> --}}
 
-                        </ul>
-                    </div>
+
+
+    <div class="row details">
+        <div class="description col-sm-8 col-xs-6">
+            {{ $apartment->description }}
+        </div>
+
+        <div class="options col-sm-4 col-xs-6">
+            <div class="card">
+                <div class="card-body">
+
+
+                    <ul class="list-group list-group-flush">
+                        {{-- <li class="list-group-item">Slug: <br> {{ $apartment->slug }}</li> --}}
+                        <li class="list-group-item">Numero Stanze: <br> {{ $apartment->room_number }}</li>
+                        <li class="list-group-item">Numero Ospiti: <br> {{ $apartment->guest_number }}</li>
+                        <li class="list-group-item">Numero Bagni: <br> {{ $apartment->wc_number}}</li>
+                        <li class="list-group-item">Metratura: <br> {{ $apartment->square_meters}}</li>
+                        <li class="list-group-item">
+                            @forelse($apartment->services as $service)
+                                {{$service->name}} {{$loop->last ? '' : '-'}}
+                            @empty
+                                -
+                            @endforelse
+
+                    </ul>
                 </div>
-
             </div>
         </div>
     </div>
 
     {{-- MAP SECTION --}}
+    <div class="row details">
+        <div class="map-content col-sm-8 col-xs-6">
+            <div class="map"></div>
+        </div>
 
+        <div class="messages col-sm-4 col-xs-6">
+            <div class="card">
+                <div class="card-body">
+                    <h5>Messaggi al proprietario</h5>
+
+                    <ul>
+                      <li>Messaggio 1</li>
+                      <li>Messaggio 2</li>
+                      <li>Messaggio 3</li>
+                      <li>Messaggio 4</li>
+                      <li>Messaggio 5</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @include('layouts.partials.footer')
 
 @endsection

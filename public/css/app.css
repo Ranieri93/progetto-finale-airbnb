@@ -1,5 +1,58 @@
 @import url(https://fonts.googleapis.com/css?family=Nunito);@charset "UTF-8";
 
+#main-public {
+  background-image: url("https://cdn.wallpapersafari.com/58/87/8Dq5YV.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-blend-mode: darken;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#main-public #search-home-public h1 {
+  color: white;
+  font-weight: bold;
+}
+
+#main-admin {
+  background-image: url("https://external-preview.redd.it/pHkCRkzD1_nLb2ik7v9U0HA12l_Hr1JSh4auGrFPiXY.jpg?auto=webp&s=3635fb966f38721f9c6c3e4a8cd380d8f3515755");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-blend-mode: darken;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#main-admin #search-home-admin h2 {
+  color: white;
+}
+
+#main-admin #search-home-admin input {
+  width: 450px;
+}
+
+.my-form {
+  display: inline-block;
+  background-color: #282B29;
+  padding: 10px;
+  border-radius: 4px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
+}
+
+.fix-img-search {
+  height: 200px;
+  width: 300px;
+  margin-right: 15px;
+}
+
+.medium-spacer {
+  margin-top: 1.5rem;
+}
+
 /*!
  * Bootstrap v4.4.1 (https://getbootstrap.com/)
  * Copyright 2011-2019 The Bootstrap Authors
@@ -10915,56 +10968,58 @@ li a {
   color: #222222 !important;
 }
 
-.fix-img-search {
-  height: 200px;
-  width: 300px;
-  margin-right: 15px;
-}
-
-.medium-spacer {
-  margin-top: 1.5rem;
-}
-
-#main-public {
-  background-image: url("https://cdn.wallpapersafari.com/58/87/8Dq5YV.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-blend-mode: darken;
-  height: 500px;
+.back {
+  background-color: #008489;
+  padding: 10px 0;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
 }
 
-#main-public #search-home-public h1 {
+.back .show-back-button {
+  margin-right: 10px;
   color: white;
-  font-weight: bold;
+  border: 2px solid white;
+  border-radius: 2px;
+  background-color: #008489;
 }
 
-#main-admin {
-  background-image: url("https://external-preview.redd.it/pHkCRkzD1_nLb2ik7v9U0HA12l_Hr1JSh4auGrFPiXY.jpg?auto=webp&s=3635fb966f38721f9c6c3e4a8cd380d8f3515755");
-  background-repeat: no-repeat;
+.show-picture {
+  position: relative;
+}
+
+.show-picture img {
+  height: 350px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  opacity: 0.5;
+}
+
+.show-picture .title {
+  position: absolute;
+  bottom: 8px;
+  left: 16px;
+}
+
+.details {
+  margin: 20px 0;
+}
+
+.details .description {
+  margin: 5px 0;
+}
+
+.details .options {
+  margin: 5px 0;
+}
+
+.map {
+  margin: 10px 0;
+  height: 220px;
+  background-image: url(https://ep01.epimg.net/tecnologia/imagenes/2019/11/13/actualidad/1573658897_566202_1573659544_noticia_normal.jpg);
   background-size: cover;
-  background-blend-mode: darken;
-  height: 500px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
-#main-admin #search-home-admin h2 {
-  color: white;
-}
-
-#main-admin #search-home-admin input {
-  width: 450px;
-}
-
-.my-form {
-  display: inline-block;
-  background-color: #282B29;
-  padding: 10px;
-  border-radius: 4px;
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
+.messages {
+  margin: 5px 0;
 }
 
