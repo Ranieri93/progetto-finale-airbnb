@@ -2,21 +2,34 @@ require('./bootstrap');
 
 var $ = require('jquery');
 
-$( document ).ready(function() {
-    $('#convert-map').click(function () {
-        // convert.preventDefault();
+$( document ).ready(function(event) {
+
+    $('#btn-create-submit').click(function () {
+        event.preventDefault();
         var myapikey = 'bFSI4kMwJMdayytGsYArg3lzUM1wsCjG';
         var addressQuery = $('#address').val();
 
         AllGeoCord = [];
         getMyGeoCord(addressQuery, myapikey);
-        console.log(AllGeoCord);
+        sendMydata(AllGeoCord);
+
+        $(this).closest('form').submit();
+
 
     });
 
-    $('#btn-create-submit').click(function () {
-        
-    });
+    function sendMydata (array) {
+        $.ajax({
+            url:'/apartment',
+            type: 'POST',
+            dataType:'json',
+            contentType: 'json',
+            data: {
+                data: JSON.stringify(array)
+            },
+            contentType: 'application/json; charset=utf-8',
+        });
+    }
 
     function getMyGeoCord ( query, apikey) {
         $.ajax ({

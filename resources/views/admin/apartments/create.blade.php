@@ -61,7 +61,7 @@
                         <label for="address">Inserisci la città e l'indirizzo</label>
                         <input type="text" class="form-control"
                                name=address"" id="address" placeholder="Scrivi qui l'indirizzo" value="{{old('indirizzo')}}" required>
-                        <button type="button" id="convert-map" class="btn btn-warning">Converti!</button >
+
 
 
                     </div>
