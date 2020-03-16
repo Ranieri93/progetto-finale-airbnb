@@ -78,6 +78,7 @@
                     </div>
                     <div class="content-apartment">
                         <h3>{{$apartment->sommary_title}}</h3>
+                        <a class="btn btn-secondary " href="{{ route('search.show', ['apartment' => $apartment->id])}}">Details</a>
                         <p>{{$apartment->guest_number}} ospiti</p>
                         <p>{{$apartment->room_number}} stanze</p>
                         <p>{{$apartment->square_meters}} metri quadrati</p>

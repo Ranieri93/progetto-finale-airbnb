@@ -15,4 +15,8 @@ class SearchController extends Controller
         $apartments = Apartment::all();
         return view('admin.search', ['services' => $services , 'apartments'=> $apartments ]);
     }
+    public function show(Apartment $apartment)
+    {
+        return view('admin.search-show-apartment', ['apartment' => $apartment]);
+    }
 }

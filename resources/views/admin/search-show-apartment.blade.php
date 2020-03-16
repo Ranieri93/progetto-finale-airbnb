@@ -2,7 +2,7 @@
 @section('content')
 
     <div class="back">
-        <a class="show-back-button btn" href="{{route('admin.apartments.index')}}">Torna indietro</a>
+        <a class="show-back-button btn" href="{{route('admin.search')}}">Torna indietro</a>
     </div>
 
     {{-- image section --}}
@@ -52,15 +52,11 @@
         <div class="messages col-sm-4 col-xs-6">
             <div class="card">
                 <div class="card-body">
-                    <h5>Messaggi al proprietario</h5>
+                    <h5>Scrivi un messaggio al proprietario</h5>
+                    <form class="" action="" method="post">
 
-                    <ul>
-                      <li>Messaggio 1</li>
-                      <li>Messaggio 2</li>
-                      <li>Messaggio 3</li>
-                      <li>Messaggio 4</li>
-                      <li>Messaggio 5</li>
-                    </ul>
+                    </form>
+
                 </div>
             </div>
         </div>

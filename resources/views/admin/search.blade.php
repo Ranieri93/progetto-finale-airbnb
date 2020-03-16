@@ -77,11 +77,12 @@
                         <img class="fix-img-search" src="{{ $apartment->cover_image}}" alt="">
                     </div>
                     <div class="content-apartment">
-                        <h3>{{$apartment->sommary_title}}</h3>
+                        <h3>{{$apartment->sommary_title}}</h3><a class="btn btn-secondary " href="{{ route('admin.search.show', ['apartment' => $apartment->id])}}">Details</a>
                         <p>{{$apartment->guest_number}} ospiti</p>
                         <p>{{$apartment->room_number}} stanze</p>
                         <p>{{$apartment->square_meters}} metri quadrati</p>
                         <p>{{ $apartment->description }}</p>
+
                     </div>
                 </div>
             </div>

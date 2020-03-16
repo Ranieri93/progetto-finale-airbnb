@@ -15,16 +15,15 @@ Route::get('/', function () {
     return view('public-home');
 });
 Route::get('/search', 'SearchController@index')->name('search');
-
+Route::get('/search/show/{apartment}', 'SearchController@show')->name('search.show');
 Auth::routes();
 
 Route::middleware('auth')->prefix('admin')->namespace('Admin')->name('admin.')->group(function (){
     Route::get('/', 'HomeController@index')->name('home');
     Route::get('/search', 'SearchController@index')->name('search');
+    Route::get('/search/show/{apartment}', 'SearchController@show')->name('search.show');
     Route::resource('/apartments', 'ApartmentController');
 });
 
 
 Route::get('/home', 'HomeController@index')->name('home');
-
-

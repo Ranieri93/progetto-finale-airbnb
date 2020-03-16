@@ -14,4 +14,8 @@ class SearchController extends Controller
         $apartments = Apartment::all();
         return view('public-search', ['services' => $services, 'apartments'=> $apartments]);
     }
+    public function show(Apartment $apartment)
+    {
+        return view('public-search-show-apartment', ['apartment' => $apartment]);
+    }
 }
