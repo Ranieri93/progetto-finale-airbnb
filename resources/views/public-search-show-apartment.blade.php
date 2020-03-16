@@ -53,8 +53,18 @@
             <div class="card">
                 <div class="card-body">
                     <h5>Scrivi un messaggio al proprietario</h5>
-                    <form class="" action="" method="post">
-
+                    <form class="" action="{{route('message.store', ['apartment' => $apartment->id])}}" method="post">
+                        @csrf
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" class="form-control"
+                                   name="email" id="email"  placeholder="Scrivi qui la tua mail.." value="">
+                        </div>
+                        <div class="form-group">
+                            <label for="text_message">Messaggio</label>
+                            <textarea class="form-control" name="text_message" placeholder="Scrivi un messaggio.." id="text_message" cols="80" ></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" value='Invia messaggio'>Invia messaggio</button>
                     </form>
 
                 </div>
