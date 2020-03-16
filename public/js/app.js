@@ -37056,7 +37056,43 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 var $ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
 
-$(document).ready(function () {});
+$(document).ready(function () {
+  $('#convert-map').click(function () {
+    // convert.preventDefault();
+    var myapikey = 'bFSI4kMwJMdayytGsYArg3lzUM1wsCjG';
+    var addressQuery = $('#address').val();
+    AllGeoCord = [];
+    getMyGeoCord(addressQuery, myapikey);
+    console.log(AllGeoCord);
+  });
+  $('#btn-create-submit').click(function () {});
+
+  function getMyGeoCord(query, apikey) {
+    $.ajax({
+      'url': 'https://api.tomtom.com/search/2/geocode/' + query + '.json?key=' + apikey,
+      'method': 'GET',
+      'success': function success(data) {
+        var results = data.results;
+
+        for (var i = 0; i < results.length; i++) {
+          var singleResult = results[i]; // console.log(singleResult);
+
+          var addressResult = singleResult.address;
+          var positionResult = singleResult.position;
+          var latPositionResult = positionResult.lat;
+          var lonPositionResult = positionResult.lon;
+
+          if (singleResult.type == 'Point Address') {
+            AllGeoCord.push(latPositionResult, lonPositionResult);
+          }
+        }
+      },
+      'error': function error() {
+        alert('error');
+      }
+    });
+  }
+});
 
 /***/ }),
 
@@ -37136,8 +37172,8 @@ if (token) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\Andre\AppData\Roaming\Composer\progetto-finale-airbnb\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\Andre\AppData\Roaming\Composer\progetto-finale-airbnb\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\MAMP\htdocs\corso-mamp\finalProjectTeam3\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\MAMP\htdocs\corso-mamp\finalProjectTeam3\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

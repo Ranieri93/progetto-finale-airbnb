@@ -57,22 +57,19 @@
                         </div>
                     @endif
 
+                    <div class="form-group">
+                        <label for="address">Inserisci la città e l'indirizzo</label>
+                        <input type="text" class="form-control"
+                               name=address"" id="address" placeholder="Scrivi qui l'indirizzo" value="{{old('indirizzo')}}" required>
+                        <button type="button" id="convert-map" class="btn btn-warning">Converti!</button >
 
-                    <div class="form-group">
-                        <label for="latitude">Latitudine</label>
-                        <input type="text" class="form-control"
-                               name="latitude" id="latitude" placeholder="Latitudine" value="{{old('latitude')}}" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="longitude">Longitudine</label>
-                        <input type="text" class="form-control"
-                               name="longitude" id="longitude" placeholder="Scrivi qui la metratura" value="{{old('longitude')}}" required>
+
                     </div>
                     <div class="form-group">
                         <label for="cover_image">Immagine di copertina</label>
                         <input type="file" class="form-control-file" id="cover_image" name="cover_image">
                     </div>
-                    <button type="submit" class="btn btn-primary">Inserisci</button>
+                    <button id="btn-create-submit" type="submit" class="btn btn-primary">Inserisci</button>
                 </form>
             </div>
         </div>

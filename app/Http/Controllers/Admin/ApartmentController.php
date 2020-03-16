@@ -51,8 +51,8 @@ class ApartmentController extends Controller
             'guest_number' => 'required|numeric|min:1|max:10',
             'wc_number' => 'required|numeric|min:1|max:3',
             'square_meters' => 'required|numeric|min:30|max:250',
-            'latitude' => 'required|numeric',
-            'longitude' => 'required|numeric',
+//            'latitude' => 'required|numeric',
+//            'longitude' => 'required|numeric',
             'cover_image' => 'image'
         ]);
 
@@ -127,6 +127,7 @@ class ApartmentController extends Controller
         ]);
 
         $data = $request->all();
+
 
 
         if (!empty($data['cover_image'])) {
