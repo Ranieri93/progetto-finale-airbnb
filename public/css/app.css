@@ -125,7 +125,7 @@ body {
   line-height: 1.6;
   color: #212529;
   text-align: left;
-  background-color: #f8fafc;
+  background-color: white;
 }
 
 [tabindex="-1"]:focus:not(:focus-visible) {
@@ -10936,7 +10936,7 @@ a.text-dark:focus {
 }
 
 nav {
-  height: 81px !important;
+  min-height: 81px !important;
 }
 
 nav .space {
