@@ -24,7 +24,6 @@ Route::middleware('auth')->prefix('admin')->namespace('Admin')->name('admin.')->
     Route::get('/search', 'SearchController@index')->name('search');
     Route::get('/search/show/{apartment}', 'SearchController@show')->name('search.show');
     Route::post('/search/show/{apartment}', 'MessageController@store')->name('message.store');
-
     Route::resource('/apartments', 'ApartmentController');
 });
 

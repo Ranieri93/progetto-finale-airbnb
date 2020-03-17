@@ -37052,20 +37052,34 @@ module.exports = function(module) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 var $ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
 
-$(document).ready(function () {
-  $('#convert-map').click(function () {
-    // convert.preventDefault();
+$(document).ready(function (event) {
+  $('#btn-create-submit').click(function () {
+    event.preventDefault();
     var myapikey = 'bFSI4kMwJMdayytGsYArg3lzUM1wsCjG';
     var addressQuery = $('#address').val();
     AllGeoCord = [];
     getMyGeoCord(addressQuery, myapikey);
-    console.log(AllGeoCord);
+    sendMydata(AllGeoCord);
+    $(this).closest('form').submit();
   });
-  $('#btn-create-submit').click(function () {});
+
+  function sendMydata(array) {
+    $.ajax(_defineProperty({
+      url: '/apartment',
+      type: 'POST',
+      dataType: 'json',
+      contentType: 'json',
+      data: {
+        data: JSON.stringify(array)
+      }
+    }, "contentType", 'application/json; charset=utf-8'));
+  }
 
   function getMyGeoCord(query, apikey) {
     $.ajax({
