@@ -61,10 +61,8 @@
                         <label for="address">Inserisci la città e l'indirizzo</label>
                         <input type="text" class="form-control"
                                name=address"" id="address" placeholder="Scrivi qui l'indirizzo" value="{{old('indirizzo')}}" required>
-
-
-
                     </div>
+
                     <div class="form-group">
                         <label for="cover_image">Immagine di copertina</label>
                         <input type="file" class="form-control-file" id="cover_image" name="cover_image">

@@ -58,6 +58,7 @@ class ApartmentController extends Controller
         ]);
 
         $data = $request->all();
+        dd($data);
         $apartment = new Apartment();
 
 

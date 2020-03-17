@@ -2,35 +2,41 @@ require('./bootstrap');
 
 var $ = require('jquery');
 
-$( document ).ready(function(event) {
+$( document ).ready(function() {
 
-    $('#btn-create-submit').click(function () {
-        event.preventDefault();
+
+
+    $('#btn-create-submit').click(function (event) {
         var myapikey = 'bFSI4kMwJMdayytGsYArg3lzUM1wsCjG';
         var addressQuery = $('#address').val();
+        event.preventDefault();
 
         AllGeoCord = [];
         getMyGeoCord(addressQuery, myapikey);
-        sendMydata(AllGeoCord);
+        console.log(AllGeoCord);
+        for (var i = 0; i < AllGeoCord.length; i++) {
+            var singleCord = AllGeoCord[i];
+            console.log(singleCord);
+        }
+        // sendMydata(AllGeoCord);
 
-        $(this).closest('form').submit();
-
+        // $(this).closest('form').submit();
 
     });
 
-    function sendMydata (array) {
-        $.ajax({
-            url:'/admin/apartments',
-            type: 'POST',
-            dataType:'json',
+    function sendMydata (coord) {
+        $.ajaxSetup({
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-            },
-            contentType: 'json',
-            data: {
-                data: JSON.stringify(array)
-            },
-            contentType: 'application/json; charset=utf-8',
+            }
+        });
+        $.ajax({
+            'url': '/admin/apartments',
+            'method' : 'POST',
+            'data': coord,
+            'success': function(data) {
+                console.log(data);
+        }
         });
     }
 

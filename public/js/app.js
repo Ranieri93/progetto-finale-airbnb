@@ -37052,33 +37052,41 @@ module.exports = function(module) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 var $ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
 
-$(document).ready(function (event) {
-  $('#btn-create-submit').click(function () {
-    event.preventDefault();
+$(document).ready(function () {
+  $('#btn-create-submit').click(function (event) {
     var myapikey = 'bFSI4kMwJMdayytGsYArg3lzUM1wsCjG';
     var addressQuery = $('#address').val();
+    event.preventDefault();
     AllGeoCord = [];
     getMyGeoCord(addressQuery, myapikey);
-    sendMydata(AllGeoCord);
-    $(this).closest('form').submit();
+    console.log(AllGeoCord);
+
+    for (var i = 0; i < AllGeoCord.length; i++) {
+      var singleCord = AllGeoCord[i];
+      console.log(singleCord);
+    } // sendMydata(AllGeoCord);
+    // $(this).closest('form').submit();
+
   });
 
-  function sendMydata(array) {
-    $.ajax(_defineProperty({
-      url: '/apartment',
-      type: 'POST',
-      dataType: 'json',
-      contentType: 'json',
-      data: {
-        data: JSON.stringify(array)
+  function sendMydata(coord) {
+    $.ajaxSetup({
+      headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
       }
-    }, "contentType", 'application/json; charset=utf-8'));
+    });
+    $.ajax({
+      'url': '/admin/apartments',
+      'method': 'POST',
+      'data': coord,
+      'success': function success(data) {
+        console.log(data);
+      }
+    });
   }
 
   function getMyGeoCord(query, apikey) {
@@ -37186,8 +37194,8 @@ if (token) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/nene/php/progetto-finale-airbnb/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /Users/nene/php/progetto-finale-airbnb/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\MAMP\htdocs\corso-mamp\finalProjectTeam3\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\MAMP\htdocs\corso-mamp\finalProjectTeam3\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
