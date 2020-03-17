@@ -13,7 +13,7 @@
                         </ul>
                     </div>
                 @endif
-                <form method="post" action="{{route('admin.apartments.store')}}" enctype="multipart/form-data">
+                <form method="post" id="create-form-apartment" action="{{route('admin.apartments.store')}}" enctype="multipart/form-data">
                     @csrf
                     <div class="form-group">
                         <label for="sommary_title">Titolo Descrittivo</label>
