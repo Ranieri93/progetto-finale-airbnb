@@ -1,6 +1,6 @@
 var $ = require('jquery');
 
-$( document ).ready(function() {
+$(document).ready(function() {
 
     $('#btn-create-submit').click(function (event) {
         var myapikey = 'bFSI4kMwJMdayytGsYArg3lzUM1wsCjG';

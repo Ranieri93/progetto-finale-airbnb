@@ -57,14 +57,14 @@
                         @csrf
                         <div class="form-group">
                             <label for="email">Email</label>
-                            <input type="email" class="form-control"
-                                   name="email" id="email"  placeholder="Scrivi qui la tua mail.." value="{{Auth::user()->email}}">
+                            <input type="email" class="prova form-control"
+                                   name="email" id="email"  placeholder="Scrivi qui la tua mail.." value="{{Auth::user()->email}}" required>
                         </div>
                         <div class="form-group">
                             <label for="text_message">Messaggio</label>
-                            <textarea class="form-control" name="text_message" placeholder="Scrivi un messaggio.." id="text_message" cols="80" ></textarea>
+                            <textarea class="prova form-control" name="text_message" placeholder="Scrivi un messaggio.." id="text_message" cols="80" required></textarea>
                         </div>
-                        <button type="submit" class="btn btn-primary" value='Invia messaggio'>Invia messaggio</button>
+                        <button type="submit" class="prova btn btn-primary" value='Invia messaggio'required>Invia messaggio</button>
                     </form>
 
                 </div>
