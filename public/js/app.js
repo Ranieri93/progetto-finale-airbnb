@@ -37165,9 +37165,32 @@ $(document).ready(function () {
   !*** ./resources/js/main.js ***!
   \******************************/
 /*! no static exports found */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: C:\\Users\\Andre\\AppData\\Roaming\\Composer\\progetto-finale-airbnb\\resources\\js\\main.js: Invalid left-hand side in assignment expression (12:4)\n\n\u001b[0m \u001b[90m 10 | \u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 11 | \u001b[39m\u001b[90m// $(document).ready(function(event) {\u001b[39m\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 12 | \u001b[39m\u001b[36mif\u001b[39m (\u001b[32m'.prova'\u001b[39m\u001b[33m.\u001b[39mlength \u001b[33m==\u001b[39m \u001b[35m0\u001b[39m \u001b[33m&&\u001b[39m \u001b[32m'.prova'\u001b[39m\u001b[33m.\u001b[39monclick \u001b[33m=\u001b[39m \u001b[36mtrue\u001b[39m) {\u001b[0m\n\u001b[0m \u001b[90m    | \u001b[39m    \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 13 | \u001b[39m    console\u001b[33m.\u001b[39mlog(\u001b[32m'errore'\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 14 | \u001b[39m} \u001b[36melse\u001b[39m {\u001b[0m\n\u001b[0m \u001b[90m 15 | \u001b[39m    document\u001b[33m.\u001b[39mwrite(\u001b[32m'<br><br><br><br><br><br><br><br><br><br><br><br><br><h1><center>Il tuo messaggio è stato inviato con successo, ti risponderemo il prima possibile!</center></h1><br><br><br><br><br><br><br><br><br><br><br>'\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m\n    at Parser._raise (C:\\Users\\Andre\\AppData\\Roaming\\Composer\\progetto-finale-airbnb\\node_modules\\@babel\\parser\\lib\\index.js:723:17)\n    at Parser.raiseWithData (C:\\Users\\Andre\\AppData\\Roaming\\Composer\\progetto-finale-airbnb\\node_modules\\@babel\\parser\\lib\\index.js:716:17)\n    at Parser.raise (C:\\Users\\Andre\\AppData\\Roaming\\Composer\\progetto-finale-airbnb\\node_modules\\@babel\\parser\\lib\\index.js:710:17)\n    at Parser.checkLVal (C:\\Users\\Andre\\AppData\\Roaming\\Composer\\progetto-finale-airbnb\\node_modules\\@babel\\parser\\lib\\index.js:9126:18)\n    at Parser.parseMaybeAssign (C:\\Users\\Andre\\AppData\\Roaming\\Composer\\progetto-finale-airbnb\\node_modules\\@babel\\parser\\lib\\index.js:9287:12)\n    at Parser.parseExpression (C:\\Users\\Andre\\AppData\\Roaming\\Composer\\progetto-finale-airbnb\\node_modules\\@babel\\parser\\lib\\index.js:9209:23)\n    at Parser.parseHeaderExpression (C:\\Users\\Andre\\AppData\\Roaming\\Composer\\progetto-finale-airbnb\\node_modules\\@babel\\parser\\lib\\index.js:11185:22)\n    at Parser.parseIfStatement (C:\\Users\\Andre\\AppData\\Roaming\\Composer\\progetto-finale-airbnb\\node_modules\\@babel\\parser\\lib\\index.js:11267:22)\n    at Parser.parseStatementContent (C:\\Users\\Andre\\AppData\\Roaming\\Composer\\progetto-finale-airbnb\\node_modules\\@babel\\parser\\lib\\index.js:10961:21)\n    at Parser.parseStatement (C:\\Users\\Andre\\AppData\\Roaming\\Composer\\progetto-finale-airbnb\\node_modules\\@babel\\parser\\lib\\index.js:10916:17)\n    at Parser.parseBlockOrModuleBlockBody (C:\\Users\\Andre\\AppData\\Roaming\\Composer\\progetto-finale-airbnb\\node_modules\\@babel\\parser\\lib\\index.js:11490:25)\n    at Parser.parseBlockBody (C:\\Users\\Andre\\AppData\\Roaming\\Composer\\progetto-finale-airbnb\\node_modules\\@babel\\parser\\lib\\index.js:11477:10)\n    at Parser.parseTopLevel (C:\\Users\\Andre\\AppData\\Roaming\\Composer\\progetto-finale-airbnb\\node_modules\\@babel\\parser\\lib\\index.js:10847:10)\n    at Parser.parse (C:\\Users\\Andre\\AppData\\Roaming\\Composer\\progetto-finale-airbnb\\node_modules\\@babel\\parser\\lib\\index.js:12452:10)\n    at parse (C:\\Users\\Andre\\AppData\\Roaming\\Composer\\progetto-finale-airbnb\\node_modules\\@babel\\parser\\lib\\index.js:12503:38)\n    at parser (C:\\Users\\Andre\\AppData\\Roaming\\Composer\\progetto-finale-airbnb\\node_modules\\@babel\\core\\lib\\parser\\index.js:54:34)\n    at parser.next (<anonymous>)\n    at normalizeFile (C:\\Users\\Andre\\AppData\\Roaming\\Composer\\progetto-finale-airbnb\\node_modules\\@babel\\core\\lib\\transformation\\normalize-file.js:93:38)\n    at normalizeFile.next (<anonymous>)\n    at run (C:\\Users\\Andre\\AppData\\Roaming\\Composer\\progetto-finale-airbnb\\node_modules\\@babel\\core\\lib\\transformation\\index.js:31:50)\n    at run.next (<anonymous>)\n    at Function.transform (C:\\Users\\Andre\\AppData\\Roaming\\Composer\\progetto-finale-airbnb\\node_modules\\@babel\\core\\lib\\transform.js:27:41)\n    at transform.next (<anonymous>)\n    at step (C:\\Users\\Andre\\AppData\\Roaming\\Composer\\progetto-finale-airbnb\\node_modules\\gensync\\index.js:254:32)\n    at C:\\Users\\Andre\\AppData\\Roaming\\Composer\\progetto-finale-airbnb\\node_modules\\gensync\\index.js:266:13\n    at async.call.result.err.err (C:\\Users\\Andre\\AppData\\Roaming\\Composer\\progetto-finale-airbnb\\node_modules\\gensync\\index.js:216:11)");
+__webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
+
+var $ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
+
+function confirmed() {
+  document.write('<h1>ciao</h1>'); // location.href = '/admin';
+} // $(document).ready(function(event) {
+// '.prova2'.onclick = function(){
+//     console.log('ciaoaaaaaaaaaaaaa');
+// }
+// });
+
+
+var clicked = document.getElementsByClassName('.prova2').onclick = function () {};
+
+if (clicked('.prova2') && '.prova'.length == 0) {
+  console.log('errore');
+} // else {
+//     document.write('<br><br><br><br><br><br><br><br><br><br><br><br><br><h1><center>Il tuo messaggio è stato inviato con successo, ti risponderemo il prima possibile!</center></h1><br><br><br><br><br><br><br><br><br><br><br>');
+//     document.write("Redirect in corso… si prega di attendere qualche istante…");
+//     setTimeout(confirmed(), 5000);
+//     // clearTimeout();
+// }
+// '.prova2'.onclick == false
 
 /***/ }),
 
