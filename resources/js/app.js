@@ -20,9 +20,12 @@ $( document ).ready(function(event) {
 
     function sendMydata (array) {
         $.ajax({
-            url:'/apartment',
+            url:'/admin/apartments',
             type: 'POST',
             dataType:'json',
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
             contentType: 'json',
             data: {
                 data: JSON.stringify(array)
