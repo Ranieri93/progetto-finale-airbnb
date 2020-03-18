@@ -37,7 +37,7 @@ $(document).ready(function() {
                     "<input type='hidden' name='latitude' value='" + latitude + "'/>",
                     "<input type='hidden' name='longitude' value='" + longitude + "'/>",
                     "<input type='hidden' name='address' value='" + query + "'/>",
-                )
+                );
                 $(idSubmitForm).append(
                     "<input type='submit' id='submit-append-inputs' style='display:none;'></input>"
                 );

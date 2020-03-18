@@ -46,9 +46,23 @@
     {{-- MAP SECTION --}}
     <div class="row details">
         <div class="map-content col-sm-8 col-xs-6">
-            <div class="map"></div>
+            <div id="map" class="map"></div>
         </div>
+        <script>
+            var myCoordinates =  [{{$apartment->longitude}}, {{$apartment->latitude}}];
 
+            var map = tt.map({
+                key: 'bFSI4kMwJMdayytGsYArg3lzUM1wsCjG',
+                container: 'map',
+                style: 'tomtom://vector/1/basic-main',
+                center: myCoordinates,
+                zoom: 12
+            });
+            var marker = new tt.Marker().setLngLat(myCoordinates).addTo(map);
+
+        </script>
+
+    {{-- MESSAGE SECTION --}}
         <div class="messages col-sm-4 col-xs-6">
             <div class="card">
                 <div class="card-body">

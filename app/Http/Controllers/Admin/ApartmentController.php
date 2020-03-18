@@ -129,6 +129,7 @@ class ApartmentController extends Controller
             'guest_number' => 'required|numeric|min:1|max:10',
             'wc_number' => 'required|numeric|min:1|max:3',
             'square_meters' => 'required|numeric|min:30|max:250',
+//            'address' => 'required|max:255',
             'latitude' => 'required|numeric',
             'longitude' => 'required|numeric',
             'cover_image' => 'image',
@@ -190,7 +191,7 @@ class ApartmentController extends Controller
 
         $today = Carbon::now()->toDateTimeString();
         //$today = Ad::getToday();
-        
+
         $token = $gateway->clientToken()->generate(); //Genero token client
         return view('admin.apartments.sponsor', [
             'apartment' => $apartment,
@@ -206,7 +207,7 @@ class ApartmentController extends Controller
         $apartment_id = $data['apartment_id']; //Prendo apartment id passato dal form
 
         $user_object = User::getUserData($user_id,$apartment_id)->first(); //Chiamo funzione da model User
-        
+
         $ad = new Ad();
 
         $ad->amount = $data['amount']; //Prendo amount dal form
@@ -225,10 +226,10 @@ class ApartmentController extends Controller
             'publicKey' => config('services.braintree.publicKey'),
             'privateKey' => config('services.braintree.privateKey'),
         ]);
-    
+
         $amount = $request->amount;
         $nonce = $request->payment_method_nonce;
-    
+
         $result = $gateway->transaction()->sale([
             'amount' => $amount,
             'paymentMethodNonce' => $nonce,
@@ -241,7 +242,7 @@ class ApartmentController extends Controller
                 'submitForSettlement' => true
             ]
         ]);
-    
+
         if ($result->success) {
             $transaction = $result->transaction;
             $ad->ad_end = $ad_end_calc; //Salvo data di fine sponsorizzazione
@@ -251,7 +252,7 @@ class ApartmentController extends Controller
             return redirect()->route('admin.apartments.index')->with('success_message', 'Transaction successful. The ID is:'. $transaction->id);
         } else {
             $errorString = "";
-    
+
             foreach ($result->errors->deepAll() as $error) {
                 $errorString .= 'Error: ' . $error->code . ": " . $error->message . "\n";
             }
