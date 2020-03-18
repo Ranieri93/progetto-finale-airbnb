@@ -17,7 +17,9 @@
     <br>
     <br>
     <div class="container">
-        @forelse ($apartment->messages as $messaggio)
+
+        @forelse ($messaggi_appartamento as $messaggio)
+            @if ($messaggio->apartment_id == $apartment->id)
                 <div class="row">
                     <div class="media">
                       <img src="https://media.wponlinesupport.com/wp-content/uploads/2015/02/how-to-change-wordpress-from-email-header.jpg" class="align-self-start mr-3" alt="...">
@@ -28,6 +30,9 @@
                     </div>
                 </div>
                 <hr>
+            @endif
+
+
 
         @empty
 

@@ -66,10 +66,11 @@ class MessageController extends Controller
      */
     public function show(Message $message, Apartment $apartment)
     {
-        // $messaggi_appartamento = $apartment->messages();
-        // dd($messaggi_appartamento);
-        // 'messaggi_appartamento' => $messaggi_appartamento
-        return view('admin.messages-show', ['apartment' => $apartment]);
+        $messaggi_appartamento = Message::orderBy('id', 'DESC')->get();
+        
+
+
+        return view('admin.messages-show', ['apartment' => $apartment, 'messaggi_appartamento' => $messaggi_appartamento]);
     }
 
     /**
