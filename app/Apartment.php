@@ -20,4 +20,7 @@ class Apartment extends Model
     public function messages() {
         return $this->hasMany('App\Message');
     }
+    public function ads() {
+        return $this->belongsToMany('App\Ad');
+    }
 }
