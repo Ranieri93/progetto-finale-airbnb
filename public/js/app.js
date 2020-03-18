@@ -37178,26 +37178,29 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 var $ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
 
-function confirmed() {
-  document.write('<h1>ciao</h1>'); // location.href = '/admin';
-} // $(document).ready(function(event) {
-// '.prova2'.onclick = function(){
-//     console.log('ciaoaaaaaaaaaaaaa');
-// }
-// });
+function ConfermaOperazione() {
+  var richiesta = window.confirm("Il tuo messaggio è stato inviato con successo, ti risponderemo il prima possibile! clicca 'OK' per proseguire");
+  return richiesta;
+}
 
+var elementIsClicked = false;
 
-var clicked = document.getElementsByClassName('.prova2').onclick = function () {};
+function clickHandler() {
+  elementIsClicked = true;
+}
 
-if (clicked('.prova2') && '.prova'.length == 0) {
+var element = document.getElementById('myElement');
+document.addEventListener('click', clickHandler);
+
+function isElementClicked() {
+  console.log(elementIsClicked ? ConfermaOperazione() : 'NOT');
+}
+
+if ('.prova'.length == 0) {
   console.log('errore');
-} // else {
-//     document.write('<br><br><br><br><br><br><br><br><br><br><br><br><br><h1><center>Il tuo messaggio è stato inviato con successo, ti risponderemo il prima possibile!</center></h1><br><br><br><br><br><br><br><br><br><br><br>');
-//     document.write("Redirect in corso… si prega di attendere qualche istante…");
-//     setTimeout(confirmed(), 5000);
-//     // clearTimeout();
-// }
-// '.prova2'.onclick == false
+} else {
+  isElementClicked('myElement'); // setInterval(isElementClicked, 2000);
+}
 
 /***/ }),
 
@@ -37219,8 +37222,8 @@ if (clicked('.prova2') && '.prova'.length == 0) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\MAMP\htdocs\progetto-finale-airbnb\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\MAMP\htdocs\progetto-finale-airbnb\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\Andre\AppData\Roaming\Composer\progetto-finale-airbnb\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\Andre\AppData\Roaming\Composer\progetto-finale-airbnb\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

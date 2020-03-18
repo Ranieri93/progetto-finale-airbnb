@@ -78,7 +78,7 @@
                             <label for="text_message">Messaggio</label>
                             <textarea class="prova form-control" name="text_message" placeholder="Scrivi un messaggio.." id="text_message" cols="80" required></textarea>
                         </div>
-                        <button type="submit" class="prova2 btn btn-primary" value='Invia messaggio'required>Invia messaggio</button>
+                        <button id="myElement" type="submit" class="not-yet-clicked btn btn-primary" value='Invia messaggio'required>Invia messaggio</button>
                     </form>
 
                 </div>
