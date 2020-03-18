@@ -12,8 +12,6 @@
         <h3 class="title">{{$apartment->sommary_title}}</h3>
     </div>
 
-
-
     <div class="row details">
         <div class="description col-sm-8 col-xs-6">
             {{ $apartment->description }}
@@ -22,8 +20,6 @@
         <div class="options col-sm-4 col-xs-6">
             <div class="card">
                 <div class="card-body">
-
-
                     <ul class="list-group list-group-flush">
                         {{-- <li class="list-group-item">Slug: <br> {{ $apartment->slug }}</li> --}}
                         <li class="list-group-item">Numero Stanze: <br> {{ $apartment->room_number }}</li>
@@ -46,8 +42,22 @@
     {{-- MAP SECTION --}}
     <div class="row details">
         <div class="map-content col-sm-8 col-xs-6">
-            <div class="map"></div>
+            <div id="map" class="map"></div>
         </div>
+        <script>
+            var myCoordinates =  [{{$apartment->longitude}}, {{$apartment->latitude}}];
+            var myAddress = ['{{$apartment->address}}'];
+
+            var map = tt.map({
+                key: 'bFSI4kMwJMdayytGsYArg3lzUM1wsCjG',
+                container: 'map',
+                style: 'tomtom://vector/1/basic-main',
+                center: myCoordinates,
+                zoom: 12
+            });
+            var marker = new tt.Marker().setLngLat(myCoordinates).setPopup(new tt.Popup({offset: 35})
+                .setHTML(myAddress)).addTo(map);
+        </script>
 
         <div class="messages col-sm-4 col-xs-6">
             <div class="card">
@@ -71,7 +81,5 @@
             </div>
         </div>
     </div>
-
     @include('layouts.partials.footer')
-
 @endsection

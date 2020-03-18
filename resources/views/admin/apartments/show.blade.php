@@ -50,6 +50,7 @@
         </div>
         <script>
             var myCoordinates =  [{{$apartment->longitude}}, {{$apartment->latitude}}];
+            var myAddress = ['{{$apartment->address}}'];
 
             var map = tt.map({
                 key: 'bFSI4kMwJMdayytGsYArg3lzUM1wsCjG',
@@ -58,7 +59,9 @@
                 center: myCoordinates,
                 zoom: 12
             });
-            var marker = new tt.Marker().setLngLat(myCoordinates).addTo(map);
+            var marker = new tt.Marker().setLngLat(myCoordinates).setPopup(new tt.Popup({offset: 35})
+                .setHTML(myAddress)).addTo(map);
+
         </script>
 
     {{-- MESSAGE SECTION --}}

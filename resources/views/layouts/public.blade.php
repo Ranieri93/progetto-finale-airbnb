@@ -8,6 +8,10 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
+    <!-- Maps -->
+    <link href='https://api.tomtom.com/maps-sdk-for-web/cdn/5.x/5.40.1/maps/maps.css' rel='stylesheet' type='text/css'>
+    <script src='https://api.tomtom.com/maps-sdk-for-web/cdn/5.x/5.40.1/maps/maps-web.min.js'></script>
+
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>

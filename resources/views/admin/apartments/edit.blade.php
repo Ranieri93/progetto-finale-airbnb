@@ -13,7 +13,7 @@
                         </ul>
                     </div>
                 @endif
-                <form method="post" action="{{route('admin.apartments.update', ['apartment' => $apartment->id])}}" enctype="multipart/form-data">
+                <form id="update-form-apartment" method="post" action="{{route('admin.apartments.update', ['apartment' => $apartment->id])}}" enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
                     <div class="form-group">
@@ -54,7 +54,7 @@
                     <div class="form-group">
                         <label for="address">Inserisci la città e l'indirizzo</label>
                         <input type="text" class="form-control"
-                               name=address"" id="address-edit" placeholder="Scrivi qui l'indirizzo"
+                               name="address" id="address-edit" placeholder="Scrivi qui l'indirizzo"
                                value="{{old('address', $apartment->address)}}" required>
                     </div>
 

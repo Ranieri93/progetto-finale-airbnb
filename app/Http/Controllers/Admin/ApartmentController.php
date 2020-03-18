@@ -128,7 +128,7 @@ class ApartmentController extends Controller
             'guest_number' => 'required|numeric|min:1|max:10',
             'wc_number' => 'required|numeric|min:1|max:3',
             'square_meters' => 'required|numeric|min:30|max:250',
-//            'address' => 'required|max:255',
+           'address' => 'required|max:255',
             'latitude' => 'required|numeric',
             'longitude' => 'required|numeric',
             'cover_image' => 'image',
