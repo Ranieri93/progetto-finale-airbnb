@@ -37219,8 +37219,8 @@ if (clicked('.prova2') && '.prova'.length == 0) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\MAMP\htdocs\corso-mamp\finalProjectTeam3\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\MAMP\htdocs\corso-mamp\finalProjectTeam3\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\MAMP\htdocs\progetto-finale-airbnb\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\MAMP\htdocs\progetto-finale-airbnb\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

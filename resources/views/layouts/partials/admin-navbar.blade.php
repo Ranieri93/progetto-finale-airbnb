@@ -14,6 +14,10 @@
         <ul class="navbar-nav ml-auto">
             @auth()
             <li class="nav-item">
+                    <a class="nav-link {{ Route::currentRouteName()== 'admin.apartments.cards' ? 'active' : '' }}"
+                       href="{{ route('admin.apartments.cards') }}">Vedi messaggi ricevuti</a>
+            </li>
+            <li class="nav-item">
                     <a class="nav-link {{ Route::currentRouteName()== 'admin.apartments.index' ? 'active' : '' }}"
                        href="{{ route('admin.apartments.index') }}">Gestisci i tuoi Appartamenti</a>
             </li>
@@ -45,5 +49,3 @@
         </ul>
     </div>
 </nav>
-
-

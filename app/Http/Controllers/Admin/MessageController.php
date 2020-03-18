@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Message;
 use App\Apartment;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
 class MessageController extends Controller
@@ -14,20 +15,20 @@ class MessageController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        //
-    }
+     public function showCards()
+     {
+
+         $apartments = Apartment::all();
+         // dd($apartments);
+         return view('admin.cards-apartments', ['apartments' => $apartments]);
+     }
+
 
     /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-        //
-    }
 
     /**
      * Store a newly created resource in storage.
@@ -49,15 +50,26 @@ class MessageController extends Controller
          return redirect()->route('admin.search.show', ['apartment' => $apartment->id] );
      }
 
+     // public function showCards()
+     // {
+     //
+     //     $apartments = Apartment::all();
+     //     dd($apartments);
+     //     return view('admin.cards-apartments', ['apartments' => $apartments]);
+     // }
+
     /**
      * Display the specified resource.
      *
      * @param  \App\Message  $message
      * @return \Illuminate\Http\Response
      */
-    public function show(Message $message)
+    public function show(Message $message, Apartment $apartment)
     {
-        //
+        // $messaggi_appartamento = $apartment->messages();
+        // dd($messaggi_appartamento);
+        // 'messaggi_appartamento' => $messaggi_appartamento
+        return view('admin.messages-show', ['apartment' => $apartment]);
     }
 
     /**
@@ -66,10 +78,6 @@ class MessageController extends Controller
      * @param  \App\Message  $message
      * @return \Illuminate\Http\Response
      */
-    public function edit(Message $message)
-    {
-        //
-    }
 
     /**
      * Update the specified resource in storage.
@@ -78,10 +86,6 @@ class MessageController extends Controller
      * @param  \App\Message  $message
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Message $message)
-    {
-        //
-    }
 
     /**
      * Remove the specified resource from storage.

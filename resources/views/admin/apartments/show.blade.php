@@ -65,15 +65,10 @@
         <div class="messages col-sm-4 col-xs-6">
             <div class="card">
                 <div class="card-body">
-                    <h5>Messaggi al proprietario</h5>
+                    <h5>Vedi i messaggi che hai ricevuto per questo appartamento</h5>
+                    <a class="btn btn-secondary " href="{{ route('admin.messages.show', ['apartment' => $apartment->id])}}">Vai a pagina messaggi</a>
 
-                    <ul>
-                      <li>Messaggio 1</li>
-                      <li>Messaggio 2</li>
-                      <li>Messaggio 3</li>
-                      <li>Messaggio 4</li>
-                      <li>Messaggio 5</li>
-                    </ul>
+
                 </div>
             </div>
         </div>

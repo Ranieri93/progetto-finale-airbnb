@@ -27,6 +27,9 @@ Route::middleware('auth')->prefix('admin')->namespace('Admin')->name('admin.')->
     Route::get('/apartments/sponsor/{apartment}','ApartmentController@adIndex')->name('ad');
     Route::post('/checkout','ApartmentController@adCheckout')->name('checkout');
     Route::resource('/apartments', 'ApartmentController');
+    Route::get('/apartments/{apartment}/messages', 'MessageController@show')->name('messages.show');
+    Route::get('/cards', 'MessageController@showCards')->name('apartments.cards');
+
 });
 
 
