@@ -60,7 +60,7 @@
                     <div class="form-group">
                         <label for="address">Inserisci la città e l'indirizzo</label>
                         <input type="text" class="form-control"
-                               name=address"" id="address" placeholder="Scrivi qui l'indirizzo" value="{{old('indirizzo')}}" required>
+                               name=address"" id="address" placeholder="Scrivi qui l'indirizzo" value="{{old('address')}}" required>
                     </div>
 
                     <div class="form-group">

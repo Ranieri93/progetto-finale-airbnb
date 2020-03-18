@@ -1,3 +1,3 @@
 require('./bootstrap');
-require('./geolocalisation');
+require('./geolocalization');
 require('./main');

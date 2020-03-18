@@ -50,17 +50,12 @@
                                name="square_meters" id="square_meters" placeholder="Scrivi qui la metratura"
                                value="{{old('square_meters', $apartment->square_meters)}}" required>
                     </div>
+
                     <div class="form-group">
-                        <label for="latitude">Latitudine</label>
+                        <label for="address">Inserisci la città e l'indirizzo</label>
                         <input type="text" class="form-control"
-                               name="latitude" id="latitude" placeholder="Latitudine"
-                               value="{{old('latitude', $apartment->latitude)}}" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="longitude">Longitudine</label>
-                        <input type="text" class="form-control"
-                               name="longitude" id="longitude" placeholder="Scrivi qui la metratura"
-                               value="{{old('longitude', $apartment->longitude)}}" required>
+                               name=address"" id="address-edit" placeholder="Scrivi qui l'indirizzo"
+                               value="{{old('address', $apartment->address)}}" required>
                     </div>
 
                     @if($services->count())
@@ -86,7 +81,7 @@
                         @endif
                         <input type="file" class="form-control-file" id="cover_image" name="cover_image">
                     </div>
-                    <button type="submit" class="btn btn-primary">Inserisci</button>
+                    <button id="btn-update-submit" type="submit" class="btn btn-primary">Inserisci</button>
                 </form>
             </div>
         </div>

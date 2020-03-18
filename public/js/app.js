@@ -37054,7 +37054,7 @@ module.exports = function(module) {
 
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
-__webpack_require__(/*! ./geolocalisation */ "./resources/js/geolocalisation.js");
+__webpack_require__(/*! ./geolocalization */ "./resources/js/geolocalization.js");
 
 __webpack_require__(/*! ./main */ "./resources/js/main.js");
 
@@ -37118,9 +37118,9 @@ if (token) {
 
 /***/ }),
 
-/***/ "./resources/js/geolocalisation.js":
+/***/ "./resources/js/geolocalization.js":
 /*!*****************************************!*\
-  !*** ./resources/js/geolocalisation.js ***!
+  !*** ./resources/js/geolocalization.js ***!
   \*****************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
@@ -37128,26 +37128,33 @@ if (token) {
 var $ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
 
 $(document).ready(function () {
+  // evento che controlla la conversione dell'indirizzo nella create
   $('#btn-create-submit').click(function (event) {
     var myapikey = 'bFSI4kMwJMdayytGsYArg3lzUM1wsCjG';
     var addressQuery = $('#address').val();
+    console.log(addressQuery);
     event.preventDefault();
-    getMyGeoCord(addressQuery, myapikey, '#create-form-apartment');
-  });
+    getMyGeoCord(addressQuery, myapikey, '#create-form-apartment', 1);
+  }); // evento che controlla la conversione dell'indirizzo nella update
 
-  function getMyGeoCord(query, apikey, idSubmitForm) {
+  $('#btn-update-submit').click(function (event) {
+    var myapikey = 'bFSI4kMwJMdayytGsYArg3lzUM1wsCjG';
+    var addressQuery = $('#address-edit').val();
+    event.preventDefault();
+    getMyGeoCord(addressQuery, myapikey, '#update-form-apartment', 1);
+  }); // funzione con chiamata ajax all'api di tomtom
+
+  function getMyGeoCord(query, apikey, idSubmitForm, limitResults) {
     $.ajax({
       'url': 'https://api.tomtom.com/search/2/geocode/' + query + '.json?key=' + apikey,
       'method': 'GET',
       'data': {
-        'limit': '1'
+        'limit': limitResults
       },
       'success': function success(data) {
         var latitude = data.results[0].position.lat;
-        console.log(latitude);
         var longitude = data.results[0].position.lon;
-        console.log(longitude);
-        $(idSubmitForm).append("<input type='hidden' name='latitude' value='" + latitude + "'/>", "<input type='hidden' name='longitude' value='" + longitude + "'/>");
+        $(idSubmitForm).append("<input type='hidden' name='latitude' value='" + latitude + "'/>", "<input type='hidden' name='longitude' value='" + longitude + "'/>", "<input type='hidden' name='address' value='" + query + "'/>");
         $(idSubmitForm).append("<input type='submit' id='submit-append-inputs' style='display:none;'></input>");
         $('#submit-append-inputs').click();
       },
@@ -37212,8 +37219,8 @@ if (clicked('.prova2') && '.prova'.length == 0) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\Andre\AppData\Roaming\Composer\progetto-finale-airbnb\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\Andre\AppData\Roaming\Composer\progetto-finale-airbnb\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\MAMP\htdocs\corso-mamp\finalProjectTeam3\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\MAMP\htdocs\corso-mamp\finalProjectTeam3\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
