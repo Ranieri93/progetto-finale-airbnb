@@ -7,7 +7,11 @@
 
     {{-- image section --}}
     <div class="show-picture">
-        <img src="{{$apartment->cover_image}}"
+        <img src=@if(strpos($apartment->cover_image, 'https') !== false)
+            "{{$apartment->cover_image}}"
+        @else
+            "{{asset('storage/' . $apartment->cover_image)}}"
+        @endif
         alt="{{$apartment->sommary_title}}" class="card-img-top" alt="...">
         <h3 class="title">{{$apartment->sommary_title}}</h3>
     </div>

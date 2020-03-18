@@ -13,7 +13,11 @@
     <div class="container d-flex flex-wrap justify-content-around">
         @forelse ($apartments as $apartment)
             <div class="card" style="width: 18rem;">
-              <img src="{{$apartment->cover_image}}" class="card-img-top" alt="...">
+              <img src=@if(strpos($apartment->cover_image, 'https') !== false)
+                  "{{$apartment->cover_image}}"
+              @else
+                  "{{asset('storage/' . $apartment->cover_image)}}"
+              @endif class="card-img-top" alt="...">
               <div class="card-body">
                 <h5 class="card-title">{{$apartment->sommary_title}}</h5>
                 <p class="card-text">Numero Stanze: {{ $apartment->room_number }}</p>

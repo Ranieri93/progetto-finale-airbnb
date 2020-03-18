@@ -74,7 +74,11 @@
             <div class="row medium-spacer">
                 <div class="single-apartment d-flex flex-row">
                     <div class="img-apartment">
-                        <img class="fix-img-search" src="{{ $apartment->cover_image}}" alt="">
+                        <img class="fix-img-search" src=@if(strpos($apartment->cover_image, 'https') !== false)
+                            "{{$apartment->cover_image}}"
+                        @else
+                            "{{asset('storage/' . $apartment->cover_image)}}"
+                        @endif alt="">
                     </div>
                     <div class="content-apartment">
                         <h3>{{$apartment->sommary_title}}</h3>
