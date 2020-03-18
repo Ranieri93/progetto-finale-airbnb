@@ -9,7 +9,7 @@ class Apartment extends Model
 
 
     protected $fillable = ['id', 'user_id', 'sommary_title', 'description', 'slug', 'room_number', 'guest_number',
-        'wc_number', 'square_meters', 'latitude', 'longitude' ];
+        'wc_number', 'square_meters', 'address', 'latitude', 'longitude' ];
 
     public function user() {
         return $this->belongsTo('App\User');

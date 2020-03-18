@@ -37154,7 +37154,7 @@ $(document).ready(function () {
       'success': function success(data) {
         var latitude = data.results[0].position.lat;
         var longitude = data.results[0].position.lon;
-        $(idSubmitForm).append("<input type='hidden' name='latitude' value='" + latitude + "'/>", "<input type='hidden' name='longitude' value='" + longitude + "'/>", "<input type='hidden' name='address' value='" + query + "'/>");
+        $(idSubmitForm).append("<input type='hidden' name='latitude' value='" + latitude + "'/>", "<input type='hidden' name='longitude' value='" + longitude + "'/>");
         $(idSubmitForm).append("<input type='submit' id='submit-append-inputs' style='display:none;'></input>");
         $('#submit-append-inputs').click();
       },

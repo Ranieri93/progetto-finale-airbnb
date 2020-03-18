@@ -59,7 +59,6 @@
                 zoom: 12
             });
             var marker = new tt.Marker().setLngLat(myCoordinates).addTo(map);
-
         </script>
 
     {{-- MESSAGE SECTION --}}
