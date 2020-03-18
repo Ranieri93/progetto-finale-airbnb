@@ -213,9 +213,9 @@ class ApartmentController extends Controller
 
         if($data['amount'] == 2.99) { //Se è stata scelta l'offerta a 2.99
             $ad_end_calc = Carbon::now()->addDay()->toDateTimeString(); //Un giorno di sponsorizzazione
-        } elseif($data['amount'] == 5.99) {
+        } elseif($data['amount'] == 5.99) { //Se è stata scelta l'offerta a 5.99
             $ad_end_calc = Carbon::now()->addDays(3)->toDateTimeString(); //3 giorni di sponsorizzazione
-        } elseif($data['amount'] == 9.99) {
+        } elseif($data['amount'] == 9.99) { //Se è stata scelta l'offerta a 9.99
             $ad_end_calc = Carbon::now()->addDays(6)->toDateTimeString(); //6 giorni di sponsorizzazione
         }
 

@@ -3,8 +3,10 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Home;
+use App\Apartment;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Carbon\Carbon;
 
 class HomeController extends Controller
 {
@@ -15,7 +17,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('admin.home');
+        $apartments = Apartment::all();
+        $today = Carbon::now()->toDateTimeString(); //Passo data di oggi per verificare sponsorizzazione
+        return view('admin.home',['apartments' => $apartments, 'today' => $today]);
     }
 
     /**

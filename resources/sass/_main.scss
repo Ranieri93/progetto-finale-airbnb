@@ -45,3 +45,13 @@
     border-radius: 4px;
     box-shadow: 0 16px 40px rgba(0,0,0,0.12);
 }
+
+#sponsored-apartments {
+    .container {
+        padding: $padding-common;
+
+        h2 {
+            margin-bottom: 30px;
+        }
+    }
+}

@@ -67,7 +67,7 @@
                             @if (!isset($end_ad) || $today > $end_ad)
                                 <a class="btn btn-info" href="{{ route('admin.ad', ['apartment' => $apartment->id]) }}">Sponsorizza</a>
                             @else
-                                <a class="btn btn-info">Sponsorizzato!</a>
+                                <a class="btn btn-success">Sponsorizzato!</a>
                             @endif
                             <form method="post" action="{{ route('admin.apartments.destroy', ['apartment' => $apartment->id])}}">
                                 @csrf

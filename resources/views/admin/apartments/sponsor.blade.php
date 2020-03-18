@@ -12,9 +12,9 @@
                             <span class="input-label">Prezzo</span>
                             <div class="input-wrapper amount-wrapper">
                                 <select id="amount" name="amount">
-                                    <option value="2.99">2.99 - 24 ore</option>
-                                    <option value="5.99">5.99 - 72 ore</option>
-                                    <option value="9.99">9.99 - 144 ore</option>
+                                    <option value="2.99">2.99€ - 24 ore</option>
+                                    <option value="5.99">5.99€ - 72 ore</option>
+                                    <option value="9.99">9.99€ - 144 ore</option>
                                 </select>
                             </div>
                         </label>

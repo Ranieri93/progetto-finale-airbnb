@@ -43,6 +43,14 @@
   box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
 }
 
+#sponsored-apartments .container {
+  padding: 35px 0;
+}
+
+#sponsored-apartments .container h2 {
+  margin-bottom: 30px;
+}
+
 .fix-img-search {
   height: 200px;
   width: 300px;
