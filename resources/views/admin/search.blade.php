@@ -17,54 +17,47 @@
     <hr>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-4 offset-2">
-                <h2>filtri</h2>
-                @if($services->count())
+            <form  action="" id="searchByFiltersForm" class="d-flex flex-row justify-content-between" method="post">
+                @csrf
+                @method("POST")
+                <div class="col-4">
+                    <h2>filtri</h2>
+                    @if($services->count())
+                        <div class="form-group">
+                            @foreach($services as $service)
+                                <label for="service_{{ $service->id }}">
+                                    <input type="checkbox" id="service_{{ $service->id }}" name="services[]" value="{{$service->id}}">
+                                    {{$service->name}}
+                                </label>
+                            @endforeach
+                        </div>
+                    @endif
+                </div>
+                <div class="col-3">
+                    <h4>Raggio di ricerca:</h4>
+                    <input id="radius" name="radius" type="range" class="form-control-range"
+                           min="1" max="200" value="50" onchange="updateRangeInput(this.value);">
+                    <input type="text" id="val-radius-input" value="">
+                    <script>
+                        function updateRangeInput(val) {
+                            document.getElementById('val-radius-input').value = val;
+                        }
+                    </script>
+
+                </div>
+                <div class="col-2" >
                     <div class="form-group">
-                        @foreach($services as $service)
-                            <label for="service_{{ $service->id }}">
-                                <input type="checkbox" id="service_{{ $service->id }}" value="{{$service->id}}">
-                                {{$service->name}}
-                            </label>
-                        @endforeach
+                        <label for="">Seleziona numero stanze:</label>
+                        <input type="number" id="rooms" name="rooms" min="1" max="10">
                     </div>
-                @endif
-            </div>
-            <div class="col-1" >
-                <div class="form-group">
-                    <label for="">Seleziona numero ospiti</label>
-                    <select class="form-control" id="">
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                        <option value="6">6</option>
-                        <option value="7">7</option>
-                        <option value="8">8</option>
-                        <option value="9">9</option>
-                        <option value="10">10</option>
-                    </select>
                 </div>
-            </div>
-            <div class="col-1 offset-1" >
-                <div class="form-group">
-                    <label for="">Seleziona numero stanze</label>
-                    <select class="form-control" id="">
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                        <option value="6">6</option>
-                        <option value="7">7</option>
-                        <option value="8">8</option>
-                        <option value="9">9</option>
-                        <option value="10">10</option>
-                    </select>
+                <div class="col-2" >
+                    <div class="form-group">
+                        <label for="">Seleziona numero letti:</label>
+                        <input type="number" id="beds" name="beds" min="1" max="10">
+                    </div>
                 </div>
-            </div>
-        </div>
+            </form>
     </div>
     <hr>
     <div class="apartment-search-results container">
@@ -91,8 +84,5 @@
             </div>
             <hr>
         @endforeach
-
-
     </div>
-
 @endsection

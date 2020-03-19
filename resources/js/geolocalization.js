@@ -3,6 +3,8 @@ var $ = require('jquery');
 $(document).ready(function() {
     var myapikey = 'bFSI4kMwJMdayytGsYArg3lzUM1wsCjG';
 
+    //EVENTI
+
     // evento che controlla la conversione dell'indirizzo nella create
     $('#btn-create-submit').click(function (event) {
         var addressQuery = $('#address').val();
@@ -23,7 +25,6 @@ $(document).ready(function() {
     $("#search-addresses-form-admin button").click(function(event) {
         event.preventDefault();
         var addressQuery = $('#input-search-address-admin').val();
-        console.log(addressQuery);
         getMyGeoCord(addressQuery, myapikey, "#search-addresses-form-admin",1);
     });
 
@@ -32,12 +33,19 @@ $(document).ready(function() {
 
         var addressQuery = $('#input-search-address-admin').val();
         if ((addressQuery).length >= 3) {
-            autoSearch(addressQuery,myapikey,4)
+            autoSearch(addressQuery,myapikey,4);
         }
+    }).delay(800);
 
+    $(document).on('click', 'li.listAuto', function () {
+        var singleLi = $(this).text();
+        $('#listAddresses').fadeOut();
+        $('#input-search-address-admin').val(singleLi);
     });
 
 
+
+    //FUNZIONI
 
     // funzione con chiamata ajax all'api di tomtom
     function getMyGeoCord ( query, apikey, idSubmitForm, limitResults) {
@@ -52,8 +60,8 @@ $(document).ready(function() {
                 var longitude = data.results[0].position.lon;
 
                 $(idSubmitForm).append(
-                    "<input type='hidden' name='latitude' value='" + latitude + "'/>",
-                    "<input type='hidden' name='longitude' value='" + longitude + "'/>",
+                    "<input type='hidden' name='latitude' data-lat='" + latitude + "' value='" + latitude + "'/>",
+                    "<input type='hidden' name='longitude' data-lon='" + longitude + "' value='" + longitude + "'/>",
                 );
                 $(idSubmitForm).append(
                     "<input type='submit' id='submit-append-inputs' style='display:none;'></input>"
@@ -67,7 +75,7 @@ $(document).ready(function() {
         });
     }
 
-    function autoSearch (query,apikey,limitResults) {
+    function autoSearch (query, apikey,limitResults) {
         $.ajax({
             "url": "https://api.tomtom.com/search/2/geocode/" + query + '.json?key=' + apikey,
             "method": "GET",
@@ -82,7 +90,7 @@ $(document).ready(function() {
                     );
                         for (var i = 0; i < data.results.length ; i++) {
                             var singleAddress = data.results[i].address.freeformAddress;
-                            $("#listAddresses ul").append("<li class='listAuto'>" + singleAddress + "</li>");
+                            $("#listAddresses ul").append("<li class='list-group-item listAuto'>" + singleAddress + "</li>");
                         }
                     $("#listAddresses").append("</ul>");
                 }

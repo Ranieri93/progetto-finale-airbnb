@@ -37128,7 +37128,8 @@ if (token) {
 var $ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
 
 $(document).ready(function () {
-  var myapikey = 'bFSI4kMwJMdayytGsYArg3lzUM1wsCjG'; // evento che controlla la conversione dell'indirizzo nella create
+  var myapikey = 'bFSI4kMwJMdayytGsYArg3lzUM1wsCjG'; //EVENTI
+  // evento che controlla la conversione dell'indirizzo nella create
 
   $('#btn-create-submit').click(function (event) {
     var addressQuery = $('#address').val();
@@ -37145,7 +37146,6 @@ $(document).ready(function () {
   $("#search-addresses-form-admin button").click(function (event) {
     event.preventDefault();
     var addressQuery = $('#input-search-address-admin').val();
-    console.log(addressQuery);
     getMyGeoCord(addressQuery, myapikey, "#search-addresses-form-admin", 1);
   });
   $('#input-search-address-admin').keyup(function () {
@@ -37155,7 +37155,13 @@ $(document).ready(function () {
     if (addressQuery.length >= 3) {
       autoSearch(addressQuery, myapikey, 4);
     }
-  }); // funzione con chiamata ajax all'api di tomtom
+  }).delay(800);
+  $(document).on('click', 'li.listAuto', function () {
+    var singleLi = $(this).text();
+    $('#listAddresses').fadeOut();
+    $('#input-search-address-admin').val(singleLi);
+  }); //FUNZIONI
+  // funzione con chiamata ajax all'api di tomtom
 
   function getMyGeoCord(query, apikey, idSubmitForm, limitResults) {
     $.ajax({
@@ -37167,7 +37173,7 @@ $(document).ready(function () {
       'success': function success(data) {
         var latitude = data.results[0].position.lat;
         var longitude = data.results[0].position.lon;
-        $(idSubmitForm).append("<input type='hidden' name='latitude' value='" + latitude + "'/>", "<input type='hidden' name='longitude' value='" + longitude + "'/>");
+        $(idSubmitForm).append("<input type='hidden' name='latitude' data-lat='" + latitude + "' value='" + latitude + "'/>", "<input type='hidden' name='longitude' data-lon='" + longitude + "' value='" + longitude + "'/>");
         $(idSubmitForm).append("<input type='submit' id='submit-append-inputs' style='display:none;'></input>");
         $('#submit-append-inputs').click();
       },
@@ -37192,7 +37198,7 @@ $(document).ready(function () {
 
           for (var i = 0; i < data.results.length; i++) {
             var singleAddress = data.results[i].address.freeformAddress;
-            $("#listAddresses ul").append("<li class='listAuto'>" + singleAddress + "</li>");
+            $("#listAddresses ul").append("<li class='list-group-item listAuto'>" + singleAddress + "</li>");
           }
 
           $("#listAddresses").append("</ul>");
