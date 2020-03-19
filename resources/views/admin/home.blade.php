@@ -23,31 +23,24 @@
         </div>
         <div id="sponsored-apartments">
             <div class="container">
-                <h2>Appartamenti Sponsorizzati</h2>
+                <h2>Appartamenti in Evidenza</h2>
                 <div class="row">
-                    @php
-                        $i = 1
-                    @endphp
-                    @foreach ($apartments as $apartment)
-                        @if (isset(($apartment->ads)->last()->ad_end) && $today < $apartment->ads->last()->ad_end && $i <= 6)
-                            <div class="col-4">
-                                <div class="card">
-                                    <img class="card-img-top" src="{{asset('storage/' . $apartment->cover_image)}}" alt="Card image cap">
-                                    <div class="card-body">
-                                        <h3 class="card-title">{{ $apartment->sommary_title }}</h3>
-                                        <p class="card-text">{{ $apartment->description }}</p>
-                                        <a href="{{ route('admin.apartments.show', ['apartment' => $apartment->id])}}" class="btn btn-primary">Details</a>
-                                    </div>
+                @if($sponsored_apartments->count() > 0)
+                    @foreach ($sponsored_apartments as $sponsored_apartment)
+                        <div class="col-4">
+                            <div class="card">
+                                <img class="card-img-top" src="{{asset('storage/' . $sponsored_apartment->cover_image)}}" alt="Card image cap">
+                                <div class="card-body">
+                                    <h3 class="card-title">{{ $sponsored_apartment->sommary_title }}</h3>
+                                    <p class="card-text">{{ $sponsored_apartment->description }}</p>
+                                    <a href="{{ route('search.show', ['apartment' => $sponsored_apartment->id])}}" class="btn btn-primary">Dettagli</a>
                                 </div>
                             </div>
-                            @php
-                                $i++
-                            @endphp
-                        @endif
+                        </div>
                     @endforeach
-                     @if ($i == 1)
-                        <p id="no-sponsor">Non ci sono appartamenti sponsorizzati al momento</p>
-                    @endif
+                @else
+                    <h3>Non sono presenti appartamenti in evidenza</h3>
+                @endif
                 </div>
             </div>
         </div>
