@@ -86,7 +86,6 @@
                         <p>{{$apartment->room_number}} stanze</p>
                         <p>{{$apartment->square_meters}} metri quadrati</p>
                         <p>{{ $apartment->description }}</p>
-
                     </div>
                 </div>
             </div>

@@ -11,18 +11,21 @@
             <div id="search-home-admin">
 
                 <h2>Cerchiamo insieme l'appartamento dei tuoi sogni!</h2>
-                <div class="form-group my-form form-inline">
-                    <input type="text" class="form-control fluid" placeholder="Everywhere">
-                    <button type="button" class="btn btn-success ml-4 mr-2 ">Search</button>
-                    <button type="button" class="btn btn-info"><a href="{{route('admin.search')}}">TEST</a> </button>
-                </div>
+                <form id="search-addresses-form-admin"  action=" {{ route('admin.search') }}" method="get">
+                    @csrf
+                    <div class="form-group my-form form-inline">
+                        <input id="input-search-address-admin" type="text" class="form-control fluid" placeholder="Inserisci Indirizzo">
+                        <div id="listAddresses" style="position: relative"></div>
+                        <button type="button" class="btn btn-info">TEST </button>
+                    </div>
+                </form>
             </div>
         </div>
         <div id="sponsored-apartments">
             <div class="container">
                 <h2>Appartamenti Sponsorizzati</h2>
                 <div class="row">
-                    @php 
+                    @php
                         $i = 1
                     @endphp
                     @foreach ($apartments as $apartment)
@@ -37,9 +40,9 @@
                                     </div>
                                 </div>
                             </div>
-                            @php 
+                            @php
                                 $i++
-                            @endphp  
+                            @endphp
                         @endif
                     @endforeach
                      @if ($i == 1)

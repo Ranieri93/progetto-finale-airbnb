@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6e00d6808a009d35606062905cf6e9b5",
+    "content-hash": "2430db12dc36c03b9a1702b5858e8d68",
     "packages": [
         {
             "name": "braintree/braintree_php",
@@ -1450,6 +1450,65 @@
                 "type"
             ],
             "time": "2019-12-15T19:35:24+00:00"
+        },
+        {
+            "name": "proai/laravel-handlebars",
+            "version": "1.9.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ProAI/laravel-handlebars.git",
+                "reference": "642f9a5768c8fda72308737e72e6676ad6e91c00"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ProAI/laravel-handlebars/zipball/642f9a5768c8fda72308737e72e6676ad6e91c00",
+                "reference": "642f9a5768c8fda72308737e72e6676ad6e91c00",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/view": "^6.0",
+                "php": "^7.2",
+                "zordius/lightncandy": "1.2.*"
+            },
+            "require-dev": {
+                "orchestra/testbench": "^4.0",
+                "phpunit/phpunit": "^8.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "ProAI\\Handlebars\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Markus J. Wetzel",
+                    "email": "markuswetzel@gmx.net"
+                },
+                {
+                    "name": "Manuel Wieser",
+                    "email": "office@manuelwieser.com"
+                }
+            ],
+            "description": "A Laravel 5 wrapper for LightnCandy for using the Handlebars (and Mustache) template engine.",
+            "homepage": "http://github.com/proai/laravel-handlebars",
+            "keywords": [
+                "handlebars",
+                "laravel",
+                "lightncandy",
+                "mustache",
+                "template engine"
+            ],
+            "time": "2019-09-23T21:48:38+00:00"
         },
         {
             "name": "psr/container",
@@ -3291,6 +3350,58 @@
                 "environment"
             ],
             "time": "2019-09-10T21:37:39+00:00"
+        },
+        {
+            "name": "zordius/lightncandy",
+            "version": "v1.2.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/zordius/lightncandy.git",
+                "reference": "37aa381e0f27d411a630062070c7a5a2174c62e7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/zordius/lightncandy/zipball/37aa381e0f27d411a630062070c7a5a2174c62e7",
+                "reference": "37aa381e0f27d411a630062070c7a5a2174c62e7",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^7"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.2.5-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "LightnCandy\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Zordius Chen",
+                    "email": "zordius@gmail.com"
+                }
+            ],
+            "description": "An extremely fast PHP implementation of handlebars ( http://handlebarsjs.com/ ) and mustache ( http://mustache.github.io/ ).",
+            "homepage": "https://github.com/zordius/lightncandy",
+            "keywords": [
+                "handlebars",
+                "logicless",
+                "mustache",
+                "php",
+                "template"
+            ],
+            "time": "2020-03-08T06:00:24+00:00"
         }
     ],
     "packages-dev": [
@@ -5344,6 +5455,5 @@
     "platform": {
         "php": "^7.2"
     },
-    "platform-dev": [],
-    "plugin-api-version": "1.1.0"
+    "platform-dev": []
 }
