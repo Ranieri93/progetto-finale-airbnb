@@ -37224,29 +37224,7 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 var $ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
 
-function ConfermaOperazione() {
-  var richiesta = window.confirm("Il tuo messaggio è stato inviato con successo, ti risponderemo il prima possibile! clicca 'OK' per proseguire");
-  return richiesta;
-}
-
-var elementIsClicked = false;
-
-function clickHandler() {
-  elementIsClicked = true;
-}
-
-var element = document.getElementById('myElement');
-document.addEventListener('click', clickHandler);
-
-function isElementClicked() {
-  console.log(elementIsClicked ? ConfermaOperazione() : 'NOT');
-}
-
-if ('.prova'.length == 0) {
-  console.log('errore');
-} else {
-  isElementClicked('myElement'); // setInterval(isElementClicked, 2000);
-}
+$(document).ready(function () {});
 
 /***/ }),
 
@@ -37268,8 +37246,8 @@ if ('.prova'.length == 0) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\MAMP\htdocs\corso-mamp\finalProjectTeam3\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\MAMP\htdocs\corso-mamp\finalProjectTeam3\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\Andre\AppData\Roaming\Composer\progetto-finale-airbnb\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\Andre\AppData\Roaming\Composer\progetto-finale-airbnb\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
