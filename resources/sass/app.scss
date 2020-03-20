@@ -5,11 +5,13 @@
 @import 'variables';
 @import "main";
 @import "general-roules";
+@import "mixins";
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
 // Components
 @import 'components/header';
+@import 'components/sponsored-apartments';
 @import 'components/footer';
 @import "components/show";

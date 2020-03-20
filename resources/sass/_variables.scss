@@ -17,5 +17,24 @@ $color: #222222;
 
 $medium-spacer: 1.5rem;
 
+//media-query-breakpoints
+$breakpoint-tablet: 768px;
+$breakpoint-large: 1024px;
+$breakpoint-xlarge: 1200px;
+
+
 //sponsored apartments --home
-$padding-sponsored: 35px 0;
+$padding-sponsored: 20px 0;
+$title-margin-bottom: 30px;
+
+$rows-margin: 25px;
+$transitions-time: 0.3s;
+$image-hover-filter: blur(2px) brightness(50%);
+
+$address-size: 16px;
+$address-margin: 30px;
+
+$details-btn-padding: 8px 15px;
+$details-btn-background: #FF6368;
+$details-btn-color: white;
+$details-btn-radius: 15px;

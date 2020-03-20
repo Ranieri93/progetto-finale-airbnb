@@ -1,0 +1,8 @@
+//sponsored-apartments
+@mixin button($padding, $back-color, $color, $radius) {
+    padding: $padding;
+    background-color: $back-color;
+    color: $color;
+    border-radius: $radius;
+    text-decoration: none;
+}
