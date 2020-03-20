@@ -37179,8 +37179,8 @@ $(document).ready(function () {
         $(idSubmitForm).append("<input type='submit' id='submit-append-inputs' style='display:none;'></input>");
         $('#submit-append-inputs').click();
       },
-      'error': function error() {
-        alert('error prima call');
+      "error": function error(iqXHR, textStatus, errorThrown) {
+        alert("iqXHR.status: " + iqXHR.status + "\n" + "textStatus: " + textStatus + "\n" + "errorThrown: " + errorThrown);
       }
     });
   }
@@ -37206,8 +37206,8 @@ $(document).ready(function () {
           $("#listAddresses").append("</ul>");
         }
       },
-      'error': function error() {
-        alert('error seconda call');
+      "error": function error(iqXHR, textStatus, errorThrown) {
+        alert("iqXHR.status: " + iqXHR.status + "\n" + "textStatus: " + textStatus + "\n" + "errorThrown: " + errorThrown);
       }
     });
   }
@@ -37272,8 +37272,8 @@ $(document).ready(function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /opt/lampp/htdocs/airbnb/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /opt/lampp/htdocs/airbnb/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\MAMP\htdocs\corso-mamp\finalProjectTeam3\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\MAMP\htdocs\corso-mamp\finalProjectTeam3\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

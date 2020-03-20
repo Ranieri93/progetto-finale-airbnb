@@ -38,11 +38,6 @@
                     <input id="radius" name="radius" type="range" class="form-control-range"
                            min="1" max="200" value="50" onchange="updateRangeInput(this.value);">
                     <input type="text" id="val-radius-input" value="">
-                    <script>
-                        function updateRangeInput(val) {
-                            document.getElementById('val-radius-input').value = val;
-                        }
-                    </script>
 
                 </div>
                 <div class="col-2" >
@@ -63,26 +58,32 @@
     <div class="apartment-search-results container">
         <h2 class="text-center">Ecco gli appartamenti disponibili nella zona che hai scelto.</h2>
         <br>
-        @foreach ($apartments as $apartment)
-            <div class="row medium-spacer">
-                <div class="single-apartment d-flex flex-row">
-                    <div class="img-apartment">
-                        <img class="fix-img-search" src=@if(strpos($apartment->cover_image, 'https') !== false)
-                            "{{$apartment->cover_image}}"
-                        @else
-                            "{{asset('storage/' . $apartment->cover_image)}}"
-                        @endif alt="">
-                    </div>
-                    <div class="content-apartment">
-                        <h3>{{$apartment->sommary_title}}</h3><a class="btn btn-secondary " href="{{ route('admin.search.show', ['apartment' => $apartment->id])}}">Details</a>
-                        <p>{{$apartment->guest_number}} ospiti</p>
-                        <p>{{$apartment->room_number}} stanze</p>
-                        <p>{{$apartment->square_meters}} metri quadrati</p>
-                        <p>{{ $apartment->description }}</p>
-                    </div>
-                </div>
-            </div>
-            <hr>
-        @endforeach
+{{--        @foreach ($apartments as $apartment)--}}
+{{--            <div class="row medium-spacer">--}}
+{{--                <div class="single-apartment d-flex flex-row">--}}
+{{--                    <div class="img-apartment">--}}
+{{--                        <img class="fix-img-search" src=@if(strpos($apartment->cover_image, 'https') !== false)--}}
+{{--                            "{{$apartment->cover_image}}"--}}
+{{--                        @else--}}
+{{--                            "{{asset('storage/' . $apartment->cover_image)}}"--}}
+{{--                        @endif alt="">--}}
+{{--                    </div>--}}
+{{--                    <div class="content-apartment">--}}
+{{--                        <h3>{{$apartment->sommary_title}}</h3><a class="btn btn-secondary " href="{{ route('admin.search.show', ['apartment' => $apartment->id])}}">Details</a>--}}
+{{--                        <p>{{$apartment->guest_number}} ospiti</p>--}}
+{{--                        <p>{{$apartment->room_number}} stanze</p>--}}
+{{--                        <p>{{$apartment->square_meters}} metri quadrati</p>--}}
+{{--                        <p>{{ $apartment->description }}</p>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--            <hr>--}}
+{{--        @endforeach--}}
     </div>
 @endsection
+
+<script>
+    function updateRangeInput(val) {
+        document.getElementById('val-radius-input').value = val;
+    }
+</script>

@@ -69,9 +69,13 @@ $(document).ready(function() {
                 $('#submit-append-inputs').click();
 
             },
-            'error': function(){
-                alert('error prima call');
-            },
+            "error": function (iqXHR, textStatus, errorThrown) {
+                alert(
+                    "iqXHR.status: " + iqXHR.status + "\n" +
+                    "textStatus: " + textStatus + "\n" +
+                    "errorThrown: " + errorThrown
+                );
+            }
         });
     }
 
@@ -88,16 +92,22 @@ $(document).ready(function() {
                     $("#listAddresses").append(
                         '<ul class="dropdown-menu" style="display:block; position:absolute;">'
                     );
-                        for (var i = 0; i < data.results.length ; i++) {
-                            var singleAddress = data.results[i].address.freeformAddress;
-                            $("#listAddresses ul").append("<li class='list-group-item listAuto'>" + singleAddress + "</li>");
-                        }
+                    for (var i = 0; i < data.results.length ; i++) {
+                        var singleAddress = data.results[i].address.freeformAddress;
+                        $("#listAddresses ul").append("<li class='list-group-item listAuto'>" + singleAddress + "</li>");
+                    }
                     $("#listAddresses").append("</ul>");
                 }
             },
-            'error': function(){
-                alert('error seconda call');
-            },
+            "error": function (iqXHR, textStatus, errorThrown) {
+                alert(
+                    "iqXHR.status: " + iqXHR.status + "\n" +
+                    "textStatus: " + textStatus + "\n" +
+                    "errorThrown: " + errorThrown
+                );
+            }
         });
     }
+
+
 });
