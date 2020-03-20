@@ -30,7 +30,6 @@ class HomeController extends Controller
 
         return view('public-home',
         [
-            'today' => $today,
             'sponsored_apartments' => $sponsored_apartments    
         ]);
     }
