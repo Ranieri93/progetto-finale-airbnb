@@ -20,6 +20,6 @@ $(document).ready(function() {
 
         $(this).children(".sponsored-apartment-img").addClass('hover-img'); //aggiungo filtri all'immagine
         $(this).children(".sponsored-apartment-body").addClass('active'); //mostro dati appartamento
-        $(this).children(".fa-question-circle").addClass('active'); //Cambio colore al punto interrogativo
+        $(this).children("i").addClass('active'); //Cambio colore al punto interrogativo
       });
 });
