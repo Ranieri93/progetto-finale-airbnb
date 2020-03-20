@@ -37211,6 +37211,21 @@ $(document).ready(function () {
       }
     });
   }
+
+  $('#prova').click(function () {
+    $.ajax({
+      "url": '/searchFilter',
+      "method": "GET",
+      contentType: "application/json",
+      dataType: "json",
+      "success": function success(data) {
+        console.log(data);
+      },
+      "error": function error(iqXHR, textStatus, errorThrown) {
+        alert("iqXHR.status: " + iqXHR.status + "\n" + "textStatus: " + textStatus + "\n" + "errorThrown: " + errorThrown);
+      }
+    });
+  });
 });
 
 /***/ }),

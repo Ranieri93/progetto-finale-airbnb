@@ -110,4 +110,25 @@ $(document).ready(function() {
     }
 
 
+    $('#prova').click(function () {
+        $.ajax({
+            "url": '/searchFilter',
+            "method": "GET",
+            contentType: "application/json",
+            dataType: "json",
+            "success": function (data) {
+                console.log(data);
+            },
+            "error": function (iqXHR, textStatus, errorThrown) {
+                alert(
+                    "iqXHR.status: " + iqXHR.status + "\n" +
+                    "textStatus: " + textStatus + "\n" +
+                    "errorThrown: " + errorThrown
+                );
+            }
+        });
+    });
+
+
+
 });
