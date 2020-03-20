@@ -16,12 +16,7 @@
     <!-- Maps -->
     <link href='https://api.tomtom.com/maps-sdk-for-web/cdn/5.x/5.40.1/maps/maps.css' rel='stylesheet' type='text/css'>
     <script src='https://api.tomtom.com/maps-sdk-for-web/cdn/5.x/5.40.1/maps/maps-web.min.js'></script>
-    <script>
-        function ConfermaOperazione() {
-            var richiesta = window.confirm("Il tuo messaggio è stato inviato con successo, ti risponderemo il prima possibile! clicca 'OK' per proseguire");
-            return richiesta;
-        }
-    </script>
+
 
     <!-- Scripts -->
 

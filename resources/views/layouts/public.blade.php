@@ -11,14 +11,6 @@
     <!-- Maps -->
     <link href='https://api.tomtom.com/maps-sdk-for-web/cdn/5.x/5.40.1/maps/maps.css' rel='stylesheet' type='text/css'>
     <script src='https://api.tomtom.com/maps-sdk-for-web/cdn/5.x/5.40.1/maps/maps-web.min.js'></script>
-    <script>
-        function ConfermaOperazione() {
-            var richiesta = window.confirm("Il tuo messaggio è stato inviato con successo, ti risponderemo il prima possibile! clicca 'OK' per proseguire");
-            return richiesta;
-        }
-    </script>
-
-
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
     <script src="https://kit.fontawesome.com/fff0ef5f89.js" crossorigin="anonymous"></script>
@@ -31,7 +23,7 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('js/app.js') }}" rel="stylesheet">
 
-    <title>Document</title>
+    <title>BoolBnB</title>
 </head>
 
 <body>
