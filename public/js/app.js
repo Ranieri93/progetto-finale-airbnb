@@ -37058,6 +37058,8 @@ __webpack_require__(/*! ./geolocalization */ "./resources/js/geolocalization.js"
 
 __webpack_require__(/*! ./main */ "./resources/js/main.js");
 
+__webpack_require__(/*! ./sponsored-apartments */ "./resources/js/sponsored-apartments.js");
+
 /***/ }),
 
 /***/ "./resources/js/bootstrap.js":
@@ -37228,6 +37230,30 @@ $(document).ready(function () {});
 
 /***/ }),
 
+/***/ "./resources/js/sponsored-apartments.js":
+/*!**********************************************!*\
+  !*** ./resources/js/sponsored-apartments.js ***!
+  \**********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+__webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
+
+var $ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
+
+$(document).ready(function () {
+  $(".sponsored-apartment").mouseenter(function () {
+    $(this).children(".sponsored-apartment-img").addClass('hover-img');
+    $(this).children(".sponsored-apartment-body").addClass('active');
+  });
+  $(".sponsored-apartment").mouseleave(function () {
+    $(this).children(".sponsored-apartment-img").removeClass('hover-img');
+    $(this).children(".sponsored-apartment-body").removeClass('active');
+  });
+});
+
+/***/ }),
+
 /***/ "./resources/sass/app.scss":
 /*!*********************************!*\
   !*** ./resources/sass/app.scss ***!
@@ -37246,8 +37272,8 @@ $(document).ready(function () {});
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\Andre\AppData\Roaming\Composer\progetto-finale-airbnb\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\Andre\AppData\Roaming\Composer\progetto-finale-airbnb\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /opt/lampp/htdocs/airbnb/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /opt/lampp/htdocs/airbnb/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

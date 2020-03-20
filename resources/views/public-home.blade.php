@@ -12,7 +12,7 @@
                 </div>
             </div>
         </div>
-        <div id="sponsored-apartments">
+        <div class="sponsored-apartments">
             <div class="container">
                 <h2>Appartamenti in Evidenza</h2>
                 <div class="row">
