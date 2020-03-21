@@ -13,7 +13,7 @@
                 <h2>Cerchiamo insieme l'appartamento dei tuoi sogni!</h2>
                 <form id="search-addresses-form-admin"  action=" {{ route('admin.search') }}" method="get">
                     @csrf
-                    <div class="form-group my-form form-inline">
+                    <div class="form-group my-form">
                         <input id="input-search-address-admin" type="text" class="form-control fluid" placeholder="Inserisci Indirizzo">
                         <div id="listAddresses" style="position: relative"></div>
                         <button type="button" class="btn btn-info">TEST </button>
@@ -35,7 +35,7 @@
                                 <div class="sponsored-apartment-body">
                                     <h3 class="card-title">{{ $sponsored_apartment->sommary_title }}</h3>
                                     <p class="card-text">{{ $sponsored_apartment->address }}</p>
-                                    <a href="{{ route('search.show', ['apartment' => $sponsored_apartment->id])}}" class="btn-details">Dettagli</a> 
+                                    <a href="{{ route('search.show', ['apartment' => $sponsored_apartment->id])}}" class="btn-details">Dettagli</a>
                                 </div>
                             </div>
                     @endforeach

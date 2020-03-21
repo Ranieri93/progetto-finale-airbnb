@@ -110,14 +110,29 @@ $(document).ready(function() {
     }
 
 
-    $('#prova').click(function () {
+    $('#searchByFiltersForm').submit(function (event) {
+
+        event.preventDefault();
+
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+
         $.ajax({
-            "url": '/searchFilter',
-            "method": "GET",
-            contentType: "application/json",
-            dataType: "json",
+            "url": '/admin/search',
+            "method": "POST",
+            "data": {
+                "rooms": $("input[name='rooms']").val(),
+                "beds": $("input[name='beds']").val(),
+                "radius": $("input[name='radius']").val(),
+                "services": $("input[name='services[]']:checked").serialize()
+            },
             "success": function (data) {
+                $('.apartment-search-results').empty();
                 console.log(data);
+                return false;
             },
             "error": function (iqXHR, textStatus, errorThrown) {
                 alert(

@@ -21,6 +21,7 @@ Auth::routes();
 Route::middleware('auth')->prefix('admin')->namespace('Admin')->name('admin.')->group(function (){
     Route::get('/', 'HomeController@index')->name('home');
     Route::get('/search', 'SearchController@searchApartment')->name('search');
+    Route::post('/search', 'SearchController@AdvancedAptSearch')->name('advancedSearch');
     Route::get('/search/show/{apartment}', 'SearchController@show')->name('search.show');
     Route::post('/search/show/{apartment}', 'MessageController@store')->name('message.store');
     Route::get('/apartments/sponsor/{apartment}','ApartmentController@adIndex')->name('ad');

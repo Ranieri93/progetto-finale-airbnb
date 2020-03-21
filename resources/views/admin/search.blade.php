@@ -12,12 +12,12 @@
                     <button type="submit" class="btn btn-primary">Cerca</button>
                 </form>
             </div>
-        </div>s
+        </div>
     </div>
     <hr>
     <div class="container-fluid">
         <div class="row">
-            <form  action="" id="searchByFiltersForm" class="d-flex flex-row justify-content-between" method="post">
+            <form  action="{{route('admin.advancedSearch')}}" id="searchByFiltersForm" class="d-flex flex-row justify-content-between" method="post">
                 @csrf
                 @method("POST")
                 <div class="col-4">
@@ -52,40 +52,45 @@
                         <input type="number" id="beds" name="beds" min="1" max="10">
                     </div>
                 </div>
+                <button id="btn-adv-search" type="submit" class="btn btn-primary">Inserisci</button>
             </form>
     </div>
     <hr>
     <div class="apartment-search-results container">
         <h2  class="text-center">Ecco gli appartamenti disponibili nella zona che hai scelto.</h2>
-        <button id="prova"> aoerjxnoweirxjwoeirjx</button>
+
         <br>
-{{--        @foreach ($filteredApartments as $spcificFilter)--}}
-{{--            <div class="row medium-spacer">--}}
-{{--                <div class="single-apartment d-flex flex-row">--}}
-{{--                    <div class="img-apartment">--}}
-{{--                        <img class="fix-img-search" src=@if(strpos($spcificFilter["apartment"] ->cover_image, 'https') !== false)--}}
-{{--                            "{{$spcificFilter["apartment"] ->cover_image}}"--}}
-{{--                        @else--}}
-{{--                            "{{asset('storage/' . $spcificFilter["apartment"] ->cover_image)}}"--}}
-{{--                        @endif alt="">--}}
-{{--                    </div>--}}
-{{--                    <div class="content-apartment">--}}
-{{--                        <h3>{{$spcificFilter["apartment"] -> sommary_title}}</h3><a class="btn btn-secondary "--}}
-{{--                            href="{{ route('admin.search.show', ['apartment' => $spcificFilter["apartment"] -> id])}}">Details</a>--}}
-{{--                        <p>{{$spcificFilter["apartment"] ->guest_number}} ospiti</p>--}}
-{{--                        <p>{{$spcificFilter["apartment"] ->room_number}} stanze</p>--}}
-{{--                        <p>{{$spcificFilter["apartment"] ->square_meters}} metri quadrati</p>--}}
-{{--                        <p>{{$spcificFilter["apartment"] ->description }}</p>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--            <hr>--}}
-{{--        @endforeach--}}
+        <div id="found-apartments"></div>
+        @foreach ($filteredApartments as $specificFilter)
+            <div class="row medium-spacer">
+                <div class="single-apartment d-flex flex-row">
+                    <div class="img-apartment">
+                        <img class="fix-img-search" src=@if(strpos($specificFilter["apartment"] ->cover_image, 'https') !== false)
+                            "{{$specificFilter["apartment"] ->cover_image}}"
+                        @else
+                            "{{asset('storage/' . $spcificFilter["apartment"] ->cover_image)}}"
+                        @endif alt="">
+                    </div>
+                    <div class="content-apartment">
+                        <h3>{{$specificFilter["apartment"] -> sommary_title}}</h3><a class="btn btn-secondary "
+                            href="{{ route('admin.search.show', ['apartment' => $specificFilter["apartment"] -> id])}}">Details</a>
+                        <p>{{$specificFilter["apartment"] ->guest_number}} ospiti</p>
+                        <p>{{$specificFilter["apartment"] ->room_number}} stanze</p>
+                        <p>{{$specificFilter["apartment"] ->square_meters}} metri quadrati</p>
+                        <p>{{$specificFilter["apartment"] ->description }}</p>
+                    </div>
+                </div>
+            </div>
+            <hr>
+        @endforeach
     </div>
 @endsection
 
 <script>
+
     function updateRangeInput(val) {
         document.getElementById('val-radius-input').value = val;
     }
+
+
 </script>

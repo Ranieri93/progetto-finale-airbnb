@@ -37212,14 +37212,26 @@ $(document).ready(function () {
     });
   }
 
-  $('#prova').click(function () {
+  $('#searchByFiltersForm').submit(function (event) {
+    event.preventDefault();
+    $.ajaxSetup({
+      headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+      }
+    });
     $.ajax({
-      "url": '/searchFilter',
-      "method": "GET",
-      contentType: "application/json",
-      dataType: "json",
+      "url": '/admin/search',
+      "method": "POST",
+      "data": {
+        "rooms": $("input[name='rooms']").val(),
+        "beds": $("input[name='beds']").val(),
+        "radius": $("input[name='radius']").val(),
+        "services": $("input[name='services[]']:checked").serialize()
+      },
       "success": function success(data) {
+        $('.apartment-search-results').empty();
         console.log(data);
+        return false;
       },
       "error": function error(iqXHR, textStatus, errorThrown) {
         alert("iqXHR.status: " + iqXHR.status + "\n" + "textStatus: " + textStatus + "\n" + "errorThrown: " + errorThrown);
@@ -37305,8 +37317,8 @@ $(document).ready(function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\Andre\AppData\Roaming\Composer\progetto-finale-airbnb\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\Andre\AppData\Roaming\Composer\progetto-finale-airbnb\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\MAMP\htdocs\corso-mamp\finalProjectTeam3\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\MAMP\htdocs\corso-mamp\finalProjectTeam3\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

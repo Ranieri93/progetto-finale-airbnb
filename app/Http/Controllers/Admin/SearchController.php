@@ -56,6 +56,76 @@ class SearchController extends Controller
         return $filteredAptsAndDists;
     }
 
+    public function matchesFilters($apartment, $numOfRooms, $numOfBeds, $services) {
+        // se l'appartamento ha lo stesso numero di stanze e letti passati in input
+        if ($apartment->rooms == $numOfRooms && $apartment->beds == $numOfBeds) {
+            /* si controlla anche che abbia come servizi gli stessi passati in input */
+            $servicesMatch = false;
+            // se il numero di servizi passati in input è lo stesso numero di servizi dell'appartamento
+            if (count($services) === count($apartment->services)) {
+                $numOfMatches = 0;
+                // per ogni servizio tra quelli passati in input
+                foreach ($services as $service) {
+                    // se il servizio è presente tra servizi dell'appartamento
+                    foreach($apartment->services as $aptmService) {
+                        if ($service === $aptmService->type) {
+                            $numOfMatches++;
+                            break;
+                        }
+                    }
+                }
+                if ($numOfMatches === count($services)) $servicesMatch = true;
+            }
+
+            return $servicesMatch;
+        }
+    }
+
+    public function AdvancedAptSearch(Request $request) {
+
+        $data = $request -> all();
+        dd($data);
+
+        $numOfRooms = $data["rooms"];
+        $numOfBeds = $data["beds"];
+        $radius = $data["radius"];
+        if (isset($data["services"])) {
+            $services = $data["services"];
+        }
+        else {
+            $services = [];
+        }
+
+        $aptsAndDists = [];
+        $filteredAptsAndDists = [];
+
+
+        if ($radius != 50) {
+            $aptsAndDists = $this->getApartmentsAndDistances(
+                $request->session()->get("searchedAddressLat"),
+                $request->session()->get("searchedAddressLon"),
+                $radius,
+                Apartment::all()
+            );
+            foreach($aptsAndDists as $aptAndDist) {
+                if($this->matchesFilters($aptAndDist["apartment"], $numOfRooms, $numOfBeds, $services)) {
+                    $filteredAptsAndDists[] = $aptAndDist;
+                }
+            }
+        }
+        else
+        {
+            foreach($request->session()->get('apartmentsAndDistances') as $aptAndDist) {
+                if($this->matchesFilters($aptAndDist["apartment"], $numOfRooms, $numOfBeds, $services)) {
+                    $filteredAptsAndDists[] = $aptAndDist;
+                }
+            }
+        }
+
+        return response()->json(compact("filteredAptsAndDists"));
+    }
+
+
     public function show(Apartment $apartment)
     {
         return view('admin.search-show-apartment', ['apartment' => $apartment]);
