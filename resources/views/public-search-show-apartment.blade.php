@@ -72,22 +72,42 @@
             })
             .setHTML(myAddress)).addTo(map);
     </script>
-
+    <script>
+        function ConfermaOperazione() {
+            var richiesta = window.confirm("Il tuo messaggio è stato inviato con successo, ti risponderemo il prima possibile! clicca 'OK' per proseguire");
+            return richiesta;
+        }
+    </script>
+    <script>
+        function validateForm() {
+            var x = document.forms["myForm"]["fname"].value;
+            var y = document.forms["myForm"]["fname2"].value;
+            if (x == "" || x == null || y == "" || y == null) {
+                alert("Controlla i tuoi dati");
+                return false;
+            } else {
+                ConfermaOperazione();
+            }
+        }
+    </script>
     <div class="messages col-sm-4 col-xs-6">
         <div class="card">
             <div class="card-body">
                 <h5>Scrivi un messaggio al proprietario</h5>
-                <form class="" action="{{route('message.store', ['apartment' => $apartment->id])}}" method="post">
+                <form name="myForm" onsubmit="return validateForm()" action="{{route('message.store', ['apartment' => $apartment->id])}}" method="post">
                     @csrf
                     <div class="form-group">
                         <label for="email">Email</label>
-                        <input type="email" class="checktext form-control" name="email" id="email" placeholder="Scrivi qui la tua mail.." value="" required>
+                        <input type="email" name="fname" class="prova form-control" name="email" id="email" placeholder="Scrivi qui la tua mail.." value="">
                     </div>
                     <div class="form-group">
                         <label for="text_message">Messaggio</label>
-                        <textarea class="checktext form-control" name="text_message" placeholder="Scrivi un messaggio.." id="text_message" cols="80" required></textarea>
+                        <textarea class="prova form-control" name="fname2" placeholder="Scrivi un messaggio.." id="text_message" cols="80"></textarea>
+
                     </div>
-                    <button onclick="ConfermaOperazione()" type="submit" class="btn btn-primary" value='Invia messaggio' required>Invia messaggio</button>
+                    <div class="form-group">
+                    </div>
+                    <button id="myElement" type="submit" class="btn btn-primary" value='Invia messaggio'>Invia messaggio</button>
                 </form>
             </div>
         </div>
