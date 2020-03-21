@@ -6,3 +6,19 @@
     border-radius: $radius;
     text-decoration: none;
 }
+
+//sponsor-page 
+@mixin background($bg-pos, $bg-size, $bg-rep) {
+    background-position: $bg-pos;
+    background-size: $bg-size;
+    background-repeat: $bg-rep;
+}
+
+@mixin circle-check($font-sz,$left,$height,$width,$bg,$box-sh) {
+    font-size: $font-sz;
+    left: $left;
+    height: $height;
+    width: $width;
+    background: $bg;
+    box-shadow: $box-sh;
+}

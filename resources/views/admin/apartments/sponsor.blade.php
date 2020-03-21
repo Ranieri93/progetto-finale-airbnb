@@ -1,34 +1,37 @@
 @extends('layouts.admin')
 @section('content')
-    <div class="container">
-       <h1>Sponsorizza l'appartamento {{ $apartment->sommary_title }}</h1>
+    <div class="container-fluid">
+        <h1 class="h1-sm">Sponsorizza <br>"{{ $apartment->sommary_title }}"</h1>
+        <h1 class="h1-tablet h1-lg">Porta il tuo appartamento <br>"{{ $apartment->sommary_title }}" ad un livello superiore</h1>
+       
 
-        <div class="row">
-            <div class="col-6">
+        <div class="row tablet lg">
+            <div class="col-md-6 col-sm-12 sponsor-section">
                 <form method="post" id="payment-form" action="{{ url('/admin/checkout') }}">
                     @csrf
-                    <section>
-                        <label for="amount">
-                            <span class="input-label">Prezzo</span>
-                            <div class="input-wrapper amount-wrapper">
-                                <select id="amount" name="amount">
-                                    <option value="2.99">2.99€ - 24 ore</option>
-                                    <option value="5.99">5.99€ - 72 ore</option>
-                                    <option value="9.99">9.99€ - 144 ore</option>
-                                </select>
-                            </div>
-                        </label>
+                    <label for="amount">
+                        <h2 class="input-label">Scegli la tua offerta</h2>
+                        <div class="input-wrapper amount-wrapper">
+                            <input type="radio" id="amount-1" name="amount" value="2.99">
+                            <label class="amount-ad" for="amount-1">2.99€ - 24 ore</label>
+                            <input type="radio" id="amount-2" name="amount" value="5.99">
+                            <label class="amount-ad" for="amount-2">5.99€ - 72 ore</label>
+                            <input type="radio" id="amount-3" name="amount" value="9.99">
+                            <label class="amount-ad" for="amount-3">9.99€ - 144 ore</label>
 
-                        <div class="bt-drop-in-wrapper">
-                            <div id="bt-dropin"></div>
+
+                            <input id="apartment_id" type="hidden" value="{{ $apartment->id }}" name="apartment_id">
+                            <input id="user_id" type="hidden" value="{{ $apartment->user_id }}" name="user_id">
+                            <input id="nonce" name="payment_method_nonce" type="hidden" />
+                            <button class="button" type="submit"><span>Acquista Sponsorizzazione</span></button>
                         </div>
-                    </section>
-
-                    <input id="apartment_id" type="hidden" value="{{ $apartment->id }}" name="apartment_id">
-                    <input id="user_id" type="hidden" value="{{ $apartment->user_id }}" name="user_id">
-                    <input id="nonce" name="payment_method_nonce" type="hidden" />
-                    <button class="button" type="submit"><span>Acquista Sponsorizzazione</span></button>
+                    </label>
                 </form>
+            </div>
+            <div class="col-md-6 col-sm-12 sponsor-section">
+                <div class="bt-drop-in-wrapper">
+                    <div id="bt-dropin"></div>
+                </div>
             </div>
         </div>
         
@@ -42,25 +45,26 @@
             authorization: client_token,
             selector: '#bt-dropin',
             }, function (createErr, instance) {
-            if (createErr) {
-                console.log('Create Error', createErr);
-                return;
-            }
-            form.addEventListener('submit', function (event) {
-                event.preventDefault();
-
-                instance.requestPaymentMethod(function (err, payload) {
-                if (err) {
-                    console.log('Request Payment Method Error', err);
+                if (createErr) {
+                    console.log('Create Error', createErr);
                     return;
                 }
+                form.addEventListener('submit', function (event) {
+                    event.preventDefault();
 
-                document.querySelector('#nonce').value = payload.nonce;
-                form.submit();
+                    instance.requestPaymentMethod(function (err, payload) {
+                    if (err) {
+                        console.log('Request Payment Method Error', err);
+                        return;
+                    }
+
+                    document.querySelector('#nonce').value = payload.nonce;
+                    form.submit();
+                    });
                 });
-            });
             });
         </script>
     </div>
+    @include('layouts.partials.footer')
 @endsection
 
