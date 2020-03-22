@@ -74,9 +74,21 @@
                 }
             }
 
-            .button {
+            .spons-button {
                 border: 0;
                 @include button($sponsor-btn-padding, $sponsor-btn-background, $sponsor-btn-color, $sponsor-btn-radius);
+                cursor: not-allowed;
+                transition: 0.2s;
+
+                &.allowed {
+                    cursor: pointer;
+
+                }
+
+                &:hover {
+                    transform: scale(0.99);
+                    background-color: $sponsor-btn-background-hover;
+                }
             }
             
         }  

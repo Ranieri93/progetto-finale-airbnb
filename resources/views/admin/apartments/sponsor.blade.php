@@ -23,7 +23,7 @@
                             <input id="apartment_id" type="hidden" value="{{ $apartment->id }}" name="apartment_id">
                             <input id="user_id" type="hidden" value="{{ $apartment->user_id }}" name="user_id">
                             <input id="nonce" name="payment_method_nonce" type="hidden" />
-                            <button class="button" type="submit"><span>Acquista Sponsorizzazione</span></button>
+                            <button class="spons-button" type="submit" disabled><span>Acquista Sponsorizzazione</span></button>
                         </div>
                     </label>
                 </form>
