@@ -37145,7 +37145,7 @@ $(document).ready(function () {
     var addressQuery = $('#address-edit').val();
     event.preventDefault();
     getMyGeoCord(addressQuery, myapikey, '#update-form-apartment', 1);
-  }); //evento che gestisce la ricerca avanzata
+  }); //evento che gestisce la ricerca degli app nelle coordinate
 
   $("#search-addresses-form-admin button").click(function (event) {
     event.preventDefault();
@@ -37212,40 +37212,27 @@ $(document).ready(function () {
         alert("iqXHR.status: " + iqXHR.status + "\n" + "textStatus: " + textStatus + "\n" + "errorThrown: " + errorThrown);
       }
     });
-  } // $('#searchByFiltersForm').submit(function (event) {
-  //
-  //     event.preventDefault();
-  //
-  //     $.ajaxSetup({
-  //         headers: {
-  //             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-  //         }
-  //     });
-  //
-  //     $.ajax({
-  //         "url": '/admin/search',
-  //         "method": "POST",
-  //         "data": {
-  //             "rooms": $("input[name='rooms']").val(),
-  //             "beds": $("input[name='beds']").val(),
-  //             "radius": $("input[name='radius']").val(),
-  //             "services": $("input[name='services[]']:checked").serialize()
-  //         },
-  //         "success": function (data) {
-  //             $('.apartment-search-results').empty();
-  //             console.log(data);
-  //             return false;
-  //         },
-  //         "error": function (iqXHR, textStatus, errorThrown) {
-  //             alert(
-  //                 "iqXHR.status: " + iqXHR.status + "\n" +
-  //                 "textStatus: " + textStatus + "\n" +
-  //                 "errorThrown: " + errorThrown
-  //             );
-  //         }
-  //     });
-  // });
+  }
 
+  function printApartments() {
+    $("#searched-apts").empty();
+    $.ajax({
+      "url": '/admin/search',
+      "method": "GET",
+      "contentType": "application/json;charset=utf-8",
+      "dataType": "json",
+      "success": function success(data) {
+        console.log(data);
+      },
+      "error": function error(iqXHR, textStatus, errorThrown) {
+        alert("iqXHR.status: " + iqXHR.status + "\n" + "textStatus: " + textStatus + "\n" + "errorThrown: " + errorThrown);
+      }
+    });
+  }
+
+  $("#btn-adv-search").click(function (event) {
+    printApartments();
+  });
 });
 
 /***/ }),

@@ -17,10 +17,9 @@ class SearchController extends Controller
         $services = Service::all();
         $filteredAptsAndDists = $this->getApartmentsAndDistances($data["latitude"], $data["longitude"], 50, Apartment::all());
         $request->session()->put('searchedAddressLat', $data["latitude"]);
-        $request->session()->put('searchedAddresLon', $data["longitude"]);
+        $request->session()->put('searchedAddressLon', $data["longitude"]);
         $request->session()->put('apartmentsAndDistances', $filteredAptsAndDists);
         $request->session()->save();
-
         return view('admin.search', [
             'services' => $services,
             'filteredApartments' => $filteredAptsAndDists
@@ -57,19 +56,49 @@ class SearchController extends Controller
     }
 
 
-    public function AdvancedSearch(Request $request) {
-
-        $data = $request -> all();
+    public function AdvancedSearch(Request $request)
+    {
+        $AllApartments = Apartment::all();
+        $data = $request->all();
 
         $numOfRooms = $data["rooms"];
-        $numOfBeds = $data["beds"];
+        $numOfGuests = $data["guests"];
         $radius = $data["radius"];
         if (isset($data["services"])) {
             $services = $data["services"];
-        }
-        else {
+        } else {
             $services = [];
         }
+
+        $geoFiltApt = [];
+        $finalApts =[];
+        if ($radius != 50) {
+            $geoFiltApt = $this->getApartmentsAndDistances(
+                $request->session()->get("searchedAddressLat"),
+                $request->session()->get("searchedAddressLon"),
+                $radius,
+                Apartment::all()
+            );
+
+            foreach ($geoFiltApt as $singelFileterdApt) {
+                if($singelFileterdApt["apartment"]->room_number == $numOfRooms &
+                    $singelFileterdApt["apartment"]->guest_number == $numOfGuests)
+                {
+                    $finalApts[] = $singelFileterdApt;
+                }
+
+            }
+        } else {
+            foreach ($request->session()->get('apartmentsAndDistances') as $singelFileterdApt) {
+                if($singelFileterdApt["apartment"]->room_number == $numOfRooms &
+                    $singelFileterdApt["apartment"]->guest_number == $numOfGuests)
+                {
+                    $finalApts[] = $singelFileterdApt;
+                }
+            }
+        }
+
+        return response()->json(compact("finalApts"));
     }
 
 

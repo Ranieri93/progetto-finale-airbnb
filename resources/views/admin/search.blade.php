@@ -48,8 +48,8 @@
                 </div>
                 <div class="col-2" >
                     <div class="form-group">
-                        <label for="">Seleziona numero letti:</label>
-                        <input type="number" id="beds" name="beds" min="1" max="10">
+                        <label for="">Seleziona numero ospiti:</label>
+                        <input type="number" id="guests" name="guests" min="1" max="10">
                     </div>
                 </div>
                 <button id="btn-adv-search" type="submit" class="btn btn-primary">Inserisci</button>
@@ -60,7 +60,7 @@
         <h2  class="text-center">Ecco gli appartamenti disponibili nella zona che hai scelto.</h2>
 
         <br>
-        <div id="found-apartments"></div>
+        <div id="searched-apts"></div>
         @foreach ($filteredApartments as $specificFilter)
             <div class="row medium-spacer">
                 <div class="single-apartment d-flex flex-row">
