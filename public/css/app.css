@@ -11113,3 +11113,236 @@ li a {
   margin: 5px 0;
 }
 
+.container-fluid,
+.container-sm,
+.container-md,
+.container-lg,
+.container-xl {
+  padding: 20px 0;
+}
+
+.container-fluid h1,
+.container-sm h1,
+.container-md h1,
+.container-lg h1,
+.container-xl h1 {
+  font-size: 30px;
+  margin-left: 10px;
+  margin-bottom: 20px;
+}
+
+.container-fluid .h1-tablet,
+.container-sm .h1-tablet,
+.container-md .h1-tablet,
+.container-lg .h1-tablet,
+.container-xl .h1-tablet,
+.container-fluid .h1-lg,
+.container-sm .h1-lg,
+.container-md .h1-lg,
+.container-lg .h1-lg,
+.container-xl .h1-lg {
+  display: none;
+}
+
+.container-fluid .row,
+.container-sm .row,
+.container-md .row,
+.container-lg .row,
+.container-xl .row {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 95px 25px;
+  width: 100%;
+  margin: 0;
+}
+
+.container-fluid .row #payment-form .input-label,
+.container-sm .row #payment-form .input-label,
+.container-md .row #payment-form .input-label,
+.container-lg .row #payment-form .input-label,
+.container-xl .row #payment-form .input-label {
+  color: #FFFF;
+  font-weight: bold;
+}
+
+.container-fluid .row #payment-form .amount-wrapper,
+.container-sm .row #payment-form .amount-wrapper,
+.container-md .row #payment-form .amount-wrapper,
+.container-lg .row #payment-form .amount-wrapper,
+.container-xl .row #payment-form .amount-wrapper {
+  color: #FFFF;
+}
+
+.container-fluid .row #payment-form .amount-wrapper .amount-ad,
+.container-sm .row #payment-form .amount-wrapper .amount-ad,
+.container-md .row #payment-form .amount-wrapper .amount-ad,
+.container-lg .row #payment-form .amount-wrapper .amount-ad,
+.container-xl .row #payment-form .amount-wrapper .amount-ad {
+  display: block;
+  margin: 30px 0;
+  font-size: 18px;
+}
+
+.container-fluid .row #payment-form input[type=radio],
+.container-sm .row #payment-form input[type=radio],
+.container-md .row #payment-form input[type=radio],
+.container-lg .row #payment-form input[type=radio],
+.container-xl .row #payment-form input[type=radio] {
+  display: none;
+}
+
+.container-fluid .row #payment-form input[type=radio] ~ label,
+.container-sm .row #payment-form input[type=radio] ~ label,
+.container-md .row #payment-form input[type=radio] ~ label,
+.container-lg .row #payment-form input[type=radio] ~ label,
+.container-xl .row #payment-form input[type=radio] ~ label {
+  background: rgba(192, 183, 183, 0.8);
+  border-radius: 5px;
+  padding: 5px 10px;
+  transition: 0.5s;
+  position: relative;
+}
+
+.container-fluid .row #payment-form input[type=radio] ~ label:hover,
+.container-sm .row #payment-form input[type=radio] ~ label:hover,
+.container-md .row #payment-form input[type=radio] ~ label:hover,
+.container-lg .row #payment-form input[type=radio] ~ label:hover,
+.container-xl .row #payment-form input[type=radio] ~ label:hover {
+  cursor: pointer;
+  background: #20df80;
+}
+
+.container-fluid .row #payment-form input[type=radio]:checked + label,
+.container-sm .row #payment-form input[type=radio]:checked + label,
+.container-md .row #payment-form input[type=radio]:checked + label,
+.container-lg .row #payment-form input[type=radio]:checked + label,
+.container-xl .row #payment-form input[type=radio]:checked + label {
+  background: #20df80;
+  color: white;
+  box-shadow: 0px 0px 12px rgba(0, 255, 128, 0.75);
+  border-radius: 5px;
+  padding: 5px 10px;
+}
+
+.container-fluid .row #payment-form input[type=radio]:checked + label::after,
+.container-sm .row #payment-form input[type=radio]:checked + label::after,
+.container-md .row #payment-form input[type=radio]:checked + label::after,
+.container-lg .row #payment-form input[type=radio]:checked + label::after,
+.container-xl .row #payment-form input[type=radio]:checked + label::after {
+  content: "\F00C";
+  color: #3d3f43;
+  font-family: FontAwesome;
+  border: 2px solid #20df80;
+  position: absolute;
+  top: -25px;
+  transform: translateX(-50%);
+  line-height: 50px;
+  text-align: center;
+  border-radius: 50%;
+  font-size: 24px;
+  left: 95%;
+  height: 50px;
+  width: 50px;
+  background: white;
+  box-shadow: 0px 2px 5px -2px rgba(0, 0, 0, 0.25);
+}
+
+.container-fluid .row #payment-form .spons-button,
+.container-sm .row #payment-form .spons-button,
+.container-md .row #payment-form .spons-button,
+.container-lg .row #payment-form .spons-button,
+.container-xl .row #payment-form .spons-button {
+  border: 0;
+  padding: 10px 20px;
+  background-color: white;
+  color: black;
+  border-radius: 3px;
+  text-decoration: none;
+  cursor: not-allowed;
+  transition: 0.2s;
+}
+
+.container-fluid .row #payment-form .spons-button.allowed,
+.container-sm .row #payment-form .spons-button.allowed,
+.container-md .row #payment-form .spons-button.allowed,
+.container-lg .row #payment-form .spons-button.allowed,
+.container-xl .row #payment-form .spons-button.allowed {
+  cursor: pointer;
+}
+
+.container-fluid .row #payment-form .spons-button:hover,
+.container-sm .row #payment-form .spons-button:hover,
+.container-md .row #payment-form .spons-button:hover,
+.container-lg .row #payment-form .spons-button:hover,
+.container-xl .row #payment-form .spons-button:hover {
+  transform: scale(0.99);
+  background-color: #f0f0f0;
+}
+
+.container-fluid .row .braintree-dropin,
+.container-sm .row .braintree-dropin,
+.container-md .row .braintree-dropin,
+.container-lg .row .braintree-dropin,
+.container-xl .row .braintree-dropin {
+  line-height: 0;
+}
+
+.container-fluid .row .braintree-sheet--has-error .braintree-sheet__error,
+.container-sm .row .braintree-sheet--has-error .braintree-sheet__error,
+.container-md .row .braintree-sheet--has-error .braintree-sheet__error,
+.container-lg .row .braintree-sheet--has-error .braintree-sheet__error,
+.container-xl .row .braintree-sheet--has-error .braintree-sheet__error {
+  padding-bottom: 12px;
+}
+
+.container-fluid .row .braintree-sheet--has-error .braintree-sheet__error .braintree-sheet__error-text,
+.container-sm .row .braintree-sheet--has-error .braintree-sheet__error .braintree-sheet__error-text,
+.container-md .row .braintree-sheet--has-error .braintree-sheet__error .braintree-sheet__error-text,
+.container-lg .row .braintree-sheet--has-error .braintree-sheet__error .braintree-sheet__error-text,
+.container-xl .row .braintree-sheet--has-error .braintree-sheet__error .braintree-sheet__error-text {
+  font-size: 8px;
+}
+
+@media screen and (min-width: 768px) {
+  .h1-sm {
+    display: none;
+  }
+
+  .h1-tablet {
+    display: block;
+    max-width: 100%;
+  }
+
+  .row.tablet {
+    background-image: url("https://images.pexels.com/photos/439227/pexels-photo-439227.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .container-fluid .h1-sm,
+  .container-sm .h1-sm,
+  .container-md .h1-sm,
+  .container-lg .h1-sm,
+  .container-xl .h1-sm {
+    display: none;
+  }
+
+  .container-fluid .h1-lg,
+  .container-sm .h1-lg,
+  .container-md .h1-lg,
+  .container-lg .h1-lg,
+  .container-xl .h1-lg {
+    display: block;
+    max-width: 55%;
+  }
+
+  .container-fluid .row.lg,
+  .container-sm .row.lg,
+  .container-md .row.lg,
+  .container-lg .row.lg,
+  .container-xl .row.lg {
+    background-image: url("https://images.pexels.com/photos/271816/pexels-photo-271816.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+  }
+}
+

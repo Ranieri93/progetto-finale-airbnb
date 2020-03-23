@@ -37060,6 +37060,8 @@ __webpack_require__(/*! ./main */ "./resources/js/main.js");
 
 __webpack_require__(/*! ./sponsored-apartments */ "./resources/js/sponsored-apartments.js");
 
+__webpack_require__(/*! ./sponsor */ "./resources/js/sponsor.js");
+
 /***/ }),
 
 /***/ "./resources/js/bootstrap.js":
@@ -37210,34 +37212,40 @@ $(document).ready(function () {
         alert("iqXHR.status: " + iqXHR.status + "\n" + "textStatus: " + textStatus + "\n" + "errorThrown: " + errorThrown);
       }
     });
-  }
+  } // $('#searchByFiltersForm').submit(function (event) {
+  //
+  //     event.preventDefault();
+  //
+  //     $.ajaxSetup({
+  //         headers: {
+  //             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+  //         }
+  //     });
+  //
+  //     $.ajax({
+  //         "url": '/admin/search',
+  //         "method": "POST",
+  //         "data": {
+  //             "rooms": $("input[name='rooms']").val(),
+  //             "beds": $("input[name='beds']").val(),
+  //             "radius": $("input[name='radius']").val(),
+  //             "services": $("input[name='services[]']:checked").serialize()
+  //         },
+  //         "success": function (data) {
+  //             $('.apartment-search-results').empty();
+  //             console.log(data);
+  //             return false;
+  //         },
+  //         "error": function (iqXHR, textStatus, errorThrown) {
+  //             alert(
+  //                 "iqXHR.status: " + iqXHR.status + "\n" +
+  //                 "textStatus: " + textStatus + "\n" +
+  //                 "errorThrown: " + errorThrown
+  //             );
+  //         }
+  //     });
+  // });
 
-  $('#searchByFiltersForm').submit(function (event) {
-    event.preventDefault();
-    $.ajaxSetup({
-      headers: {
-        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-      }
-    });
-    $.ajax({
-      "url": '/admin/search',
-      "method": "POST",
-      "data": {
-        "rooms": $("input[name='rooms']").val(),
-        "beds": $("input[name='beds']").val(),
-        "radius": $("input[name='radius']").val(),
-        "services": $("input[name='services[]']:checked").serialize()
-      },
-      "success": function success(data) {
-        $('.apartment-search-results').empty();
-        console.log(data);
-        return false;
-      },
-      "error": function error(iqXHR, textStatus, errorThrown) {
-        alert("iqXHR.status: " + iqXHR.status + "\n" + "textStatus: " + textStatus + "\n" + "errorThrown: " + errorThrown);
-      }
-    });
-  });
 });
 
 /***/ }),
@@ -37254,6 +37262,26 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 var $ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
 
 $(document).ready(function () {});
+
+/***/ }),
+
+/***/ "./resources/js/sponsor.js":
+/*!*********************************!*\
+  !*** ./resources/js/sponsor.js ***!
+  \*********************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+__webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
+
+var $ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
+
+$(document).ready(function () {
+  $(".amount-ad").click(function () {
+    //Controllo che l'utente clicchi un'offerta
+    $(".spons-button").addClass("allowed").prop('disabled', false); //Se ha cliccato un offerta, permetto di cliccare il button di submit
+  });
+});
 
 /***/ }),
 
