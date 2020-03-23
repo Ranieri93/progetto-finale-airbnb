@@ -115,7 +115,7 @@ $(document).ready(function() {
         $("#searched-apts").empty();
 
         $.ajax({
-            "url": '/admin/search',
+            "url": '/admin/filtered',
             "method": "GET",
             "contentType": "application/json;charset=utf-8",
             "dataType": "json",
@@ -132,7 +132,7 @@ $(document).ready(function() {
         });
     }
     $("#btn-adv-search").click(function(event) {
-
+        event.preventDefault();
         printApartments();
     });
 
