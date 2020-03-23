@@ -22,6 +22,24 @@ $breakpoint-tablet: 768px;
 $breakpoint-large: 1024px;
 $breakpoint-xlarge: 1200px;
 
+//admin-index
+$title-margin: 40px;
+
+$index-card-margin: 75px;
+$index-card-padding: 20px;
+$index-card-border: 1px solid rgba(0, 0, 0, 0.3);
+$index-card-border-radius: 5px;
+$index-card-border-hover: 1px solid rgba(0, 0, 0);
+
+$index-card-img-margin: 15px;
+$index-card-img-width-lg: 90%;
+$index-card-img-height-lg: 80%;
+$index-card-img-radius-lg: 50%;
+
+
+$index-card-actions-margin: 0 15px 20px 0;
+$index-card-actions-width: 50px;
+$index-card-actions-width-tbl: 40px;
 
 //sponsored apartments --home
 $padding-sponsored: 20px 0;

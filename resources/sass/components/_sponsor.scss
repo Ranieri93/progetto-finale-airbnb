@@ -1,4 +1,4 @@
-.container-fluid {
+.container-fluid.sponsor {
     padding: $sponsor-container-padding;
 
     h1 {
@@ -109,22 +109,24 @@
 }
 
 @media screen and (min-width: $breakpoint-tablet) {
-    .h1-sm {
-        display: none;
-    }
+    .container-fluid.sponsor{
+        .h1-sm {
+            display: none;
+        }
 
-    .h1-tablet {
-        display: block;
-        max-width: 100%;
-    }
+        #s-large {
+            display: block;
+            max-width: 100%;
+        }
 
-    .row.tablet {
-        background-image: url("https://images.pexels.com/photos/439227/pexels-photo-439227.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+        .row.tablet {
+            background-image: url("https://images.pexels.com/photos/439227/pexels-photo-439227.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+        }
     }
 }
 
 @media screen and (min-width: $breakpoint-large) {
-    .container-fluid {
+    .container-fluid.sponsor {
         .h1-sm {
             display: none;
         }

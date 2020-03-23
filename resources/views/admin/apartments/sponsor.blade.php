@@ -1,8 +1,8 @@
 @extends('layouts.admin')
 @section('content')
-    <div class="container-fluid">
+    <div class="container-fluid sponsor">
         <h1 class="h1-sm">Sponsorizza <br>"{{ $apartment->sommary_title }}"</h1>
-        <h1 class="h1-tablet h1-lg">Porta il tuo appartamento <br>"{{ $apartment->sommary_title }}" ad un livello superiore</h1>
+        <h1 id="s-large" class="h1-tablet h1-lg">Porta il tuo appartamento <br>"{{ $apartment->sommary_title }}" ad un livello superiore</h1>
        
 
         <div class="row tablet lg">

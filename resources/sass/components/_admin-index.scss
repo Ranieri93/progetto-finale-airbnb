@@ -1,0 +1,107 @@
+.container.index {
+    h1 {
+        margin-bottom: $title-margin
+    }
+
+    .apartment-card {
+        margin-bottom: $index-card-margin;
+        padding: $index-card-padding;
+        position: relative;
+        border: $index-card-border;
+        border-radius: $index-card-border-radius;
+        transition: 0.2s;
+
+        &:hover {
+            border: $index-card-border-hover
+        }
+
+        .row {         
+
+            .ap-img {
+                margin-bottom: $index-card-img-margin;
+                
+                img {
+                    width: 100%;
+                    border: $index-card-border-hover
+                }
+            }
+
+            .actions {
+                .act-butt {
+                    margin: $index-card-actions-margin;
+                    text-align: center;
+                    display: inline-block;
+                    width: $index-card-actions-width;
+                    transition: 0.2s;
+
+                    &:hover {
+                        transform: scale(1.1);;
+                    }
+                }
+
+                form {
+                    display: inline-block;
+                    
+                    .del-btn {
+                        #send-form {
+                            background: none;
+                            border:none;
+                        }
+                    }
+                }
+            }
+        }
+
+        .sponsor-btn {
+            position: absolute;
+            top: -2%;
+            right: -3%;
+            transform: translateY(-50%);
+
+            img {
+                width: 65px;
+                transition: 0.2s;
+
+                &#not-spons {
+                    filter: grayscale(100%);
+
+                    &:hover {
+                        filter: grayscale(0);
+                        transform: scale(1.1);;
+                    }
+                }
+            }
+        }
+    }
+
+    @media screen and (min-width: $breakpoint-tablet) {
+        .apartment-card {
+            .actions {
+                .act-butt.tbl {
+                    width: $index-card-actions-width-tbl
+                }
+            }
+        }
+    }
+    
+    @media screen and (min-width: $breakpoint-large) {
+        .apartment-card {
+            .row {  
+                .ap-img {
+
+                    img.lg {
+                        width: $index-card-img-width-lg;
+                        height: $index-card-img-height-lg;
+                        border-radius: $index-card-img-radius-lg;
+                    }
+                }
+
+                .actions {
+                    .act-butt.lg {
+                        display: block;
+                    }
+                }
+            }   
+        }   
+    }
+}
