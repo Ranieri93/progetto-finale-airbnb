@@ -53,13 +53,13 @@
                     </div>
                     <div class="col-lg-2 col-md-4 col-sm-12 actions">
                         <h3>Azioni</h3>
-                        <a id="details-button" class="act-butt tbl lg" href="{{ route('admin.apartments.show', ['apartment' => $apartment->id])}}"><img src="https://image.flaticon.com/icons/svg/751/751381.svg"></a>
-                        <a class="act-butt tbl lg" href="{{ route('admin.apartments.edit', ['apartment' => $apartment->id])}}"><img src="https://image.flaticon.com/icons/svg/526/526127.svg"></a>
+                        <a id="details-button" class="act-butt tbl lg" href="{{ route('admin.apartments.show', ['apartment' => $apartment->id])}}"><i class="fas fa-search"></i></a>
+                        <a id="edit-button" class="act-butt tbl lg" href="{{ route('admin.apartments.edit', ['apartment' => $apartment->id])}}"><i class="fas fa-pencil-alt"></i></a>
                         <form method="post" action="{{ route('admin.apartments.destroy', ['apartment' => $apartment->id])}}">
                             @csrf
                             @method('DELETE')
                             <div class="del-btn">
-                                <button id="send-form"><img class="act-butt tbl lg" src="https://image.flaticon.com/icons/svg/1345/1345925.svg"></button>
+                                <button id="send-form"><i id="delete-button" class="fas fa-trash act-butt tbl lg"></i></button>
                             </div>
                         </form>
                     </div>
