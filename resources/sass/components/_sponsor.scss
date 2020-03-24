@@ -11,8 +11,8 @@
         display: none;
     }
 
-    .row {
-        //background-image: url("https://images.pexels.com/photos/2394446/pexels-photo-2394446.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+    .row.sm {
+        background-image: url("https://images.pexels.com/photos/2394446/pexels-photo-2394446.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
         @include background($sponsor-bg-position, $sponsor-bg-size, $sponsor-bg-repeat);
         padding: $sponsor-row-padding;
         width: 100%;
