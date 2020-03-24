@@ -30,6 +30,8 @@ $(document).ready(function() {
         }
     });
 
+
+    // Gestione evento ricerca avanzata home page admin
     $('#input-search-address-admin').keyup(function () {
         $("#listAddresses").empty();
 
@@ -47,8 +49,6 @@ $(document).ready(function() {
         $('#listAddresses').fadeOut();
         $('#input-search-address-admin').val(singleLi);
     });
-
-
 
     //FUNZIONI
 

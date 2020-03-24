@@ -3,15 +3,7 @@
 @section('content')
     <div class="container">
         <div class="row">
-            <div class="col-6 offset-3">
-                <form>
-                    <div class="form-group">
-                        <label for="">Dove vorresti soggiornare?</label>
-                        <input type="text" class="form-control" id="" placeholder="Ovunque">
-                    </div>
-                    <button type="submit" class="btn btn-primary">Cerca</button>
-                </form>
-            </div>
+            <button class="btn btn-danger"><a href="{{route('admin.home')}}">TORNA ALLA RICERCA!</a></button>
         </div>
     </div>
     <hr>
