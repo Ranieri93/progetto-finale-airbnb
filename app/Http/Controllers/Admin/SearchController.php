@@ -59,6 +59,7 @@ class SearchController extends Controller
     public function AdvancedSearch(Request $request)
     {
         $AllApartments = Apartment::all();
+        $Allservices = Service::all();
         $data = $request->all();
 
         $numOfRooms = $data["rooms"];
@@ -72,6 +73,7 @@ class SearchController extends Controller
 
         $geoFiltApt = [];
         $finalApts =[];
+
         if ($radius != 50) {
             $geoFiltApt = $this->getApartmentsAndDistances(
                 $request->session()->get("searchedAddressLat"),
@@ -84,21 +86,29 @@ class SearchController extends Controller
                 if($singelFileterdApt["apartment"]->room_number == $numOfRooms &
                     $singelFileterdApt["apartment"]->guest_number == $numOfGuests)
                 {
-                    $finalApts[] = $singelFileterdApt;
-                }
 
+//                    foreach($singelFileterdApt["apartment"]->services as $aptservice) {
+//                        dd($aptservice->name);
+//                    }
+                }
             }
         } else {
             foreach ($request->session()->get('apartmentsAndDistances') as $singelFileterdApt) {
                 if($singelFileterdApt["apartment"]->room_number == $numOfRooms &
                     $singelFileterdApt["apartment"]->guest_number == $numOfGuests)
                 {
+                    foreach($singelFileterdApt["apartment"]->services as $service) {
+                        dd($service);
+                    }
                     $finalApts[] = $singelFileterdApt;
                 }
             }
         }
 
-        return response()->json(compact("finalApts"));
+        return view('admin.search', [
+            'filteredApartments' => $finalApts,
+            'services' => $Allservices
+        ] );
     }
 
 

@@ -68,7 +68,7 @@
                         <img class="fix-img-search" src=@if(strpos($specificFilter["apartment"] ->cover_image, 'https') !== false)
                             "{{$specificFilter["apartment"] ->cover_image}}"
                         @else
-                            "{{asset('storage/' . $spcificFilter["apartment"] ->cover_image)}}"
+                            "{{asset('storage/' . $specificFilter["apartment"] ->cover_image)}}"
                         @endif alt="">
                     </div>
                     <div class="content-apartment">

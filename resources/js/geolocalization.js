@@ -25,17 +25,22 @@ $(document).ready(function() {
     $("#search-addresses-form-admin button").click(function(event) {
         event.preventDefault();
         var addressQuery = $('#input-search-address-admin').val();
-        getMyGeoCord(addressQuery, myapikey, "#search-addresses-form-admin",1);
+        if (addressQuery.length > 0) {
+            getMyGeoCord(addressQuery, myapikey, "#search-addresses-form-admin",1);
+        }
     });
 
     $('#input-search-address-admin').keyup(function () {
         $("#listAddresses").empty();
 
         var addressQuery = $('#input-search-address-admin').val();
-        if ((addressQuery).length >= 3) {
-            autoSearch(addressQuery,myapikey,4);
+        var lunghezzaQuery = addressQuery.length;
+        var resto = lunghezzaQuery % 2;
+
+        if (lunghezzaQuery >= 3 && resto != 0) {
+            debounce(autoSearch(addressQuery,myapikey,4),300);
         }
-    }).delay(800);
+    });
 
     $(document).on('click', 'li.listAuto', function () {
         var singleLi = $(this).text();
@@ -89,6 +94,7 @@ $(document).ready(function() {
             "success": function (data) {
                 console.log(data);
                 if (data.results.length !== 0){
+                    $("#listAddresses").empty();
                     $("#listAddresses").append(
                         '<ul class="dropdown-menu" style="display:block; position:absolute;">'
                     );
@@ -109,33 +115,18 @@ $(document).ready(function() {
         });
     }
 
-
-    function printApartments() {
-
-        $("#searched-apts").empty();
-
-        $.ajax({
-            "url": '/admin/filtered',
-            "method": "GET",
-            "contentType": "application/json;charset=utf-8",
-            "dataType": "json",
-            "success": function (data) {
-                console.log(data);
-            },
-            "error": function (iqXHR, textStatus, errorThrown) {
-                alert(
-                    "iqXHR.status: " + iqXHR.status + "\n" +
-                    "textStatus: " + textStatus + "\n" +
-                    "errorThrown: " + errorThrown
-                );
-            }
-        });
-    }
-    $("#btn-adv-search").click(function(event) {
-        event.preventDefault();
-        printApartments();
-    });
-
-
-
+    function debounce(func, wait, immediate) {
+        var timeout;
+        return function() {
+            var context = this, args = arguments;
+            var later = function() {
+                timeout = null;
+                if (!immediate) func.apply(context, args);
+            };
+            var callNow = immediate && !timeout;
+            clearTimeout(timeout);
+            timeout = setTimeout(later, wait);
+            if (callNow) func.apply(context, args);
+        };
+    };
 });

@@ -49,15 +49,7 @@
         <div id="map" class="map"></div>
     </div>
     <script>
-        var myCoordinates = [{
-            {
-                $apartment - > longitude
-            }
-        }, {
-            {
-                $apartment - > latitude
-            }
-        }];
+        var myCoordinates = [{{$apartment-> longitude}}, {{$apartment->latitude}}];
         var myAddress = ['{{$apartment->address}}'];
 
         var map = tt.map({

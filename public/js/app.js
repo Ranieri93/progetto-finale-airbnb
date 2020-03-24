@@ -37045,6 +37045,28 @@ module.exports = function(module) {
 
 /***/ }),
 
+/***/ "./resources/js/adminIndex.js":
+/*!************************************!*\
+  !*** ./resources/js/adminIndex.js ***!
+  \************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+__webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
+
+var $ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
+
+$(document).ready(function () {
+  $(document).on("click", ".apartment-card", function () {
+    $(this).find("#details-button").triggerHandler('click'); //trigger non funzionante
+  });
+  $(".del-btn").click(function () {
+    $('#send-form').submit();
+  });
+});
+
+/***/ }),
+
 /***/ "./resources/js/app.js":
 /*!*****************************!*\
   !*** ./resources/js/app.js ***!
@@ -37057,6 +37079,8 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 __webpack_require__(/*! ./geolocalization */ "./resources/js/geolocalization.js");
 
 __webpack_require__(/*! ./main */ "./resources/js/main.js");
+
+__webpack_require__(/*! ./adminIndex */ "./resources/js/adminIndex.js");
 
 __webpack_require__(/*! ./sponsored-apartments */ "./resources/js/sponsored-apartments.js");
 
@@ -37150,16 +37174,21 @@ $(document).ready(function () {
   $("#search-addresses-form-admin button").click(function (event) {
     event.preventDefault();
     var addressQuery = $('#input-search-address-admin').val();
-    getMyGeoCord(addressQuery, myapikey, "#search-addresses-form-admin", 1);
+
+    if (addressQuery.length > 0) {
+      getMyGeoCord(addressQuery, myapikey, "#search-addresses-form-admin", 1);
+    }
   });
   $('#input-search-address-admin').keyup(function () {
     $("#listAddresses").empty();
     var addressQuery = $('#input-search-address-admin').val();
+    var lunghezzaQuery = addressQuery.length;
+    var resto = lunghezzaQuery % 2;
 
-    if (addressQuery.length >= 3) {
-      autoSearch(addressQuery, myapikey, 4);
+    if (lunghezzaQuery >= 3 && resto != 0) {
+      debounce(autoSearch(addressQuery, myapikey, 4), 300);
     }
-  }).delay(800);
+  });
   $(document).on('click', 'li.listAuto', function () {
     var singleLi = $(this).text();
     $('#listAddresses').fadeOut();
@@ -37198,6 +37227,7 @@ $(document).ready(function () {
         console.log(data);
 
         if (data.results.length !== 0) {
+          $("#listAddresses").empty();
           $("#listAddresses").append('<ul class="dropdown-menu" style="display:block; position:absolute;">');
 
           for (var i = 0; i < data.results.length; i++) {
@@ -37214,26 +37244,25 @@ $(document).ready(function () {
     });
   }
 
-  function printApartments() {
-    $("#searched-apts").empty();
-    $.ajax({
-      "url": '/admin/filtered',
-      "method": "GET",
-      "contentType": "application/json;charset=utf-8",
-      "dataType": "json",
-      "success": function success(data) {
-        console.log(data);
-      },
-      "error": function error(iqXHR, textStatus, errorThrown) {
-        alert("iqXHR.status: " + iqXHR.status + "\n" + "textStatus: " + textStatus + "\n" + "errorThrown: " + errorThrown);
-      }
-    });
+  function debounce(func, wait, immediate) {
+    var timeout;
+    return function () {
+      var context = this,
+          args = arguments;
+
+      var later = function later() {
+        timeout = null;
+        if (!immediate) func.apply(context, args);
+      };
+
+      var callNow = immediate && !timeout;
+      clearTimeout(timeout);
+      timeout = setTimeout(later, wait);
+      if (callNow) func.apply(context, args);
+    };
   }
 
-  $("#btn-adv-search").click(function (event) {
-    event.preventDefault();
-    printApartments();
-  });
+  ;
 });
 
 /***/ }),
