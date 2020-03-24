@@ -5,7 +5,7 @@
         <h1 id="s-large" class="h1-tablet h1-lg">Porta il tuo appartamento <br>"{{ $apartment->sommary_title }}" ad un livello superiore</h1>
        
 
-        <div class="row tablet lg">
+        <div class="row sm tablet lg">
             <div class="col-md-6 col-sm-12 sponsor-section">
                 <form method="post" id="payment-form" action="{{ url('/admin/checkout') }}">
                     @csrf
