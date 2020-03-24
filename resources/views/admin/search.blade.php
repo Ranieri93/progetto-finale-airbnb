@@ -26,7 +26,7 @@
                         <div class="form-group">
                             @foreach($services as $service)
                                 <label for="service_{{ $service->id }}">
-                                    <input type="checkbox" id="service_{{ $service->id }}" name="services[]" value="{{$service->id}}">
+                                    <input type="checkbox" id="service_{{ $service->id }}" name="services[]" value="{{$service->name}}">
                                     {{$service->name}}
                                 </label>
                             @endforeach
@@ -36,20 +36,20 @@
                 <div class="col-3">
                     <h4>Raggio di ricerca:</h4>
                     <input id="radius" name="radius" type="range" class="form-control-range"
-                           min="1" max="200" value="50" onchange="updateRangeInput(this.value);">
-                    <input type="text" id="val-radius-input" value="">
+                           min="1" max="200" value="50" onchange="updateRangeInput(this.value);" required>
+                    <input type="text" id="val-radius-input" value="50">
 
                 </div>
                 <div class="col-2" >
                     <div class="form-group">
                         <label for="">Seleziona numero stanze:</label>
-                        <input type="number" id="rooms" name="rooms" min="1" max="10">
+                        <input type="number" id="rooms" name="rooms" min="1" max="10" required>
                     </div>
                 </div>
                 <div class="col-2" >
                     <div class="form-group">
                         <label for="">Seleziona numero ospiti:</label>
-                        <input type="number" id="guests" name="guests" min="1" max="10">
+                        <input type="number" id="guests" name="guests" min="1" max="10" required>
                     </div>
                 </div>
                 <button id="btn-adv-search" type="submit" class="btn btn-primary">Inserisci</button>

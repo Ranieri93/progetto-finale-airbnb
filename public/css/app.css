@@ -11075,6 +11075,8 @@ li a {
 
 .container.index .apartment-card:hover {
   border: 1px solid black;
+  transform: scale(1.01);
+  background-color: rgba(192, 192, 192, 0.1);
 }
 
 .container.index .apartment-card .row .ap-img {
@@ -11083,19 +11085,32 @@ li a {
 
 .container.index .apartment-card .row .ap-img img {
   width: 100%;
-  border: 1px solid black;
+  border: 1px solid rgba(0, 0, 0, 0.3);
 }
 
 .container.index .apartment-card .row .actions .act-butt {
   margin: 0 15px 20px 0;
-  text-align: center;
   display: inline-block;
-  width: 50px;
+  color: #212529;
+  margin-left: 25px;
+  font-size: 25px;
   transition: 0.2s;
 }
 
 .container.index .apartment-card .row .actions .act-butt:hover {
   transform: scale(1.1);
+}
+
+.container.index .apartment-card .row .actions .act-butt#details-button:hover {
+  color: lightgreen;
+}
+
+.container.index .apartment-card .row .actions .act-butt#edit-button:hover {
+  color: yellow;
+}
+
+.container.index .apartment-card .row .actions .act-butt#delete-button:hover {
+  color: red;
 }
 
 .container.index .apartment-card .row .actions form {
@@ -11132,15 +11147,15 @@ li a {
 
 @media screen and (min-width: 768px) {
   .container.index .apartment-card .actions .act-butt.tbl {
-    width: 40px;
+    font-size: 25px;
+    display: block;
   }
 }
 
 @media screen and (min-width: 1024px) {
   .container.index .apartment-card .row .ap-img img.lg {
-    width: 90%;
-    height: 80%;
-    border-radius: 50%;
+    width: 100%;
+    border-radius: 5%;
   }
 
   .container.index .apartment-card .row .actions .act-butt.lg {
@@ -11232,11 +11247,12 @@ li a {
   display: none;
 }
 
-.container-fluid.sponsor .row,
-.sponsor.container-sm .row,
-.sponsor.container-md .row,
-.sponsor.container-lg .row,
-.sponsor.container-xl .row {
+.container-fluid.sponsor .row.sm,
+.sponsor.container-sm .row.sm,
+.sponsor.container-md .row.sm,
+.sponsor.container-lg .row.sm,
+.sponsor.container-xl .row.sm {
+  background-image: url("https://images.pexels.com/photos/2394446/pexels-photo-2394446.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -11245,46 +11261,46 @@ li a {
   margin: 0;
 }
 
-.container-fluid.sponsor .row #payment-form .input-label,
-.sponsor.container-sm .row #payment-form .input-label,
-.sponsor.container-md .row #payment-form .input-label,
-.sponsor.container-lg .row #payment-form .input-label,
-.sponsor.container-xl .row #payment-form .input-label {
+.container-fluid.sponsor .row.sm #payment-form .input-label,
+.sponsor.container-sm .row.sm #payment-form .input-label,
+.sponsor.container-md .row.sm #payment-form .input-label,
+.sponsor.container-lg .row.sm #payment-form .input-label,
+.sponsor.container-xl .row.sm #payment-form .input-label {
   color: #FFFF;
   font-weight: bold;
 }
 
-.container-fluid.sponsor .row #payment-form .amount-wrapper,
-.sponsor.container-sm .row #payment-form .amount-wrapper,
-.sponsor.container-md .row #payment-form .amount-wrapper,
-.sponsor.container-lg .row #payment-form .amount-wrapper,
-.sponsor.container-xl .row #payment-form .amount-wrapper {
+.container-fluid.sponsor .row.sm #payment-form .amount-wrapper,
+.sponsor.container-sm .row.sm #payment-form .amount-wrapper,
+.sponsor.container-md .row.sm #payment-form .amount-wrapper,
+.sponsor.container-lg .row.sm #payment-form .amount-wrapper,
+.sponsor.container-xl .row.sm #payment-form .amount-wrapper {
   color: #FFFF;
 }
 
-.container-fluid.sponsor .row #payment-form .amount-wrapper .amount-ad,
-.sponsor.container-sm .row #payment-form .amount-wrapper .amount-ad,
-.sponsor.container-md .row #payment-form .amount-wrapper .amount-ad,
-.sponsor.container-lg .row #payment-form .amount-wrapper .amount-ad,
-.sponsor.container-xl .row #payment-form .amount-wrapper .amount-ad {
+.container-fluid.sponsor .row.sm #payment-form .amount-wrapper .amount-ad,
+.sponsor.container-sm .row.sm #payment-form .amount-wrapper .amount-ad,
+.sponsor.container-md .row.sm #payment-form .amount-wrapper .amount-ad,
+.sponsor.container-lg .row.sm #payment-form .amount-wrapper .amount-ad,
+.sponsor.container-xl .row.sm #payment-form .amount-wrapper .amount-ad {
   display: block;
   margin: 30px 0;
   font-size: 18px;
 }
 
-.container-fluid.sponsor .row #payment-form input[type=radio],
-.sponsor.container-sm .row #payment-form input[type=radio],
-.sponsor.container-md .row #payment-form input[type=radio],
-.sponsor.container-lg .row #payment-form input[type=radio],
-.sponsor.container-xl .row #payment-form input[type=radio] {
+.container-fluid.sponsor .row.sm #payment-form input[type=radio],
+.sponsor.container-sm .row.sm #payment-form input[type=radio],
+.sponsor.container-md .row.sm #payment-form input[type=radio],
+.sponsor.container-lg .row.sm #payment-form input[type=radio],
+.sponsor.container-xl .row.sm #payment-form input[type=radio] {
   display: none;
 }
 
-.container-fluid.sponsor .row #payment-form input[type=radio] ~ label,
-.sponsor.container-sm .row #payment-form input[type=radio] ~ label,
-.sponsor.container-md .row #payment-form input[type=radio] ~ label,
-.sponsor.container-lg .row #payment-form input[type=radio] ~ label,
-.sponsor.container-xl .row #payment-form input[type=radio] ~ label {
+.container-fluid.sponsor .row.sm #payment-form input[type=radio] ~ label,
+.sponsor.container-sm .row.sm #payment-form input[type=radio] ~ label,
+.sponsor.container-md .row.sm #payment-form input[type=radio] ~ label,
+.sponsor.container-lg .row.sm #payment-form input[type=radio] ~ label,
+.sponsor.container-xl .row.sm #payment-form input[type=radio] ~ label {
   background: rgba(192, 183, 183, 0.8);
   border-radius: 5px;
   padding: 5px 10px;
@@ -11292,20 +11308,20 @@ li a {
   position: relative;
 }
 
-.container-fluid.sponsor .row #payment-form input[type=radio] ~ label:hover,
-.sponsor.container-sm .row #payment-form input[type=radio] ~ label:hover,
-.sponsor.container-md .row #payment-form input[type=radio] ~ label:hover,
-.sponsor.container-lg .row #payment-form input[type=radio] ~ label:hover,
-.sponsor.container-xl .row #payment-form input[type=radio] ~ label:hover {
+.container-fluid.sponsor .row.sm #payment-form input[type=radio] ~ label:hover,
+.sponsor.container-sm .row.sm #payment-form input[type=radio] ~ label:hover,
+.sponsor.container-md .row.sm #payment-form input[type=radio] ~ label:hover,
+.sponsor.container-lg .row.sm #payment-form input[type=radio] ~ label:hover,
+.sponsor.container-xl .row.sm #payment-form input[type=radio] ~ label:hover {
   cursor: pointer;
   background: #20df80;
 }
 
-.container-fluid.sponsor .row #payment-form input[type=radio]:checked + label,
-.sponsor.container-sm .row #payment-form input[type=radio]:checked + label,
-.sponsor.container-md .row #payment-form input[type=radio]:checked + label,
-.sponsor.container-lg .row #payment-form input[type=radio]:checked + label,
-.sponsor.container-xl .row #payment-form input[type=radio]:checked + label {
+.container-fluid.sponsor .row.sm #payment-form input[type=radio]:checked + label,
+.sponsor.container-sm .row.sm #payment-form input[type=radio]:checked + label,
+.sponsor.container-md .row.sm #payment-form input[type=radio]:checked + label,
+.sponsor.container-lg .row.sm #payment-form input[type=radio]:checked + label,
+.sponsor.container-xl .row.sm #payment-form input[type=radio]:checked + label {
   background: #20df80;
   color: white;
   box-shadow: 0px 0px 12px rgba(0, 255, 128, 0.75);
@@ -11313,11 +11329,11 @@ li a {
   padding: 5px 10px;
 }
 
-.container-fluid.sponsor .row #payment-form input[type=radio]:checked + label::after,
-.sponsor.container-sm .row #payment-form input[type=radio]:checked + label::after,
-.sponsor.container-md .row #payment-form input[type=radio]:checked + label::after,
-.sponsor.container-lg .row #payment-form input[type=radio]:checked + label::after,
-.sponsor.container-xl .row #payment-form input[type=radio]:checked + label::after {
+.container-fluid.sponsor .row.sm #payment-form input[type=radio]:checked + label::after,
+.sponsor.container-sm .row.sm #payment-form input[type=radio]:checked + label::after,
+.sponsor.container-md .row.sm #payment-form input[type=radio]:checked + label::after,
+.sponsor.container-lg .row.sm #payment-form input[type=radio]:checked + label::after,
+.sponsor.container-xl .row.sm #payment-form input[type=radio]:checked + label::after {
   content: "\F00C";
   color: #3d3f43;
   font-family: FontAwesome;
@@ -11336,11 +11352,11 @@ li a {
   box-shadow: 0px 2px 5px -2px rgba(0, 0, 0, 0.25);
 }
 
-.container-fluid.sponsor .row #payment-form .spons-button,
-.sponsor.container-sm .row #payment-form .spons-button,
-.sponsor.container-md .row #payment-form .spons-button,
-.sponsor.container-lg .row #payment-form .spons-button,
-.sponsor.container-xl .row #payment-form .spons-button {
+.container-fluid.sponsor .row.sm #payment-form .spons-button,
+.sponsor.container-sm .row.sm #payment-form .spons-button,
+.sponsor.container-md .row.sm #payment-form .spons-button,
+.sponsor.container-lg .row.sm #payment-form .spons-button,
+.sponsor.container-xl .row.sm #payment-form .spons-button {
   border: 0;
   padding: 10px 20px;
   background-color: white;
@@ -11351,44 +11367,44 @@ li a {
   transition: 0.2s;
 }
 
-.container-fluid.sponsor .row #payment-form .spons-button.allowed,
-.sponsor.container-sm .row #payment-form .spons-button.allowed,
-.sponsor.container-md .row #payment-form .spons-button.allowed,
-.sponsor.container-lg .row #payment-form .spons-button.allowed,
-.sponsor.container-xl .row #payment-form .spons-button.allowed {
+.container-fluid.sponsor .row.sm #payment-form .spons-button.allowed,
+.sponsor.container-sm .row.sm #payment-form .spons-button.allowed,
+.sponsor.container-md .row.sm #payment-form .spons-button.allowed,
+.sponsor.container-lg .row.sm #payment-form .spons-button.allowed,
+.sponsor.container-xl .row.sm #payment-form .spons-button.allowed {
   cursor: pointer;
 }
 
-.container-fluid.sponsor .row #payment-form .spons-button:hover,
-.sponsor.container-sm .row #payment-form .spons-button:hover,
-.sponsor.container-md .row #payment-form .spons-button:hover,
-.sponsor.container-lg .row #payment-form .spons-button:hover,
-.sponsor.container-xl .row #payment-form .spons-button:hover {
+.container-fluid.sponsor .row.sm #payment-form .spons-button:hover,
+.sponsor.container-sm .row.sm #payment-form .spons-button:hover,
+.sponsor.container-md .row.sm #payment-form .spons-button:hover,
+.sponsor.container-lg .row.sm #payment-form .spons-button:hover,
+.sponsor.container-xl .row.sm #payment-form .spons-button:hover {
   transform: scale(0.99);
   background-color: #f0f0f0;
 }
 
-.container-fluid.sponsor .row .braintree-dropin,
-.sponsor.container-sm .row .braintree-dropin,
-.sponsor.container-md .row .braintree-dropin,
-.sponsor.container-lg .row .braintree-dropin,
-.sponsor.container-xl .row .braintree-dropin {
+.container-fluid.sponsor .row.sm .braintree-dropin,
+.sponsor.container-sm .row.sm .braintree-dropin,
+.sponsor.container-md .row.sm .braintree-dropin,
+.sponsor.container-lg .row.sm .braintree-dropin,
+.sponsor.container-xl .row.sm .braintree-dropin {
   line-height: 0;
 }
 
-.container-fluid.sponsor .row .braintree-sheet--has-error .braintree-sheet__error,
-.sponsor.container-sm .row .braintree-sheet--has-error .braintree-sheet__error,
-.sponsor.container-md .row .braintree-sheet--has-error .braintree-sheet__error,
-.sponsor.container-lg .row .braintree-sheet--has-error .braintree-sheet__error,
-.sponsor.container-xl .row .braintree-sheet--has-error .braintree-sheet__error {
+.container-fluid.sponsor .row.sm .braintree-sheet--has-error .braintree-sheet__error,
+.sponsor.container-sm .row.sm .braintree-sheet--has-error .braintree-sheet__error,
+.sponsor.container-md .row.sm .braintree-sheet--has-error .braintree-sheet__error,
+.sponsor.container-lg .row.sm .braintree-sheet--has-error .braintree-sheet__error,
+.sponsor.container-xl .row.sm .braintree-sheet--has-error .braintree-sheet__error {
   padding-bottom: 12px;
 }
 
-.container-fluid.sponsor .row .braintree-sheet--has-error .braintree-sheet__error .braintree-sheet__error-text,
-.sponsor.container-sm .row .braintree-sheet--has-error .braintree-sheet__error .braintree-sheet__error-text,
-.sponsor.container-md .row .braintree-sheet--has-error .braintree-sheet__error .braintree-sheet__error-text,
-.sponsor.container-lg .row .braintree-sheet--has-error .braintree-sheet__error .braintree-sheet__error-text,
-.sponsor.container-xl .row .braintree-sheet--has-error .braintree-sheet__error .braintree-sheet__error-text {
+.container-fluid.sponsor .row.sm .braintree-sheet--has-error .braintree-sheet__error .braintree-sheet__error-text,
+.sponsor.container-sm .row.sm .braintree-sheet--has-error .braintree-sheet__error .braintree-sheet__error-text,
+.sponsor.container-md .row.sm .braintree-sheet--has-error .braintree-sheet__error .braintree-sheet__error-text,
+.sponsor.container-lg .row.sm .braintree-sheet--has-error .braintree-sheet__error .braintree-sheet__error-text,
+.sponsor.container-xl .row.sm .braintree-sheet--has-error .braintree-sheet__error .braintree-sheet__error-text {
   font-size: 8px;
 }
 

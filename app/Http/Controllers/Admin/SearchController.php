@@ -68,8 +68,9 @@ class SearchController extends Controller
         if (isset($data["services"])) {
             $services = $data["services"];
         } else {
-            $services = [];
+            $services = false;
         }
+
 
         $geoFiltApt = [];
         $finalApts =[];
@@ -86,21 +87,38 @@ class SearchController extends Controller
                 if($singelFileterdApt["apartment"]->room_number == $numOfRooms &
                     $singelFileterdApt["apartment"]->guest_number == $numOfGuests)
                 {
+                    if ($services) {
+                        $servziApp = [];
+                        foreach ($singelFileterdApt["apartment"]->services as $aptservice) {
+                            array_push($servziApp,$aptservice->name);
+                        }
+                        if ($servziApp === $services) {
 
-//                    foreach($singelFileterdApt["apartment"]->services as $aptservice) {
-//                        dd($aptservice->name);
-//                    }
+                            $finalApts[] = $singelFileterdApt;
+                        }
+                    } else {
+                        $finalApts[] = $singelFileterdApt;
+                    }
                 }
             }
+
         } else {
             foreach ($request->session()->get('apartmentsAndDistances') as $singelFileterdApt) {
                 if($singelFileterdApt["apartment"]->room_number == $numOfRooms &
                     $singelFileterdApt["apartment"]->guest_number == $numOfGuests)
                 {
-                    foreach($singelFileterdApt["apartment"]->services as $service) {
-                        dd($service);
+                    if ($services) {
+                        $servziApp = [];
+                        foreach ($singelFileterdApt["apartment"]->services as $aptservice) {
+                            array_push($servziApp,$aptservice->name);
+                        }
+                        if ($servziApp === $services) {
+
+                            $finalApts[] = $singelFileterdApt;
+                        }
+                    } else {
+                        $finalApts[] = $singelFileterdApt;
                     }
-                    $finalApts[] = $singelFileterdApt;
                 }
             }
         }
