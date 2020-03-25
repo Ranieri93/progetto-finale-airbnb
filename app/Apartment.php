@@ -25,12 +25,20 @@ class Apartment extends Model
         return $this->belongsToMany('App\Ad');
     }
 
-    public function scopeGetApartmentsWithAd($query,$today) { //Query che prende appartamenti sponsorizzati
+    public function scopeGetSixApartmentsWithAd($query,$today) { //Query che prende appartamenti sponsorizzati
         return $apartments_ads = DB::table('apartments') //Recupero dati degli appartamenti
                                 ->join('ad_apartment','apartments.id', '=', 'ad_apartment.apartment_id') //Join su tabella ponte
                                 ->join('ads','ad_apartment.ad_id', '=', 'ads.id') //Join su tabella Ads
                                 ->where(function($query) use ($today){ $query->where('ads.ad_end', '>', $today);})
                                 ->take(6) //Prendo al massimo sei risultati
+                                ->select('apartments.id','sommary_title','description','address','cover_image');
+    }
+
+    public function scopeGetApartmentsWithAd($query,$today,$searchApartments) { //Query che prende appartamenti sponsorizzati
+        return $apartments_ads = DB::table('apartments') //Recupero dati degli appartamenti
+                                ->join('ad_apartment','apartments.id', '=', 'ad_apartment.apartment_id') //Join su tabella ponte
+                                ->join('ads','ad_apartment.ad_id', '=', 'ads.id') //Join su tabella Ads
+                                ->where(function($query) use ($today){ $query->where('ads.ad_end', '>', $today);})
                                 ->select('apartments.id','sommary_title','description','address','cover_image');
     }
 }

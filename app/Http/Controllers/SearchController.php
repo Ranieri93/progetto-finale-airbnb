@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Service;
 use App\Apartment;
 use Illuminate\Http\Request;
+use Carbon\Carbon;
 
 class SearchController extends Controller
 {
@@ -17,11 +18,12 @@ class SearchController extends Controller
         $request->session()->put('searchedAddressLon', $data["longitude"]);
         $request->session()->put('apartmentsAndDistances', $filteredAptsAndDists);
         $request->session()->save();
+        $today = Carbon::now()->toDateTimeString(); //Passo data di oggi per verificare sponsorizzazione
         return view('public-search', [
             'services' => $services,
-            'filteredApartments' => $filteredAptsAndDists
+            'filteredApartments' => $filteredAptsAndDists,
+            'today' => $today
         ]);
-
     }
 
     public function distance($latitudeFrom, $longitudeFrom, $latitudeTo, $longitudeTo, $earthRadius) {

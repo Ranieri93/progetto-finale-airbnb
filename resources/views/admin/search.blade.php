@@ -52,6 +52,39 @@
         <h2  class="text-center">Ecco gli appartamenti disponibili nella zona che hai scelto.</h2>
 
         <br>
+
+        <div id="sponsored-searched-apts">
+            @foreach ($filteredApartments as $specificFilter)
+                @if (isset($specificFilter['apartment']->ads->last()->ad_end))
+                    @php  
+                        $end_ad = ($specificFilter['apartment']->ads->last()->ad_end)
+                    @endphp
+                @endif
+
+                @if ($today < $end_ad)
+                    <div class="row medium-spacer">
+                        <div class="single-apartment d-flex flex-row">
+                            <div class="img-apartment">
+                                <img class="fix-img-search" src=@if(strpos($specificFilter["apartment"] ->cover_image, 'https') !== false)
+                                    "{{$specificFilter["apartment"] ->cover_image}}"
+                                @else
+                                    "{{asset('storage/' . $specificFilter["apartment"] ->cover_image)}}"
+                                @endif alt="">
+                            </div>
+                            <div class="content-apartment">
+                                <h3>{{$specificFilter["apartment"] -> sommary_title}}</h3><a class="btn btn-secondary "
+                                                                                            href="{{ route('admin.search.show', ['apartment' => $specificFilter["apartment"] -> id])}}">Details</a>
+                                <p>{{$specificFilter["apartment"] ->guest_number}} ospiti</p>
+                                <p>{{$specificFilter["apartment"] ->room_number}} stanze</p>
+                                <p>{{$specificFilter["apartment"] ->square_meters}} metri quadrati</p>
+                                <p>{{$specificFilter["apartment"] ->description }}</p>
+                            </div>
+                        </div>
+                    </div>
+                @endif
+            @endforeach
+        </div>
+
         <div id="searched-apts"></div>
         @foreach ($filteredApartments as $specificFilter)
             <div class="row medium-spacer">

@@ -26,7 +26,7 @@ class HomeController extends Controller
     public function index()
     {
         $today = Carbon::now()->toDateTimeString(); //Passo data di oggi per verificare sponsorizzazione
-        $sponsored_apartments = Apartment::GetApartmentsWithAd($today)->get(); //Richiamo funzione per ricevere 6 appartamenti sponsorizzati
+        $sponsored_apartments = Apartment::GetSixApartmentsWithAd($today)->get(); //Richiamo funzione per ricevere 6 appartamenti sponsorizzati
 
         return view('public-home',
         [
