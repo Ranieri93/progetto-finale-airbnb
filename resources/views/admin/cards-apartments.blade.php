@@ -4,15 +4,12 @@
     <div class="back">
         <a class="show-back-button btn" href="{{route('admin.apartments.index')}}">Torna indietro</a>
     </div>
-    <br>
-    <br>
-    <h2 class="text-center font-italic">Scegli per quale dei tuoi appartamenti vuoi controllare i messaggi ricevuti</h2>
-    <br>
-    <br>
+
+    <h2 class="text-center mt-5 mb-5">Scegli per quale dei tuoi appartamenti vuoi controllare i messaggi ricevuti</h2>
 
     <div class="container d-flex flex-wrap justify-content-around">
         @forelse ($apartments as $apartment)
-            <div class="card" style="width: 18rem;">
+            <div class="card mb-3" style="width: 18rem;">
               <img src=@if(strpos($apartment->cover_image, 'https') !== false)
                   "{{$apartment->cover_image}}"
               @else

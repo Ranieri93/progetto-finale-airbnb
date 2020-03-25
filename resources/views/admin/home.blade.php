@@ -10,18 +10,17 @@
         <div id="main-admin">
             <div id="search-home-admin">
 
-                <h2>Cerchiamo insieme l'appartamento dei tuoi sogni!</h2>
+                <h2 class="text">Cerchiamo insieme l'appartamento dei tuoi sogni!</h2>
                 <form id="search-addresses-form-admin"  action=" {{ route('admin.search') }}" method="get">
                     @csrf
                     <div class="form-group my-form">
                         <input id="input-search-address-admin" type="text" class="form-control fluid" placeholder="Inserisci Indirizzo">
-                        <div id="listAddresses" style="position: relative"></div>
-                        <button type="button" class="btn btn-info"> Cerca </button>
+                        <button type="button" class="btn btn-info search-button"> Cerca </button>
                     </div>
                 </form>
             </div>
         </div>
-        <div class="sponsored-apartments">
+        <div class="sponsored-apartments pt-4">
             <div class="container">
                 <h2>Appartamenti in Evidenza</h2>
                 <div class="row">

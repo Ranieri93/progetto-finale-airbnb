@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 @section('content')
-<div class="container index">
+<div class="container mt-5 index">
     <div class="row">
         <div class="col-12">
             <div class="d-flex justify-content-between">
@@ -62,7 +62,7 @@
                 </div>
                 <div class="sponsor-btn">
                     @if (isset(($apartment->ads)->last()->ad_end))
-                            @php  
+                            @php
                                 $end_ad = (($apartment->ads)->last()->ad_end)
                             @endphp
                         @else

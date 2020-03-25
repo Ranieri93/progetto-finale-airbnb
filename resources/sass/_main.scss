@@ -1,3 +1,29 @@
+.navbar {
+    background-color: #282B29;
+}
+
+.navbar-brand {
+    color: white;
+}
+
+.navbar-brand:hover,
+.navbar-brand:focus {
+    color: white;
+}
+
+.navbar-toggler {
+    border: none !important;
+}
+
+.navbar-toggler:focus {
+    outline: 0;
+    box-shadow: none !important;
+}
+
+.nav-link {
+    color: white !important;
+}
+
 #main-public {
     background-image: url('https://cdn.wallpapersafari.com/58/87/8Dq5YV.jpg');
     background-repeat: no-repeat;
@@ -9,6 +35,11 @@
     justify-content: center;
 
     #search-home-public {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+
         h1 {
             color: white;
             font-weight:bold;
@@ -16,7 +47,7 @@
     }
 
     .my-form {
-        width: 350px;
+        width: 500px;
     }
 
 }
@@ -42,9 +73,19 @@
     }
 }
 .my-form {
-    display: inline-block;
     background-color: #282B29;
-    padding: 10px;
+    padding: 20px;
     border-radius: 4px;
     box-shadow: 0 16px 40px rgba(0,0,0,0.12);
+    display: inline-flex;
+
+    .search-button {
+        margin-left: 20px;
+    }
+}
+
+#search-addresses-form-admin,
+#search-addresses-form-public {
+    display: flex;
+    justify-content: center;
 }

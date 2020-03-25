@@ -1,8 +1,16 @@
+.page-footer {
+    background-color: #282B29;
+    color: white;
+    li a {
+        color: white !important;
+    }
+}
+
 footer {
     margin-top: 50px;
 }
 li a {
-    color: $color !important;
+    color: s !important;
 }
 
 .low_left {
@@ -16,7 +24,7 @@ li a {
         content: "";
     }
     a {
-        color: $color !important;
+        color: white !important;
         margin-left: 8px;
     }
 }

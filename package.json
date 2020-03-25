@@ -24,6 +24,7 @@
     },
     "dependencies": {
         "@tomtom-international/web-sdk-maps": "^5.48.1",
-        "handlebars": "^4.7.3"
+        "handlebars": "^4.7.3",
+        "waypoints": "^4.0.1"
     }
 }

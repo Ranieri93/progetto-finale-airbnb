@@ -1,5 +1,31 @@
 @import url(https://fonts.googleapis.com/css?family=Nunito);@charset "UTF-8";
 
+.navbar {
+  background-color: #282B29;
+}
+
+.navbar-brand {
+  color: white;
+}
+
+.navbar-brand:hover,
+.navbar-brand:focus {
+  color: white;
+}
+
+.navbar-toggler {
+  border: none !important;
+}
+
+.navbar-toggler:focus {
+  outline: 0;
+  box-shadow: none !important;
+}
+
+.nav-link {
+  color: white !important;
+}
+
 #main-public {
   background-image: url("https://cdn.wallpapersafari.com/58/87/8Dq5YV.jpg");
   background-repeat: no-repeat;
@@ -11,13 +37,20 @@
   justify-content: center;
 }
 
+#main-public #search-home-public {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
 #main-public #search-home-public h1 {
   color: white;
   font-weight: bold;
 }
 
 #main-public .my-form {
-  width: 350px;
+  width: 500px;
 }
 
 #main-admin {
@@ -40,11 +73,21 @@
 }
 
 .my-form {
-  display: inline-block;
   background-color: #282B29;
-  padding: 10px;
+  padding: 20px;
   border-radius: 4px;
   box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
+  display: inline-flex;
+}
+
+.my-form .search-button {
+  margin-left: 20px;
+}
+
+#search-addresses-form-admin,
+#search-addresses-form-public {
+  display: flex;
+  justify-content: center;
 }
 
 .fix-img-search {
@@ -11039,12 +11082,21 @@ nav .space {
   }
 }
 
+.page-footer {
+  background-color: #282B29;
+  color: white;
+}
+
+.page-footer li a {
+  color: white !important;
+}
+
 footer {
   margin-top: 50px;
 }
 
 li a {
-  color: #222222 !important;
+  color: s !important;
 }
 
 .low_left a::after {
@@ -11059,7 +11111,7 @@ li a {
 }
 
 .low_left a {
-  color: #222222 !important;
+  color: white !important;
   margin-left: 8px;
 }
 
@@ -11473,5 +11525,9 @@ li a {
   .sponsor.container-xl .row.lg {
     background-image: url("https://images.pexels.com/photos/271816/pexels-photo-271816.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
   }
+}
+
+#create-form-apartment .description {
+  width: 100%;
 }
 

@@ -12,10 +12,10 @@
             <hr class="clearfix w-100 d-md-none">
 
             <!-- Grid column -->
-            <div class="col-md-3 mx-auto">
+            <div class="col-md-3 mb-3 mx-auto">
 
                 <!-- Links -->
-                <h5 class="font-weight-bold text-uppercase mt-3 mb-4">COMMUNITY</h5>
+                <h5 class="font-weight-bold text-uppercase mt-5 mb-4">COMMUNITY</h5>
 
                 <ul class="list-unstyled">
                     <li>
@@ -35,10 +35,10 @@
             <hr class="clearfix w-100 d-md-none">
 
             <!-- Grid column -->
-            <div class="col-md-3 mx-auto">
+            <div class="col-md-3 mb-3 mx-auto">
 
                 <!-- Links -->
-                <h5 class="font-weight-bold text-uppercase mt-3 mb-4">OSPITA</h5>
+                <h5 class="font-weight-bold text-uppercase mt-5 mb-4">OSPITA</h5>
 
                 <ul class="list-unstyled">
                     <li>
@@ -57,10 +57,10 @@
             <hr class="clearfix w-100 d-md-none">
 
             <!-- Grid column -->
-            <div class="col-md-3 mx-auto">
+            <div class="col-md-3 mb-3 mx-auto">
 
                 <!-- Links -->
-                <h5 class="font-weight-bold text-uppercase mt-3 mb-4">ASSISTENZA</h5>
+                <h5 class="font-weight-bold text-uppercase mt-5 mb-4">ASSISTENZA</h5>
 
                 <ul class="list-unstyled">
                     <li>

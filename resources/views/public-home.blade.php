@@ -9,13 +9,12 @@
                     @csrf
                     <div class="form-group my-form">
                         <input id="input-search-address-public" type="text" class="form-control fluid" placeholder="Inserisci Indirizzo">
-                        <div id="listAddresses" style="position: relative"></div>
-                        <button type="button" class="btn btn-info"> Cerca </button>
+                        <button type="button" class="btn btn-info search-button"> Cerca </button>
                     </div>
                 </form>
             </div>
         </div>
-        <div class="sponsored-apartments" >
+        <div class="sponsored-apartments pt-4" >
             <div class="container">
                 <h2>Appartamenti in Evidenza</h2>
                 <div class="row">

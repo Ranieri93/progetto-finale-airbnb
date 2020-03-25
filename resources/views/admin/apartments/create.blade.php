@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 @section('content')
-    <div class="container">
+    <div class="container mt-5 mb-5">
         <div class="row">
             <div class="col-6 offset-3" >
                 <h1>Inserisci un nuovo Appartamento</h1>
@@ -22,7 +22,7 @@
                     </div>
                     <div class="form-group">
                         <label for="description">Testo Articolo</label>
-                        <textarea name="description" id="description" cols="80" >{{old('description')}}</textarea>
+                        <textarea name="description" id="description" class="description" cols="80" >{{old('description')}}</textarea>
                     </div>
                     <div class="form-group">
                         <label for="room_number">Numero Stanze</label>
