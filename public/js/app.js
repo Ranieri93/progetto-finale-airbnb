@@ -37169,7 +37169,8 @@ $(document).ready(function () {
     var addressQuery = $('#address-edit').val();
     event.preventDefault();
     getMyGeoCord(addressQuery, myapikey, '#update-form-apartment', 1);
-  }); //evento che gestisce la ricerca degli app nelle coordinate
+  }); // <!-- RICERCA LATO ADMIN -->
+  //evento che gestisce la ricerca degli app nelle coordinate
 
   $("#search-addresses-form-admin button").click(function (event) {
     event.preventDefault();
@@ -37178,7 +37179,8 @@ $(document).ready(function () {
     if (addressQuery.length > 0) {
       getMyGeoCord(addressQuery, myapikey, "#search-addresses-form-admin", 1);
     }
-  });
+  }); // Gestione evento ricerca avanzata home page admin
+
   $('#input-search-address-admin').keyup(function () {
     $("#listAddresses").empty();
     var addressQuery = $('#input-search-address-admin').val();
@@ -37193,6 +37195,32 @@ $(document).ready(function () {
     var singleLi = $(this).text();
     $('#listAddresses').fadeOut();
     $('#input-search-address-admin').val(singleLi);
+  }); // <!-- RICERCA LATO PUBLIC -->
+  //evento che gestisce la ricerca degli app nelle coordinate
+
+  $("#search-addresses-form-public button").click(function (event) {
+    event.preventDefault();
+    var addressQuery = $('#input-search-address-public').val();
+
+    if (addressQuery.length > 0) {
+      getMyGeoCord(addressQuery, myapikey, "#search-addresses-form-public", 1);
+    }
+  }); // Gestione evento ricerca avanzata home page admin
+
+  $('#input-search-address-public').keyup(function () {
+    $("#listAddresses").empty();
+    var addressQuery = $('#input-search-address-public').val();
+    var lunghezzaQuery = addressQuery.length;
+    var resto = lunghezzaQuery % 2;
+
+    if (lunghezzaQuery >= 3 && resto != 0) {
+      debounce(autoSearch(addressQuery, myapikey, 4), 300);
+    }
+  });
+  $(document).on('click', 'li.listAuto', function () {
+    var singleLi = $(this).text();
+    $('#listAddresses').fadeOut();
+    $('#input-search-address-public').val(singleLi);
   }); //FUNZIONI
   // funzione con chiamata ajax all'api di tomtom
 

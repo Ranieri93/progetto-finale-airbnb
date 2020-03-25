@@ -16,6 +16,10 @@
   font-weight: bold;
 }
 
+#main-public .my-form {
+  width: 350px;
+}
+
 #main-admin {
   background-image: url("https://external-preview.redd.it/pHkCRkzD1_nLb2ik7v9U0HA12l_Hr1JSh4auGrFPiXY.jpg?auto=webp&s=3635fb966f38721f9c6c3e4a8cd380d8f3515755");
   background-repeat: no-repeat;

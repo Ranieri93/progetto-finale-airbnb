@@ -5,11 +5,14 @@
         <div id="main-public">
             <div id="search-home-public">
                 <h1>Apartments everywhere</h1>
-                <div class="form-group my-form form-inline">
-                    <input type="text" class="form-control" placeholder="Everywhere">
-                    <button type="button" class="btn btn-success ml-5 mr-2 ">Search</button>
-                    <button type="button" class="btn btn-info"><a href="{{route('search')}}">TEST</a> </button>
-                </div>
+                <form id="search-addresses-form-public"  action=" {{ route('search') }}" method="get">
+                    @csrf
+                    <div class="form-group my-form">
+                        <input id="input-search-address-public" type="text" class="form-control fluid" placeholder="Inserisci Indirizzo">
+                        <div id="listAddresses" style="position: relative"></div>
+                        <button type="button" class="btn btn-info"> Cerca </button>
+                    </div>
+                </form>
             </div>
         </div>
         <div class="sponsored-apartments" >
@@ -26,7 +29,7 @@
                                 <div class="sponsored-apartment-body">
                                     <h3 class="card-title">{{ $sponsored_apartment->sommary_title }}</h3>
                                     <p class="card-text">{{ $sponsored_apartment->address }}</p>
-                                    <a href="{{ route('search.show', ['apartment' => $sponsored_apartment->id])}}" class="btn-details">Dettagli</a> 
+                                    <a href="{{ route('search.show', ['apartment' => $sponsored_apartment->id])}}" class="btn-details">Dettagli</a>
                                 </div>
                             </div>
                         @endforeach

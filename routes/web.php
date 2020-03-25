@@ -13,7 +13,8 @@
 
 Route::get('/', 'HomeController@index');
 
-Route::get('/search', 'SearchController@index')->name('search');
+Route::get('/search', 'SearchController@searchApartment')->name('search');
+Route::post('/search', 'SearchController@AdvancedSearch')->name('advancedSearch');
 Route::get('/search/show/{apartment}', 'SearchController@show')->name('search.show');
 Route::post('/search/show/{apartment}', 'MessageController@store')->name('message.store');
 Auth::routes();

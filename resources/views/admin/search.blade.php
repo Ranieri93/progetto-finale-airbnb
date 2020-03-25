@@ -79,10 +79,7 @@
 @endsection
 
 <script>
-
     function updateRangeInput(val) {
         document.getElementById('val-radius-input').value = val;
     }
-
-
 </script>

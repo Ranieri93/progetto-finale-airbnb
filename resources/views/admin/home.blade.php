@@ -16,7 +16,7 @@
                     <div class="form-group my-form">
                         <input id="input-search-address-admin" type="text" class="form-control fluid" placeholder="Inserisci Indirizzo">
                         <div id="listAddresses" style="position: relative"></div>
-                        <button type="button" class="btn btn-info">TEST </button>
+                        <button type="button" class="btn btn-info"> Cerca </button>
                     </div>
                 </form>
             </div>
