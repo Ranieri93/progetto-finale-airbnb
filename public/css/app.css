@@ -11054,6 +11054,10 @@ li a {
   content: ".";
 }
 
+.low_left a:last-child::after {
+  content: "";
+}
+
 .low_left a {
   color: #222222 !important;
   margin-left: 8px;
@@ -11083,6 +11087,10 @@ li a {
   background-color: rgba(192, 192, 192, 0.1);
 }
 
+.container.index .apartment-card .row .card-sez:not(:nth-child(even)) {
+  margin-bottom: 15px;
+}
+
 .container.index .apartment-card .row .ap-img {
   margin-bottom: 15px;
 }
@@ -11093,7 +11101,7 @@ li a {
 }
 
 .container.index .apartment-card .row .actions .act-butt {
-  margin: 0 15px 20px 0;
+  margin: 0 25px 20px 0;
   display: inline-block;
   color: #212529;
   margin-left: 25px;
@@ -11150,7 +11158,12 @@ li a {
 }
 
 @media screen and (min-width: 768px) {
-  .container.index .apartment-card .actions .act-butt.tbl {
+  .container.index .apartment-card .row img.md {
+    width: 100%;
+    border-radius: 5%;
+  }
+
+  .container.index .apartment-card .row .actions .act-butt.tbl {
     font-size: 25px;
     display: block;
   }
@@ -11160,10 +11173,6 @@ li a {
   .container.index .apartment-card .row .ap-img img.lg {
     width: 100%;
     border-radius: 5%;
-  }
-
-  .container.index .apartment-card .row .actions .act-butt.lg {
-    display: block;
   }
 }
 

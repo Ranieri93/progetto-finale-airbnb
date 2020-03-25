@@ -12,6 +12,9 @@ li a {
         top: 25%;
          content: ".";
     }
+    a:last-child::after {
+        content: "";
+    }
     a {
         color: $color !important;
         margin-left: 8px;
