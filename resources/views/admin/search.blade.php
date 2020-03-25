@@ -54,6 +54,7 @@
         <br>
 
         <div id="sponsored-searched-apts">
+         <h3>In Evidenza</h3>
             @foreach ($filteredApartments as $specificFilter)
                 @if (isset($specificFilter['apartment']->ads->last()->ad_end))
                     @php  
