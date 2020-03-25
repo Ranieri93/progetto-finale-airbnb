@@ -1,35 +1,21 @@
 @extends('layouts.admin')
 
 @section('content')
-    <div class="back">
-        <a class="show-back-button btn" href="{{route('admin.apartments.index')}}">Torna indietro</a>
-    </div>
-
-    {{-- image section --}}
-    <div class="show-picture">
-        <img src=@if(strpos($apartment->cover_image, 'https') !== false)
-            "{{$apartment->cover_image}}"
-        @else
-            "{{asset('storage/' . $apartment->cover_image)}}"
-        @endif
-        alt="{{$apartment->sommary_title}}" class="card-img-top" alt="...">
-        <h3 class="title">{{$apartment->sommary_title}}</h3>
+    <div id="mess_title">
+        <h2  class="text-center">Ecco i messaggi che hai ricevuto per questo appartamento</h2>
     </div>
     <br>
     <br>
-    <h2 class="text-center">Ecco i messaggi che hai ricevuto per questo appartamento</h2>
-    <br>
-    <br>
-    <div class="container">
+    <div class="container container_messaggi">
 
         @forelse ($messaggi_appartamento as $messaggio)
             @if ($messaggio->apartment_id == $apartment->id)
-                <div class="row">
+                <div class="row messaggio">
                     <div class="media">
-                      <img src="https://media.wponlinesupport.com/wp-content/uploads/2015/02/how-to-change-wordpress-from-email-header.jpg" class="align-self-start mr-3" alt="...">
+                      <img src="https://www.freepngimg.com/thumb/iphone/68607-email-computer-iphone-icons-download-free-image.png" class="align-self-start mr-3 immagine_mess" alt="...">
                       <div class="media-body">
-                        <h5 class="mt-0">{{$messaggio->email}}</h5>
-                        <p>{{$messaggio->text_message}}</p>
+                        <h5 class="mt-0 e">{{$messaggio->email}} <small class="ricevuto">{{$messaggio->created_at}}</small></h5>
+                        <p class="testo_mess">{{$messaggio->text_message}}</p>
                       </div>
                     </div>
                 </div>

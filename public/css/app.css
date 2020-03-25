@@ -11228,6 +11228,12 @@ li a {
   }
 }
 
+#sponsored-searched-apts {
+  margin: 20px 0;
+  border: 1px solid black;
+  padding: 30px;
+}
+
 .back {
   background-color: #008489;
   padding: 10px 0;
@@ -11529,5 +11535,45 @@ li a {
 
 #create-form-apartment .description {
   width: 100%;
+}
+
+.mycard {
+  margin-top: 25px;
+}
+
+#mess_title {
+  margin-top: 30px;
+}
+
+.align-self-start {
+  height: 64px;
+  width: 64px;
+}
+
+.mess_container {
+  padding: 30px;
+}
+
+.messaggio:hover {
+  cursor: pointer;
+  background-color: #DEFAF5;
+}
+
+.email {
+  font-weight: bolder;
+}
+
+.ricevuto {
+  margin-left: 15px;
+}
+
+.immagine_mess,
+.testo_mess {
+  display: none;
+}
+
+.immagine_mess.active,
+.testo_mess.active {
+  display: block;
 }
 

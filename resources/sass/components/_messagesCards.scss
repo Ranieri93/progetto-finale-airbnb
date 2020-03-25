@@ -1,0 +1,30 @@
+.mycard {
+    margin-top: 25px;
+}
+#mess_title {
+    margin-top: 30px;
+}
+.align-self-start{
+    height: 64px;
+    width: 64px;
+}
+.mess_container {
+    // border: 1px solid lightgrey;
+    padding: 30px;
+}
+.messaggio:hover {
+    cursor: pointer;
+    background-color: #DEFAF5;
+}
+.email{
+    font-weight: bolder;
+}
+.ricevuto {
+    margin-left: 15px;
+}
+.immagine_mess, .testo_mess {
+    display: none;
+}
+.immagine_mess.active, .testo_mess.active {
+    display: block;
+}

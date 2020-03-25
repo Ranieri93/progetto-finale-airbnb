@@ -37086,6 +37086,8 @@ __webpack_require__(/*! ./sponsored-apartments */ "./resources/js/sponsored-apar
 
 __webpack_require__(/*! ./sponsor */ "./resources/js/sponsor.js");
 
+__webpack_require__(/*! ./messages */ "./resources/js/messages.js");
+
 /***/ }),
 
 /***/ "./resources/js/bootstrap.js":
@@ -37310,6 +37312,27 @@ $(document).ready(function () {});
 
 /***/ }),
 
+/***/ "./resources/js/messages.js":
+/*!**********************************!*\
+  !*** ./resources/js/messages.js ***!
+  \**********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+$(document).ready(function () {
+  $(document).on("click", ".messaggio", function () {
+    $(this).find(".testo_mess").toggleClass("active");
+    $(this).find(".immagine_mess").toggleClass("active"); // if ($(this).children(".testo_mess").toggleClass("active")) {
+    //     $(".testo_mess").hide();
+    // } else {
+    //     $(".testo_mess").hide();
+    //     $(this).children(".testo_mess").show();
+    // }
+  });
+});
+
+/***/ }),
+
 /***/ "./resources/js/sponsor.js":
 /*!*********************************!*\
   !*** ./resources/js/sponsor.js ***!
@@ -37390,8 +37413,8 @@ $(document).ready(function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/nene/php/progetto-finale-airbnb/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /Users/nene/php/progetto-finale-airbnb/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\MAMP\htdocs\progetto-finale-airbnb\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\MAMP\htdocs\progetto-finale-airbnb\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

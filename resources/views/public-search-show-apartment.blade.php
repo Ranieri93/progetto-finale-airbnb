@@ -90,11 +90,11 @@
                     @csrf
                     <div class="form-group">
                         <label for="email">Email</label>
-                        <input type="email" name="fname" class="prova form-control" name="email" id="email" placeholder="Scrivi qui la tua mail.." value="">
+                        <input type="email" name="email" class="prova form-control" name="email" id="email" placeholder="Scrivi qui la tua mail.." value="">
                     </div>
                     <div class="form-group">
                         <label for="text_message">Messaggio</label>
-                        <textarea class="prova form-control" name="fname2" placeholder="Scrivi un messaggio.." id="text_message" cols="80"></textarea>
+                        <textarea class="prova form-control" name="text_message" placeholder="Scrivi un messaggio.." id="text_message" cols="80"></textarea>
 
                     </div>
                     <div class="form-group">
