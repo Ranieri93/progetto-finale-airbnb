@@ -18,6 +18,10 @@
         }
 
         .row {         
+            
+            .card-sez:not(:nth-child(even)) {
+                margin-bottom: $index-card-img-margin;
+            }
 
             .ap-img {
                 margin-bottom: $index-card-img-margin;
@@ -91,10 +95,16 @@
 
     @media screen and (min-width: $breakpoint-tablet) {
         .apartment-card {
-            .actions {
-                .act-butt.tbl {
-                    font-size: $index-card-actions-size-tbl;
-                    display: block;
+            .row {
+                img.md {
+                    width: $index-card-img-width-lg;
+                    border-radius: $index-card-img-radius-lg;                }
+
+                .actions {
+                    .act-butt.tbl {
+                        font-size: $index-card-actions-size-tbl;
+                        display: block;
+                    }
                 }
             }
         }
@@ -108,12 +118,6 @@
                     img.lg {
                         width: $index-card-img-width-lg;
                         border-radius: $index-card-img-radius-lg;
-                    }
-                }
-
-                .actions {
-                    .act-butt.lg {
-                        display: block;
                     }
                 }
             }   
