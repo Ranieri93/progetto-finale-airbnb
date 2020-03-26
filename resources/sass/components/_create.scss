@@ -1,5 +1,10 @@
-#create-form-apartment {
+#create-form-apartment,
+#update-form-apartment {
     .description {
         width: 100%;
     }
+}
+
+.edit-image {
+    width: 500px;
 }

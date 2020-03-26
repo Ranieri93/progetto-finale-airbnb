@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 @section('content')
-    <div class="container">
+    <div class="container mt-5">
         <div class="row">
             <div class="col-6 offset-3" >
                 <h1>Inserisci un nuovo Post</h1>
@@ -24,7 +24,7 @@
                     </div>
                     <div class="form-group">
                         <label for="description">Testo Articolo</label>
-                        <textarea name="description" id="description" cols="80" >{{old('description', $apartment->description)}}</textarea>
+                        <textarea name="description" id="description" class="description" cols="80" >{{old('description', $apartment->description)}}</textarea>
                     </div>
                     <div class="form-group">
                         <label for="room_number">Numero Stanze</label>
@@ -77,7 +77,7 @@
                     <div class="form-group">
                         <label for="cover_image">Immagine di copertina</label>
                         @if($apartment->cover_image)
-                            <img src="{{asset('storage/' . $apartment->cover_image) }}" alt="{{$apartment->sommary_title}}">
+                            <img class="edit-image" src="{{asset('storage/' . $apartment->cover_image) }}" alt="{{$apartment->sommary_title}}">
                         @endif
                         <input type="file" class="form-control-file" id="cover_image" name="cover_image">
                     </div>
@@ -86,4 +86,5 @@
             </div>
         </div>
     </div>
+    @include('layouts.partials.footer')
 @endsection

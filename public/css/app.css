@@ -11554,8 +11554,13 @@ li a {
   }
 }
 
-#create-form-apartment .description {
+#create-form-apartment .description,
+#update-form-apartment .description {
   width: 100%;
+}
+
+.edit-image {
+  width: 500px;
 }
 
 .mycard {

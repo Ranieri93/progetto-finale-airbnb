@@ -2,6 +2,9 @@
     @auth()
     <a class="navbar-brand" href="{{ route('admin.home') }}">BoolBnB</a>
     @endauth
+    @guest
+    <a class="navbar-brand" href="{{ route('home') }}">BoolBnB</a>
+    @endguest
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -33,6 +36,11 @@
                     </li>
                 @endif
             @else
+                <li class="nav-item">
+                    <span class="nav-link">
+                        {{ Auth::user()->name }}
+                    </span>
+                </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('logout') }}"
                         onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
