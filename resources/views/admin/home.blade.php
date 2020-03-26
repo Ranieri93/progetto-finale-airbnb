@@ -10,16 +10,28 @@
         <div id="main-admin">
             <div id="search-home-admin">
 
-                <h2 class="text">Cerchiamo insieme l'appartamento dei tuoi sogni!</h2>
-                <form id="search-addresses-form-admin"  action=" {{ route('admin.search') }}" method="get">
-                    @csrf
-                    <div class="form-group my-form">
-                        <input id="input-search-address-admin" type="text" class="form-control fluid" placeholder="Inserisci Indirizzo">
-                        <div id="listAddresses" class="list-admin"></div>
-                        <button type="button" class="btn btn-info search-button"> Cerca </button>
+                <div class="show-picture">
+                    <img src="https://external-preview.redd.it/pHkCRkzD1_nLb2ik7v9U0HA12l_Hr1JSh4auGrFPiXY.jpg?auto=webp&s=3635fb966f38721f9c6c3e4a8cd380d8f3515755"
+                    alt="" class="card-img-top">
+
+                    <div class="content">
+                        <h2 class="text">Cerchiamo insieme l'appartamento dei tuoi sogni!</h2>
+
+                        <div class="search-bar-content">
+                            <form id="search-addresses-form-admin" action=" {{ route('admin.search') }}" method="get">
+                                @csrf
+                                <div class="form-group my-form w-100">
+                                    <input id="input-search-address-admin" type="text" class="form-control fluid" placeholder="Inserisci Indirizzo">
+                                    <button type="button" class="btn btn-info search-button"> Cerca </button>
+                                </div>
+
+                            </form>
+                        </div>
+
                     </div>
 
-                </form>
+                </div>
+
             </div>
         </div>
         <div class="sponsored-apartments pt-4">
@@ -41,7 +53,9 @@
                             </div>
                     @endforeach
                 @else
-                    <h3>Non sono presenti appartamenti in evidenza</h3>
+                    <div class="col col-sm-12 ml-3 mr-3">
+                        <h3>Non sono presenti appartamenti in evidenza</h3>
+                    </div>
                 @endif
                 </div>
             </div>

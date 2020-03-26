@@ -4,15 +4,28 @@
 @section('content')
         <div id="main-public">
             <div id="search-home-public">
-                <h1>Apartments everywhere</h1>
-                <form id="search-addresses-form-public"  action=" {{ route('search') }}" method="get">
-                    @csrf
-                    <div class="form-group my-form">
-                        <input id="input-search-address-public" type="text" class="form-control fluid" placeholder="Inserisci Indirizzo">
-                        <div id="listAddresses" class="list-public"></div>
-                        <button type="button" class="btn btn-info search-button"> Cerca </button>
+
+                <div class="show-picture">
+                    <img src="https://cdn.wallpapersafari.com/58/87/8Dq5YV.jpg"
+                    alt="" class="card-img-top">
+
+                    <div class="content">
+                        <h2 class="text">Apartments everywhere</h2>
+
+                        <div class="search-bar-content">
+                            <form id="search-addresses-form-public"  action=" {{ route('search') }}" method="get">
+                                @csrf
+                                <div class="form-group my-form w-100">
+                                    <input id="input-search-address-public" type="text" class="form-control fluid" placeholder="Inserisci Indirizzo">
+                                    <button type="button" class="btn btn-info search-button"> Cerca </button>
+                                </div>
+                            </form>
+                        </div>
+
                     </div>
-                </form>
+
+                </div>
+
             </div>
         </div>
         <div class="sponsored-apartments pt-4" >
@@ -34,7 +47,9 @@
                             </div>
                         @endforeach
                     @else
-                        <h3>Non sono presenti appartamenti in evidenza</h3>
+                        <div class="col col-sm-12 ml-3 mr-3">
+                            <h3>Non sono presenti appartamenti in evidenza</h3>
+                        </div>
                     @endif
                 </div>
             </div>
