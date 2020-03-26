@@ -27,10 +27,6 @@
 }
 
 #main-public {
-  background-image: url("https://cdn.wallpapersafari.com/58/87/8Dq5YV.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-blend-mode: darken;
   height: 500px;
   display: flex;
   align-items: center;
@@ -39,6 +35,46 @@
 
 #main-public #search-home-public {
   text-align: center;
+}
+
+#main-public #search-home-public .show-picture {
+  position: relative;
+}
+
+#main-public #search-home-public .show-picture img {
+  height: 500px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  opacity: 0.7;
+}
+
+#main-public #search-home-public .show-picture .content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#main-public #search-home-public .show-picture .content .text {
+  padding: 0 25px;
+}
+
+#main-public #search-home-public .show-picture .content .search-bar-content {
+  padding: 0 20px;
+  max-width: 500px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#main-public #search-home-public h2 {
+  color: white;
 }
 
 #main-public #search-home-public h1 {
@@ -63,22 +99,50 @@
 }
 
 #main-admin {
-  background-image: url("https://external-preview.redd.it/pHkCRkzD1_nLb2ik7v9U0HA12l_Hr1JSh4auGrFPiXY.jpg?auto=webp&s=3635fb966f38721f9c6c3e4a8cd380d8f3515755");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-blend-mode: darken;
   height: 500px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-#main-admin #search-home-admin h2 {
-  color: white;
+#main-admin #search-home-admin .show-picture {
+  position: relative;
 }
 
-#main-admin #search-home-admin input {
-  width: 450px;
+#main-admin #search-home-admin .show-picture img {
+  height: 500px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  opacity: 0.7;
+}
+
+#main-admin #search-home-admin .show-picture .content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#main-admin #search-home-admin .show-picture .content .text {
+  padding: 0 25px;
+}
+
+#main-admin #search-home-admin .show-picture .content .search-bar-content {
+  padding: 0 20px;
+  max-width: 500px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#main-admin #search-home-admin h2 {
+  color: white;
 }
 
 #main-admin #search-home-admin .list-group {
