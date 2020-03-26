@@ -129,7 +129,7 @@ $(document).ready(function() {
                 if (data.results.length !== 0){
                     $("#listAddresses").empty();
                     $("#listAddresses").append(
-                        '<ul class="dropdown-menu" style="display:block; position:absolute;">'
+                        '<ul class="list-group">'
                     );
                     for (var i = 0; i < data.results.length ; i++) {
                         var singleAddress = data.results[i].address.freeformAddress;

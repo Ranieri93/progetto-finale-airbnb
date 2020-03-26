@@ -38,15 +38,24 @@
 }
 
 #main-public #search-home-public {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   text-align: center;
 }
 
 #main-public #search-home-public h1 {
   color: white;
   font-weight: bold;
+}
+
+#main-public #search-home-public .list-group {
+  display: block;
+  position: absolute;
+  width: 377.36px;
+}
+
+#main-public #search-home-public .list-public {
+  position: relative;
+  left: -377.36px;
+  bottom: -37.03px;
 }
 
 #main-public .my-form {
@@ -72,12 +81,24 @@
   width: 450px;
 }
 
+#main-admin #search-home-admin .list-group {
+  display: block;
+  position: absolute;
+  width: 450px;
+}
+
+#main-admin #search-home-admin .list-admin {
+  position: relative;
+  left: -450px;
+  bottom: -37.03px;
+}
+
 .my-form {
   background-color: #282B29;
   padding: 20px;
   border-radius: 4px;
   box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
-  display: inline-flex;
+  display: flex;
 }
 
 .my-form .search-button {

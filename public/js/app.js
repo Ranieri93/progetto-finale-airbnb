@@ -37258,7 +37258,7 @@ $(document).ready(function () {
 
         if (data.results.length !== 0) {
           $("#listAddresses").empty();
-          $("#listAddresses").append('<ul class="dropdown-menu" style="display:block; position:absolute;">');
+          $("#listAddresses").append('<ul class="list-group">');
 
           for (var i = 0; i < data.results.length; i++) {
             var singleAddress = data.results[i].address.freeformAddress;
@@ -37413,8 +37413,8 @@ $(document).ready(function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\Andre\AppData\Roaming\Composer\progetto-finale-airbnb\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\Andre\AppData\Roaming\Composer\progetto-finale-airbnb\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\MAMP\htdocs\corso-mamp\finalProjectTeam3\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\MAMP\htdocs\corso-mamp\finalProjectTeam3\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
