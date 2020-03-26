@@ -14,35 +14,35 @@
         <ul class="navbar-nav ml-auto">
             @auth()
             <li class="nav-item">
-                    <a class="nav-link {{ Route::currentRouteName()== 'admin.apartments.cards' ? 'active' : '' }}"
+                    <a class="nav-link text-white {{ Route::currentRouteName()== 'admin.apartments.cards' ? 'active' : '' }}"
                        href="{{ route('admin.apartments.cards') }}">Vedi messaggi ricevuti</a>
             </li>
             <li class="nav-item">
-                    <a class="nav-link {{ Route::currentRouteName()== 'admin.apartments.index' ? 'active' : '' }}"
+                    <a class="nav-link text-white {{ Route::currentRouteName()== 'admin.apartments.index' ? 'active' : '' }}"
                        href="{{ route('admin.apartments.index') }}">Gestisci i tuoi Appartamenti</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link {{ Route::currentRouteName()== 'admin.apartments.create' ? 'active' : '' }}"
+                <a class="nav-link text-white {{ Route::currentRouteName()== 'admin.apartments.create' ? 'active' : '' }}"
                     href="{{ route('admin.apartments.create') }}">Crea i tuoi Appartamenti</a>
             </li>
             @endauth
             @guest
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                    <a class="nav-link text-white" href="{{ route('login') }}">{{ __('Login') }}</a>
                 </li>
                 @if (Route::has('register'))
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                        <a class="nav-link text-white" href="{{ route('register') }}">{{ __('Register') }}</a>
                     </li>
                 @endif
             @else
                 <li class="nav-item">
-                    <span class="nav-link">
+                    <span class="nav-link text-white">
                         {{ Auth::user()->name }}
                     </span>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('logout') }}"
+                    <a class="nav-link text-white" href="{{ route('logout') }}"
                         onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                         {{ __('Logout') }}
                     </a>

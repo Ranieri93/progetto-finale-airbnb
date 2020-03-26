@@ -22,10 +22,6 @@
   box-shadow: none !important;
 }
 
-.nav-link {
-  color: white !important;
-}
-
 #main-public {
   height: 500px;
   display: flex;
@@ -11173,15 +11169,11 @@ nav .space {
 }
 
 .page-footer li a {
-  color: white !important;
+  color: white;
 }
 
 footer {
   margin-top: 50px;
-}
-
-li a {
-  color: s !important;
 }
 
 .low_left a::after {
