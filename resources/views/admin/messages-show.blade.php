@@ -12,6 +12,16 @@
             @if ($messaggio->apartment_id == $apartment->id)
                 <div class="row messaggio">
                     <div class="media">
+                        <form method="post" action="{{ route('admin.message.destroy', [
+                            'message' => $messaggio->id,
+                            'apartment'=> $apartment->id
+                            ])}}">
+                            @csrf
+                            @method('DELETE')
+                            <div class="del-btn">
+                                <button><i class="fas fa-trash act-butt tbl lg"></i></button>
+                            </div>
+                        </form>
                       <img src="https://www.freepngimg.com/thumb/iphone/68607-email-computer-iphone-icons-download-free-image.png" class="align-self-start mr-3 immagine_mess" alt="...">
                       <div class="media-body">
                         <h5 class="mt-0 e">{{$messaggio->email}} <small class="ricevuto">{{$messaggio->created_at}}</small></h5>
@@ -21,12 +31,7 @@
                 </div>
                 <hr>
             @endif
-
-
-
         @empty
-
-
                 <div class="row">
                     <div class="card">
                       <div class="card-header">
@@ -36,8 +41,6 @@
                       </div>
                     </div>
                 </div>
-
-
         @endforelse
     </div>
 

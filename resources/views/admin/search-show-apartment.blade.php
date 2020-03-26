@@ -68,7 +68,7 @@
             })
             .setHTML(myAddress)).addTo(map);
     </script>
-    <script>
+    {{-- <script>
         function ConfermaOperazione() {
             var richiesta = window.confirm("Il tuo messaggio è stato inviato con successo, ti risponderemo il prima possibile! clicca 'OK' per proseguire");
             return richiesta;
@@ -85,12 +85,13 @@
                 ConfermaOperazione();
             }
         }
-    </script>
+    </script> --}}
     <div class="messages col-sm-4 col-xs-6">
         <div class="card">
             <div class="card-body">
                 <h5>Scrivi un messaggio al proprietario</h5>
-                <form name="myForm" onsubmit="return validateForm()" class="" action="{{route('admin.message.store', ['apartment' => $apartment->id])}}" method="post">
+
+                <form name="myForm" onsubmit="return validateForm()" action="{{route('admin.message.store', ['apartment' => $apartment->id])}}" class=""  method="post">
                     @csrf
                     <div class="form-group">
                         <label for="email">Email</label>
@@ -101,8 +102,9 @@
                         <textarea class="prova form-control" name="text_message" placeholder="Scrivi un messaggio.." id="text_message" cols="80"></textarea>
 
                     </div>
-                    <div class="form-group">
-                    </div>
+                    {{-- <div class="form-group">
+                        <input hidden type="text" name="apartment_id" class="form-control hidden" id="apartment_id"  value="{{$apartment->id}}">
+                    </div> --}}
                     <button id="myElement" type="submit" class="btn btn-primary" value='Invia messaggio'>Invia messaggio</button>
                 </form>
             </div>

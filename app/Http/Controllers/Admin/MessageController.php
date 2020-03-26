@@ -48,6 +48,12 @@ class MessageController extends Controller
          // dd($new_message);
          $new_message->save();
          return redirect()->route('admin.search.show', ['apartment' => $apartment->id] );
+         // return response()->json(
+         //     [
+         //         'success' => true,
+         //         'results' => $new_message,
+         //     ]
+         //     );
      }
 
      // public function showCards()
@@ -67,7 +73,7 @@ class MessageController extends Controller
     public function show(Message $message, Apartment $apartment)
     {
         $messaggi_appartamento = Message::orderBy('id', 'DESC')->get();
-        
+
 
 
         return view('admin.messages-show', ['apartment' => $apartment, 'messaggi_appartamento' => $messaggi_appartamento]);
@@ -94,8 +100,10 @@ class MessageController extends Controller
      * @param  \App\Message  $message
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Message $message)
+    public function destroy(Message $message, Apartment $apartment )
     {
-        //
+        // dd($message);
+        $message->delete();
+        return redirect()->route('admin.messages.show', ['apartment' => $apartment->id]);
     }
 }
