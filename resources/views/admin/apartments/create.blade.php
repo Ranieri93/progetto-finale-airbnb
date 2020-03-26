@@ -1,5 +1,31 @@
 @extends('layouts.admin')
 @section('content')
+<script>
+    function ConfermaOperazione() {
+        var confirm = window.confirm("Il tuo appartamento è stato aggiunto con successo ! clicca 'OK' per proseguire");
+        return confirm;
+    }
+</script>
+<script>
+    function validateForm() {
+        var a = document.forms["Form"]["sommary_title"].value;
+        var b = document.forms["Form"]["description"].value;
+        var c = document.forms["Form"]["room_number"].value;
+        var d = document.forms["Form"]["guest_number"].value;
+        var e = document.forms["Form"]["wc_number"].value;
+        var f = document.forms["Form"]["square_meters"].value;
+        var g = document.forms["Form"]["address"].value;
+        if (a == "" || a == null || b == "" || b == null || isNaN(c) ||
+            c == "" || c == null || d == "" || d == null || isNaN(d) ||
+            e == "" || e == null || f == "" || f == null || isNaN(e) ||
+            g == "" || g == null || isNaN(f)) {
+            alert("Controlla i tuoi dati");
+            return false;
+        } else {
+            ConfermaOperazione();
+        }
+    }
+</script>
 <div class="container mt-5 mb-5">
     <div class="row">
         <div class="col-6 offset-3">
@@ -13,11 +39,11 @@
                 </ul>
             </div>
             @endif
-            <form name="Form" method="post" id="create-form-apartment" action="{{route('admin.apartments.store')}}" enctype="multipart/form-data">
+            <form name="Form" onsubmit="return validateForm()" method="post" id="create-form-apartment" action="{{route('admin.apartments.store')}}" enctype="multipart/form-data">
                 @csrf
                 <div class="form-group">
                     <label for="sommary_title">Titolo Descrittivo</label>
-                    <input type="text" class="form-control"  name="sommary_title" id="sommary_title" placeholder="Scrivi qui il titolo descrittivo" value="{{old('sommary_title')}}">
+                    <input type="text" class="form-control" name="sommary_title" id="sommary_title" placeholder="Scrivi qui il titolo descrittivo" value="{{old('sommary_title')}}">
                 </div>
                 <div class="form-group">
                     <label for="description">Testo Articolo</label>
@@ -53,7 +79,7 @@
 
                 <div class="form-group">
                     <label for="address">Inserisci la città e l'indirizzo</label>
-                    <input type="text" class="form-control" name="address" id="address" placeholder="Scrivi qui l'indirizzo">
+                    <input type="text" class="form-control" name="address" id="address" value="Scrivi qui l'indirizzo">
                 </div>
 
                 <div class="form-group">

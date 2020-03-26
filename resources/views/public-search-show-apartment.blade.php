@@ -72,8 +72,8 @@
     </script>
     <script>
         function validateForm() {
-            var x = document.forms["myForm"]["fname"].value;
-            var y = document.forms["myForm"]["fname2"].value;
+            var x = document.forms["myForm"]["email"].value;
+            var y = document.forms["myForm"]["text_message"].value;
             if (x == "" || x == null || y == "" || y == null) {
                 alert("Controlla i tuoi dati");
                 return false;
