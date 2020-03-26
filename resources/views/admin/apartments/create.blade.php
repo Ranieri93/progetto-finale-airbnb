@@ -13,7 +13,7 @@
                 </ul>
             </div>
             @endif
-            <form name="Form" onsubmit="return validateForm()" method="post" id="create-form-apartment" action="{{route('admin.apartments.store')}}" enctype="multipart/form-data">
+            <form name="Form" method="post" id="create-form-apartment" action="{{route('admin.apartments.store')}}" enctype="multipart/form-data">
                 @csrf
                 <div class="form-group">
                     <label for="sommary_title">Titolo Descrittivo</label>
@@ -53,7 +53,7 @@
 
                 <div class="form-group">
                     <label for="address">Inserisci la città e l'indirizzo</label>
-                    <input type="text" class="form-control" name="address" id="address" placeholder="Scrivi qui l'indirizzo" value="Scrivi qui l'indirizzo">
+                    <input type="text" class="form-control" name="address" id="address" placeholder="Scrivi qui l'indirizzo">
                 </div>
 
                 <div class="form-group">

@@ -17,15 +17,15 @@
             background-color: rgba(192, 192, 192, 0.1);
         }
 
-        .row {         
-            
+        .row {
+
             .card-sez:not(:nth-child(even)) {
                 margin-bottom: $index-card-img-margin;
             }
 
             .ap-img {
                 margin-bottom: $index-card-img-margin;
-                
+
                 img {
                     width: 100%;
                     border: $index-card-border;
@@ -35,7 +35,6 @@
             .actions {
                 .act-butt {
                     margin: $index-card-actions-margin;
-                    display: inline-block;
                     color: $index-card-actions-color;
                     margin-left: 25px;
                     font-size: $index-card-actions-size-tbl;
@@ -60,7 +59,7 @@
 
                 form {
                     display: inline-block;
-                    
+
                     .del-btn {
                         #send-form {
                             background: none;
@@ -109,10 +108,10 @@
             }
         }
     }
-    
+
     @media screen and (min-width: $breakpoint-large) {
         .apartment-card {
-            .row {  
+            .row {
                 .ap-img {
 
                     img.lg {
@@ -120,7 +119,7 @@
                         border-radius: $index-card-img-radius-lg;
                     }
                 }
-            }   
-        }   
+            }
+        }
     }
 }
