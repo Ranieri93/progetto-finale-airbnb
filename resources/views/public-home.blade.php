@@ -17,6 +17,7 @@
                                 @csrf
                                 <div class="form-group my-form w-100">
                                     <input id="input-search-address-public" type="text" class="form-control fluid" placeholder="Inserisci Indirizzo">
+                                    <div id="listAddresses" class="list-public"></div>
                                     <button type="button" class="btn btn-info search-button"> Cerca </button>
                                 </div>
                             </form>
