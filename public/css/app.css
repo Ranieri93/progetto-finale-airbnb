@@ -11303,6 +11303,55 @@ footer {
   }
 }
 
+@media screen and (max-width: 320px) {
+  body > main > div.container > div > button {
+    width: 300px;
+    margin-left: 25px;
+  }
+
+  #searchByFiltersFormPublic {
+    flex-wrap: wrap !important;
+    justify-content: space-around !important;
+  }
+
+  #val-radius-input {
+    width: 89px;
+  }
+
+  #searchByFiltersFormPublic > div.col-3 {
+    height: 100px;
+    display: contents !important;
+  }
+
+  #searchByFiltersFormPublic > div:nth-child(5) {
+    height: 100px !important;
+    display: table !important;
+  }
+
+  #searchByFiltersFormPublic > div.col-3 > h4 {
+    margin-left: 20px;
+    height: 50px !important;
+    position: absolute;
+  }
+
+  #radius {
+    width: 70px;
+    position: relative;
+    top: 5px;
+  }
+
+  #val-radius-input {
+    position: relative;
+    top: 143px;
+    height: 20px;
+  }
+
+  #searchByFiltersFormPublic > div:nth-child(6) {
+    height: 100px !important;
+    display: table !important;
+  }
+}
+
 #sponsored-searched-apts,
 .searched-all {
   margin: 20px 0 30px;
