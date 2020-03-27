@@ -32,7 +32,7 @@
                             "{{asset('storage/' . $apartment->cover_image)}}">
                         @endif
                     </div>
-                    <div class="col-6 col-md-6 col-sm-12 d-flex flex-column">
+                    <div class="col-lg-6 col-md-6 col-sm-12 d-flex flex-column">
                         <div class="card-sez">
                             <h1>{{ $apartment->sommary_title }}</h1>
                             <h2>Camere: {{ $apartment->room_number }}<h2>

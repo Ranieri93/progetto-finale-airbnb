@@ -9,6 +9,7 @@ use App\Ad;
 use App\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Storage;
 use Carbon\Carbon;
@@ -23,9 +24,9 @@ class ApartmentController extends Controller
      */
     public function index()
     {
-        $apartments = Apartment::all();
+        $userApartments = Apartment::all()->where('user_id', '=', Auth::user()->id);
         $today = Carbon::now()->toDateTimeString(); //Passo data di oggi per verificare sponsorizzazione
-        return view('admin.apartments.index', ['apartments' => $apartments, 'today' => $today]);
+        return view('admin.apartments.index', ['apartments' => $userApartments, 'today' => $today]);
     }
 
     /**

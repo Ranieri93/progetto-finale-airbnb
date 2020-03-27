@@ -4,7 +4,6 @@
     h2 {
         margin-bottom: $title-margin-bottom;
         font-size: 25px;
-        text-align: center;
     }
 
     .prew-apartment-card {
@@ -18,8 +17,8 @@
 
             &.hover-img {
                 filter: $image-hover-filter
-            } 
-        } 
+            }
+        }
 
         i {
             position: absolute;
@@ -32,7 +31,7 @@
             &.active {
                 color: white;
             }
-        } 
+        }
 
         .single-apartment-body {
             position: absolute;
