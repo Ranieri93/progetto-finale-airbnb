@@ -40,12 +40,12 @@
                 <div class="row">
                 @if($sponsored_apartments->count() > 0)
                     @foreach ($sponsored_apartments as $sponsored_apartment)
-                        <div class="col-xs-12 col-md-6 col-lg-4 sponsored-apartment">
-                                <div class="sponsored-apartment-img">
+                        <div class="col-xs-12 col-md-6 col-lg-4 sponsored-apartment prew-apartment-card">
+                                <div class="sponsored-img single-apartment-img">
                                     <img class="img-fluid" src="{{asset('storage/' . $sponsored_apartment->cover_image)}}" alt="Card image cap">
                                 </div>
                                 <i class="far fa-question-circle"></i>
-                                <div class="sponsored-apartment-body">
+                                <div class="sponsored-body single-apartment-body">
                                     <h3 class="card-title">{{ $sponsored_apartment->sommary_title }}</h3>
                                     <p class="card-text">{{ $sponsored_apartment->address }}</p>
                                     <a href="{{ route('admin.search.show', ['apartment' => $sponsored_apartment->id])}}" class="btn-details">Dettagli</a>

@@ -53,61 +53,68 @@
 
             <br>
 
-            <div id="sponsored-searched-apts">
-                <h3>In Evidenza</h3>
-            @foreach ($filteredApartments as $specificFilter)
-                @if (isset($specificFilter['apartment']->ads->last()->ad_end))
-                    @php  
-                        $end_ad = ($specificFilter['apartment']->ads->last()->ad_end)
-                    @endphp
+           <div id="sponsored-searched-apts">
+                <div class="row">
+                    @foreach ($filteredApartments as $specificFilter)
+                        @if (isset($specificFilter['apartment']->ads->last()->ad_end))
+                            @php  
+                                $end_ad = ($specificFilter['apartment']->ads->last()->ad_end)
+                            @endphp
 
-                    @if ($today < $end_ad)
-                        <div class="row medium-spacer">
-                            <div class="single-apartment d-flex flex-row">
-                                <div class="img-apartment">
-                                    <img class="fix-img-search" src=@if(strpos($specificFilter["apartment"] ->cover_image, 'https') !== false)
+                            @if ($today < $end_ad)
+                            <div class="col-xs-12 col-md-6 col-lg-6 single-apartment prew-apartment-card search-apartment-st">
+                                <div class="img-apartment single-apartment-img search-apartment-img sponsored-searched-img">
+                                    <img class="search" src=@if(strpos($specificFilter["apartment"] ->cover_image, 'https') !== false)
                                         "{{$specificFilter["apartment"] ->cover_image}}"
                                     @else
                                         "{{asset('storage/' . $specificFilter["apartment"] ->cover_image)}}"
                                     @endif alt="">
+                                    <span class="ad-alert">Sponsorizzato</span>
                                 </div>
-                                <div class="content-apartment">
-                                    <h3>{{$specificFilter["apartment"] -> sommary_title}}</h3><a class="btn btn-secondary " href="{{ route('admin.search.show', ['apartment' => $specificFilter["apartment"] -> id])}}">Details</a>
-                                    <p>{{$specificFilter["apartment"] ->guest_number}} ospiti</p>
-                                    <p>{{$specificFilter["apartment"] ->room_number}} stanze</p>
-                                    <p>{{$specificFilter["apartment"] ->square_meters}} metri quadrati</p>
+                                <i class="far fa-question-circle"></i>
+                                <div class="single-apartment-body search-apartment-body">
+                                    <h3>{{$specificFilter["apartment"] -> sommary_title}}</h3>
                                     <p>{{$specificFilter["apartment"] ->description }}</p>
                                 </div>
+                                <div class="search-apartment-info">
+                                    <p>{{$specificFilter["apartment"] ->guest_number}} Ospiti</p>
+                                    <p>{{$specificFilter["apartment"] ->room_number}} Stanze</p>
+                                    <p>{{$specificFilter["apartment"] ->square_meters}} Metri quadrati</p>
+                                    <a class="btn btn-secondary "  href="{{ route('search.show', ['apartment' => $specificFilter["apartment"] -> id])}}">Details</a>
+                                </div>
                             </div>
-                        </div>
-                    @endif
-                @endif
-            @endforeach
+                            @endif
+                        @endif
+                    @endforeach
+                </div>
             </div>
 
             <div id="searched-apts-Public"></div>
-            @foreach ($filteredApartments as $specificFilter)
-                <div class="row medium-spacer">
-                    <div class="single-apartment d-flex flex-row">
-                        <div class="img-apartment">
-                            <img class="fix-img-search" src=@if(strpos($specificFilter["apartment"] ->cover_image, 'https') !== false)
+                <div class="row searched-all">
+                @foreach ($filteredApartments as $specificFilter)
+                    <div class="col-xs-12 col-md-6 col-lg-4 single-apartment prew-apartment-card search-apartment-st">
+                        <div class="img-apartment single-apartment-img search-apartment-img">
+                            <img class="search" src=@if(strpos($specificFilter["apartment"] ->cover_image, 'https') !== false)
                                 "{{$specificFilter["apartment"] ->cover_image}}"
                             @else
                                 "{{asset('storage/' . $specificFilter["apartment"] ->cover_image)}}"
                             @endif alt="">
                         </div>
-                        <div class="content-apartment">
-                            <h3>{{$specificFilter["apartment"] -> sommary_title}}</h3><a class="btn btn-secondary "
-                                                                                         href="{{ route('search.show', ['apartment' => $specificFilter["apartment"] -> id])}}">Details</a>
-                            <p>{{$specificFilter["apartment"] ->guest_number}} ospiti</p>
-                            <p>{{$specificFilter["apartment"] ->room_number}} stanze</p>
-                            <p>{{$specificFilter["apartment"] ->square_meters}} metri quadrati</p>
+                        <i class="far fa-question-circle"></i>
+                        <div class="single-apartment-body search-apartment-body">
+                            <h3>{{$specificFilter["apartment"] -> sommary_title}}</h3>
                             <p>{{$specificFilter["apartment"] ->description }}</p>
                         </div>
+                        <div class="search-apartment-info">
+                            <p>{{$specificFilter["apartment"] ->guest_number}} Ospiti</p>
+                            <p>{{$specificFilter["apartment"] ->room_number}} Stanze</p>
+                            <p>{{$specificFilter["apartment"] ->square_meters}} Metri quadrati</p>
+                            <a class="btn btn-secondary "  href="{{ route('search.show', ['apartment' => $specificFilter["apartment"] -> id])}}">Details</a>
+                        </div>
                     </div>
+                @endforeach
                 </div>
-                <hr>
-            @endforeach
+            </div>
         </div>
         @endsection
 

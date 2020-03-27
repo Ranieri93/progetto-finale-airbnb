@@ -60,6 +60,7 @@ class SearchController extends Controller
         $AllApartments = Apartment::all();
         $Allservices = Service::all();
         $data = $request->all();
+        $today = Carbon::now()->toDateTimeString(); //Passo data di oggi per verificare sponsorizzazione
 
         $numOfRooms = $data["rooms"];
         $numOfGuests = $data["guests"];
@@ -124,7 +125,8 @@ class SearchController extends Controller
 
         return view('public-search', [
             'filteredApartments' => $finalApts,
-            'services' => $Allservices
+            'services' => $Allservices,
+            'today' => $today
         ] );
     }
 
