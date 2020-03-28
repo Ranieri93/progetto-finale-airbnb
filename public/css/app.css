@@ -39,8 +39,7 @@
 
 #main-public #search-home-public .show-picture img {
   height: 500px;
-  -o-object-fit: cover;
-     object-fit: cover;
+  width: 100vw;
   opacity: 0.7;
 }
 
@@ -107,8 +106,7 @@
 
 #main-admin #search-home-admin .show-picture img {
   height: 500px;
-  -o-object-fit: cover;
-     object-fit: cover;
+  width: 100vw;
   opacity: 0.7;
 }
 
