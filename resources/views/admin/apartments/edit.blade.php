@@ -28,25 +28,25 @@
                     </div>
                     <div class="form-group">
                         <label for="room_number">Numero Stanze</label>
-                        <input type="text" class="form-control"
+                        <input type="number" min="1" max="8" class="form-control"
                                name="room_number" id="room_number" placeholder="Scrivi qui il numero delle stanze"
                                value="{{old('room_number', $apartment->room_number)}}" required>
                     </div>
                     <div class="form-group">
                         <label for="guest_number">Numero Ospiti</label>
-                        <input type="text" class="form-control"
+                        <input type="number" min="1" max="8" class="form-control"
                                name="guest_number" id="guest_number" placeholder="Scrivi qui il numero degli ospiti"
                                value="{{old('guest_number', $apartment->guest_number)}}" required>
                     </div>
                     <div class="form-group">
                         <label for="wc_number">Numero Bagni</label>
-                        <input type="text" class="form-control"
+                        <input type="number" min="1" max="5" class="form-control"
                                name="wc_number" id="wc_number" placeholder="Scrivi qui il numero dei bagni"
                                value="{{old('wc_number', $apartment->wc_number)}}" required>
                     </div>
                     <div class="form-group">
                         <label for="square_meters">Metri Quadrati</label>
-                        <input type="text" class="form-control"
+                        <input type="number" min="30" max="250" class="form-control"
                                name="square_meters" id="square_meters" placeholder="Scrivi qui la metratura"
                                value="{{old('square_meters', $apartment->square_meters)}}" required>
                     </div>
@@ -56,6 +56,7 @@
                         <input type="text" class="form-control"
                                name="address" id="address-edit" placeholder="Scrivi qui l'indirizzo"
                                value="{{old('address', $apartment->address)}}" required>
+                        <div id="listAddresses"></div>
                     </div>
 
                     @if($services->count())

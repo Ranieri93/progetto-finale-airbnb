@@ -176,3 +176,15 @@ main {
     display: flex;
     justify-content: center;
 }
+
+#create-form-apartment {
+    #listAddresses {
+        position: absolute;
+    }
+}
+
+#update-form-apartment {
+    #listAddresses {
+        position: absolute;
+    }
+}

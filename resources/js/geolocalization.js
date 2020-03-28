@@ -81,7 +81,48 @@ $(document).ready(function() {
         $('#input-search-address-public').val(singleLi);
     });
 
+    // <!-- RICERCA LATO CREATE -->
 
+    // Gestione evento ricerca CREATE
+    $('#address').keyup(function () {
+        $("#listAddresses").empty();
+
+        var addressQuery = $('#address').val();
+        var lunghezzaQuery = addressQuery.length;
+        var resto = lunghezzaQuery % 2;
+
+        if (lunghezzaQuery >= 3 && resto != 0) {
+            debounce(autoSearch(addressQuery,myapikey,4),300);
+        }
+    });
+
+    $(document).on('click', 'li.listAuto', function () {
+        var singleLi = $(this).text();
+        $('#listAddresses').fadeOut();
+        $('#address').val(singleLi);
+    });
+
+
+    // <!-- RICERCA LATO EDIT -->
+
+    // Gestione evento ricerca EDIT
+    $('#address-edit').keyup(function () {
+        $("#listAddresses").empty();
+
+        var addressQuery = $('#address-edit').val();
+        var lunghezzaQuery = addressQuery.length;
+        var resto = lunghezzaQuery % 2;
+
+        if (lunghezzaQuery >= 3 && resto != 0) {
+            debounce(autoSearch(addressQuery,myapikey,4),300);
+        }
+    });
+
+    $(document).on('click', 'li.listAuto', function () {
+        var singleLi = $(this).text();
+        $('#listAddresses').fadeOut();
+        $('#address-edit').val(singleLi);
+    });
 
     //FUNZIONI
 
