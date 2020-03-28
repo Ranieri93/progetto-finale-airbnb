@@ -1,10 +1,5 @@
 @extends('layouts.admin')
 @section('content')
-
-<div class="back">
-    <a class="show-back-button btn" href="{{route('admin.search')}}">Torna indietro</a>
-</div>
-
 {{-- image section --}}
 <div class="show-picture">
     <img src=@if(strpos($apartment->cover_image, 'https') !== false)

@@ -18,9 +18,9 @@ class MessageController extends Controller
      public function showCards()
      {
 
-         $apartments = Apartment::all();
+         $userApartments = Apartment::all()->where('user_id', '=', Auth::user()->id);
          // dd($apartments);
-         return view('admin.cards-apartments', ['apartments' => $apartments]);
+         return view('admin.cards-apartments', ['apartments' => $userApartments]);
      }
 
 

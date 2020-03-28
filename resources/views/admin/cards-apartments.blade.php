@@ -1,10 +1,6 @@
 @extends('layouts.admin')
 
 @section('content')
-    <div class="back">
-        <a class="show-back-button btn" href="{{route('admin.apartments.index')}}">Torna indietro</a>
-    </div>
-
     <h4 class="text-center mt-5 mb-5">Scegli per quale dei tuoi appartamenti vuoi controllare i messaggi ricevuti</h4>
 
     <div class="container d-flex flex-wrap justify-content-around">
