@@ -1,3 +1,10 @@
+main {
+    position: relative;
+    min-height: 100vh;
+    padding-bottom: $footer-height;
+}
+
+
 .navbar {
     background-color: #282B29;
 }
