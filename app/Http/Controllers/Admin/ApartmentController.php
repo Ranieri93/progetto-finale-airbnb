@@ -176,6 +176,10 @@ class ApartmentController extends Controller
             $apartment->services()->sync([]);
         }
 
+        if ($apartment->ads->isNotEmpty()) {
+            $apartment->ads()->sync([]);
+        }
+
         $apartment->delete();
         return redirect()->route('admin.apartments.index');
     }
