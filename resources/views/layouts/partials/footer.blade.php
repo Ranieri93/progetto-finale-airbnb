@@ -2,7 +2,7 @@
 <footer class="page-footer font-small indigo">
 
     <!-- Footer Links -->
-    <div class="container text-center text-md-left">
+    <div class="container footer-container text-center text-md-left">
 
         <!-- Grid row -->
         <div class="row">
