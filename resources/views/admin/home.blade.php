@@ -37,7 +37,7 @@
         </div>
         <div class="sponsored-apartments pt-4">
             <div class="container">
-                <h2>Appartamenti in Evidenza</h2>
+                <h2 class="pl-3 pr-3">Appartamenti in Evidenza</h2>
                 <div class="row">
                 @if($sponsored_apartments->count() > 0)
                     @foreach ($sponsored_apartments as $sponsored_apartment)

@@ -6,7 +6,7 @@ main {
 
 
 .navbar {
-    background-color: #282B29;
+    background-color: $primary-background;
 }
 
 .navbar-brand {
@@ -160,7 +160,7 @@ main {
     }
 }
 .my-form {
-    background-color: #282B29;
+    background-color: $primary-background;
     padding: 20px;
     border-radius: 4px;
     box-shadow: 0 16px 40px rgba(0,0,0,0.12);

@@ -4,11 +4,15 @@
     width: 100%;
     height: $footer-height;
 
-    background-color: #282B29;
+    background-color: $primary-background;
     color: white;
     li a {
         color: white;
     }
+}
+
+.footer-container {
+    background-color: $primary-background;
 }
 
 footer {
@@ -16,6 +20,8 @@ footer {
 }
 
 .low_left {
+    background-color: $primary-background;
+
     a::after{
         margin-left: 4px;
         position: absolute;
