@@ -25,6 +25,55 @@ $breakpoint-tablet: 768px;
 $breakpoint-large: 1024px;
 $breakpoint-xlarge: 1200px;
 $breakpoint-smartphone: 320px;
+
+//Search
+//filters
+$filters-primary-color: #227DC7;
+$filters-width-sm: 100%;
+$filters-height-sm: 100vh;
+$filters-width-tb: 25%;
+$filters-width-lg: 20%;
+
+$filters-bg-color: rgba(224, 224, 224, 0.85);
+$filters-padding: 20px 10px;
+$filters-border-radius: 5px;
+
+$filters-checkbox-width: 15px;
+$filters-checkbox-height: 20px;
+$filters-checkbox-bg: white;
+$filters-checkbox-border: 1px solid rgba(0, 0, 0 , .5);
+$filters-checkbox-checked-size: 16px;
+
+$filters-radius-common: 15px;
+$filters-radius-bg: #aaaaaa;
+
+$filters-input-width: 50%;
+$filters-input-border-radius: 5px;
+$filters-input-box-shadow: 0 6px 10px 0 rgba(0, 0, 0 , .1);
+
+$filters-chev-border: 1px solid rgba(0, 0, 0, 0.1);
+$filters-chev-border-radius: 50%;
+$filters-chev-bg: white;
+$filters-chev-padding: 15px;
+$filters-chev-box-shadow: 0px 0px 1px 1px rgba(224,224,224,1);
+
+//apartments
+$title-h2-padding: 10px;
+
+$search-section-apartments-width: 95%;
+$search-section-apartments-margin: 20px 0 30px;
+
+$search-apartments-img-width: 100%;
+
+$search-ad-color: #ffbf00;
+$search-ad-bg-color: rgba(255, 191, 0, 0.2);
+$search-ad-size: 16px;
+$search-ad-border: 1px solid $search-ad-color;
+$search-ad-border-radius: 5px;
+
+//end search
+
+
 //admin-index
 $title-margin: 40px;
 
