@@ -8,12 +8,12 @@
     </div> --}}
 
     <div class="container filters">
-        <form  action="{{route('admin.advancedSearch')}}" id="searchByFiltersForm" method="post">
+        <form  action="{{route('advancedSearch')}}" id="searchByFiltersForm" method="post">
             @csrf
             @method("POST")
             <div class="row">
                 <div class="col-12">
-                    <h2>Filtri<a class="float-right home-but" href="{{route('admin.home')}}"><i class="fas fa-home"></i></a></h2>
+                    <h2>Filtri<a class="float-right home-but" href="{{route('home')}}"><i class="fas fa-home"></i></a></h2>
                     @if($services->count())
                         <div class="form-group">
                             @foreach($services as $service)
@@ -45,6 +45,7 @@
                 </div>
                 <div class="col-12">
                     <button id="btn-adv-search" type="submit" class="btn btn-primary">Inserisci</button>
+                    <button type="reset" class="btn btn-warning">Reset</button>
                 </div>
             </div>
         </form>
@@ -57,12 +58,12 @@
     <div class="apartment-search-results container">
         <h2  class="text-center">Ecco gli appartamenti disponibili nella zona che hai scelto.</h2>
         <br>
-        
+
         <div id="sponsored-searched-apts">
             <div class="row">
                 @foreach ($filteredApartments as $specificFilter)
                     @if (isset($specificFilter['apartment']->ads->last()->ad_end))
-                        @php  
+                        @php
                             $end_ad = ($specificFilter['apartment']->ads->last()->ad_end)
                         @endphp
 

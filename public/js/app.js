@@ -37082,6 +37082,8 @@ __webpack_require__(/*! ./main */ "./resources/js/main.js");
 
 __webpack_require__(/*! ./adminIndex */ "./resources/js/adminIndex.js");
 
+__webpack_require__(/*! ./filtersSection */ "./resources/js/filtersSection.js");
+
 __webpack_require__(/*! ./sponsored-apartments */ "./resources/js/sponsored-apartments.js");
 
 __webpack_require__(/*! ./sponsor */ "./resources/js/sponsor.js");
@@ -37145,6 +37147,33 @@ if (token) {
 //     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
 //     encrypted: true
 // });
+
+/***/ }),
+
+/***/ "./resources/js/filtersSection.js":
+/*!****************************************!*\
+  !*** ./resources/js/filtersSection.js ***!
+  \****************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+__webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
+
+var $ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
+
+$(document).ready(function () {
+  $(".filter-chev").click(function () {
+    if ($(".filters").hasClass('open-an')) {
+      $(".filters").removeClass('open-an');
+      $(".filter-chev .open-bt").removeClass('no-active-open');
+      $(".filter-chev .close-bt").removeClass('active-close');
+    } else {
+      $(".filters").addClass('open-an');
+      $(".filter-chev .open-bt").addClass('no-active-open');
+      $(".filter-chev .close-bt").addClass('active-close');
+    }
+  });
+});
 
 /***/ }),
 

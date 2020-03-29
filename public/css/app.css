@@ -11187,8 +11187,16 @@ nav .space {
   color: white;
 }
 
+.footer-container {
+  background-color: #282B29;
+}
+
 footer {
   margin-top: 50px;
+}
+
+.low_left {
+  background-color: #282B29;
 }
 
 .low_left a::after {
@@ -11319,53 +11327,145 @@ footer {
   }
 }
 
-@media screen and (max-width: 320px) {
-  body > main > div.container > div > button {
-    width: 300px;
-    margin-left: 25px;
-  }
+.filters {
+  position: fixed;
+  left: -100%;
+  top: 0%;
+  z-index: 10;
+  width: 100%;
+  height: 100vh;
+  transition: 1s;
+}
 
-  #searchByFiltersFormPublic {
-    flex-wrap: wrap !important;
-    justify-content: space-around !important;
-  }
+.filters.open-an {
+  left: 0;
+}
 
-  #val-radius-input {
-    width: 89px;
-  }
+.filters .home-but {
+  display: inline-block;
+  text-align: right;
+  text-decoration: none;
+}
 
-  #searchByFiltersFormPublic > div.col-3 {
-    height: 100px;
-    display: contents !important;
-  }
+.filters #searchByFiltersForm {
+  background-color: rgba(224, 224, 224, 0.85);
+  padding: 20px 10px;
+  border-radius: 5px;
+  position: relative;
+  font-weight: bold;
+}
 
-  #searchByFiltersFormPublic > div:nth-child(5) {
-    height: 100px !important;
-    display: table !important;
-  }
+.filters #searchByFiltersForm h2 {
+  text-align: left;
+}
 
-  #searchByFiltersFormPublic > div.col-3 > h4 {
-    margin-left: 20px;
-    height: 50px !important;
-    position: absolute;
-  }
+.filters #searchByFiltersForm .checkbox-filt {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+       appearance: none;
+  background-color: white;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  border-radius: 15px;
+  height: 20px;
+  width: 15px;
+}
 
-  #radius {
-    width: 70px;
-    position: relative;
-    top: 5px;
-  }
+.filters #searchByFiltersForm .checkbox-filt:focus {
+  outline: none;
+}
 
-  #val-radius-input {
-    position: relative;
-    top: 143px;
-    height: 20px;
-  }
+.filters #searchByFiltersForm .checkbox-filt:checked {
+  position: relative;
+}
 
-  #searchByFiltersFormPublic > div:nth-child(6) {
-    height: 100px !important;
-    display: table !important;
-  }
+.filters #searchByFiltersForm .checkbox-filt:checked:after {
+  content: "\2714";
+  font-size: 16px;
+  bottom: 3px;
+  color: #227DC7;
+}
+
+.filters #searchByFiltersForm #radius {
+  max-width: 80%;
+  margin-bottom: 15px;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  height: 15px;
+  background: #aaaaaa;
+  outline: none;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+
+.filters #searchByFiltersForm #radius:hover {
+  opacity: 1;
+}
+
+.filters #searchByFiltersForm #radius::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  border-radius: 15px;
+  background: #227DC7;
+  cursor: pointer;
+}
+
+.filters #searchByFiltersForm #radius::-moz-range-thumb {
+  width: 1 15px;
+  height: 15px;
+  background: #227DC7;
+  cursor: pointer;
+}
+
+.filters #searchByFiltersForm .input-style {
+  width: 50%;
+  border-radius: 5px;
+  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.1);
+  border: 0;
+  outline: 0;
+}
+
+.filters #searchByFiltersForm #rooms {
+  margin: 10px 0;
+}
+
+.filters .filter-chev {
+  position: absolute;
+  right: -8%;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  background-color: white;
+  padding: 15px;
+  cursor: pointer;
+  box-shadow: 0px 0px 1px 1px #e0e0e0;
+}
+
+.filters .filter-chev .open-bt {
+  display: block;
+}
+
+.filters .filter-chev .open-bt.no-active-open {
+  display: none;
+}
+
+.filters .filter-chev .close-bt {
+  display: none;
+}
+
+.filters .filter-chev .close-bt.active-close {
+  display: block;
+}
+
+.apartment-search-results h2 {
+  padding: 10px;
+}
+
+#sponsored-searched-apts {
+  width: 95%;
 }
 
 #sponsored-searched-apts,
@@ -11377,6 +11477,7 @@ footer {
 .searched-all .search-apartment-st {
   transition: 0.5s;
   cursor: pointer;
+  padding: 0;
 }
 
 #sponsored-searched-apts .search-apartment-st.flip,
@@ -11399,7 +11500,7 @@ footer {
 .searched-all .search-apartment-st .search-apartment-img .ad-alert {
   position: absolute;
   bottom: 5%;
-  left: 2%;
+  left: 4%;
   font-size: 16px;
   border: 1px solid #ffbf00;
   border-radius: 5px;
@@ -11418,7 +11519,7 @@ footer {
 #sponsored-searched-apts .search-apartment-st .search-apartment-info,
 .searched-all .search-apartment-st .search-apartment-info {
   position: absolute;
-  bottom: 15%;
+  bottom: 10%;
   left: 10%;
   z-index: 2;
   color: white;
@@ -11429,6 +11530,33 @@ footer {
 .searched-all .search-apartment-st .search-apartment-info.show-info {
   display: block;
   transform: rotateY(180deg);
+}
+
+@media screen and (min-width: 768px) {
+  .search-apartment-st.search-tbl {
+    padding: 0 10px;
+  }
+
+  .filters {
+    left: -25%;
+    width: 25%;
+  }
+
+  .filters .filter-chev {
+    right: -15%;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .filters {
+    left: -19%;
+    top: 10%;
+    width: 20%;
+  }
+
+  .filters .filter-chev {
+    right: -10%;
+  }
 }
 
 .back {

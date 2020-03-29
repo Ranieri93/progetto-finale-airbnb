@@ -21,8 +21,6 @@
     <div class="options col-sm-4 col-xs-6">
         <div class="card">
             <div class="card-body">
-
-
                 <ul class="list-group list-group-flush">
                     {{-- <li class="list-group-item">Slug: <br> {{ $apartment->slug }}</li> --}}
                     <li class="list-group-item">Numero Stanze: <br> {{ $apartment->room_number }}</li>

@@ -45,6 +45,7 @@
                 </div>
                 <div class="col-12">
                     <button id="btn-adv-search" type="submit" class="btn btn-primary">Inserisci</button>
+                    <button type="reset" class="btn btn-warning">Reset</button>
                 </div>
             </div>
         </form>
@@ -57,12 +58,12 @@
     <div class="apartment-search-results container">
         <h2  class="text-center">Ecco gli appartamenti disponibili nella zona che hai scelto.</h2>
         <br>
-        
+
         <div id="sponsored-searched-apts">
             <div class="row">
                 @foreach ($filteredApartments as $specificFilter)
                     @if (isset($specificFilter['apartment']->ads->last()->ad_end))
-                        @php  
+                        @php
                             $end_ad = ($specificFilter['apartment']->ads->last()->ad_end)
                         @endphp
 
